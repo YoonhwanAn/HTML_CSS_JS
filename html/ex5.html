@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid rgb(160 160 160);
+            padding: 8px 10px;
+        }
+
+        tr:nth-of-type(odd) td {
+            background-color: #eee;
+
+            
+        }
+
+        tr th[scope="row"] {
+            background-color: #d6ecd4;
+        }
+    </style>
+    <title>table 예제</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th scope="row">A</th>
+            <td>Alfa</td>
+            <td>AL fah</td>
+        </tr>
+        <tr>
+            <th scope="row">B</th>
+            <td>Bravo</td>
+            <td>BRAH voh</td>
+        </tr>
+        <tr>
+            <th scope="row">C</th>
+            <td>Charlie</td>
+            <td>CHAR lee</td>
+        </tr>
+        <tr>
+            <th scope="row">D</th>
+            <td>Delta</td>
+            <td>DELL tah</td>
+        </tr>
+    </table>
+    <h3>상품구성</h3>
+    <dl> <!-- dl : Description List -->
+        <dt>선물용 3kg</dt> <!-- dt : Description Term  -->
+        <dd>소과 13~16과</dd> <!-- dd : Description Details -->
+        <dd>중과 10~12과</dd>
+    </dl>
+    <dl>
+        <dt>선물용 5kg</dt>
+        <dd>중과 15~19과</dd>
+    </dl>
+</body>
+</html>
