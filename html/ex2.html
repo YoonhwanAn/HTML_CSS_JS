@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 외부에서 ul스타일을 강제 변경할 경우. (해당 페이지에서 스타일로 적용)*/
+        /* style 내부는 타언어를 불러오는 개념이라 참조 기호 및 작성방법이 다름*/
+        ul {
+            list-style-type: "\1F60A"; /* unicode 문자 : 스마일 페이스 */
+            /* https://home.unicode.org/ : unicode 사이트 */
+        }
+    </style>
+</head>
+<body>
+    <a href="#">python</a>
+    &lt;a&gt;&lt;/a&gt; <!-- MIME  -->
+    &amp;lt;&amp;gt;
+    <!-- \n : 텍스트 모드(console, 예시-명령프롬프트)에서 줄바꿈. text/plain (MIME) -->
+    <!-- 웹브라우저 : 그래픽 모드, text/html (MIME)-->
+    <hr>
+    <hr>
+    java <em>html/css</em> spring<br>
+    자바 <i> 프론트웹</i> 스프링<br>
+    <hr>
+    <blockquote> 인용문은 자동으로 약간 들여 써줍니다. </blockquote>
+
+
+    <!-- ol type 종류
+    a for lowercase letters
+    A for uppercase letters
+    i for lowercase Roman numerals
+    I for uppercase Roman numerals
+    1 for numbers (default) 
+    -->
+    <!--
+    항목의 순서를 바꿨을 때 의미도 바뀜 - <ol>
+    항목의 순서를 바꿨을 때 의미가 바뀌지 않음 - <ul>
+    -->
+    <ol>
+        <li>짜장</li>
+        <li>짬뽕</li>
+        <li>탕수육</li>
+    </ol>
+    <ol type="i">
+        <li>짜장</li>
+        <li>짬뽕</li>
+        <li>탕수육</li>
+    </ol>
+
+    <!-- 
+    ul도 type이 적용되나 비추천 (CSS로 하는 것을 추천) / 상단의 head에 style 적용 
+    -->
+    <ul>
+        <li>짜장</li>
+        <li>짬뽕</li>
+        <li>탕수육</li>
+    </ul>
+</body>
+</html>
