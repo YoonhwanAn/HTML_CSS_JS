@@ -1,0 +1,61 @@
+<!-- 2025.04.23 수업내용 review -->
+
+    <!-- 텍스트 태그(요소) review -->
+    
+    <!-- 1. 글자 디자인 -->
+        <!-- 굵게(bold) -->
+        <b></b><strong></strong>
+        <!-- 취소선 -->
+        <s></s><strike></strike>
+        <!-- 기울여서(italic) -->
+        <i></i><em></em><cite></cite>
+        <!-- 인용 -->
+        <blockquote></blockquote>
+        <!-- 수평선 -->
+        <hr>
+
+    <!-- 2. 항목(list) 만들기 -->
+        <!-- 숫자가 포함된 항목 (ordered list)-->
+        <ol></ol>
+        <!-- 숫자가 포함되지 않은 항목 (unordered list) -->
+        <ul></ul>
+        <!-- 세부항목 (list) -->
+        <li></li>
+
+    <!-- 3. 표만들기 선언 -->
+    <table></table> grid(matrix) : div => grid layout
+        <!-- 표의 제목 -->
+        <caption></caption>
+        <!-- 행,열,표제 만들기 -->
+        <tr></tr><td></td><th></th>
+        <!-- 표의 head, body, foot 구분시 -->
+        <thead></thead><tbody></tbody><tfoot></tfoot>
+        <!-- 표 세로줄 일괄 효과 -->
+        <colgruop></colgruop>
+        <col>
+        <!-- 표 합치기 -->
+        colspan="2", rowspan="2"
+    
+    <!-- 4. CSS이용해서 꾸미기 -->
+        <!-- 항목별 적용 -->
+        <td style="backgronund=color:#ccc"></td>
+        CSS항목 상세는 => CSS refs 참고
+        <!-- head단에서 전체 적용 -->
+        <style> </style>=> 주로 head에서 사용
+
+    border : formal syntax(문법)
+    border-color
+
+    <!-- 5. 이미지 개론 -->
+    
+        픽픽어플 사용
+        color: 16color, 140 color(name)
+        RGB=> 2의 24승의 색상을 나타낼 수 있음
+        CMYK는 더 많은 색상 표현 가능
+        (00~ff, 00~ff, 00~ff) 식으로 RGB 색상 표현가능
+
+        graylevel(grayscale)
+        rgb(), hsl(), rgba(), hsla() : CSS함수
+
+        raster(bitmap) 이미지 vs vector(~.SVG)이미지
+        image의 발전: gif, jpeg, png-8/24, webP 

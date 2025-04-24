@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>font change sample</title>
+  <style>
+    /* h1의 스타일 결정 */
+    h1 {
+      font-family: "맑은고딕", 돋움, 굴림; /* 맑은고딕을 쓰되 폰트가 없으면 2순위 돋움, 3순위 굴림을 써라*/
+      /* 특정 글꼴을 사용할 수 있다는 보장이 없으므로 목록에는 항상 적어도 하나의 일반 글꼴을 포함할 것. 
+      이렇게 하면 브라우저가 필요에 따라 적절한 대체 글꼴을 선택함. */
+    }
+    p {
+      font-size: 10px;
+    }
+
+
+  </style>
+
+
+</head>
+<body>
+
+    <h1>절대크기</h1>
+    <!-- 글자크기를 고정하는 방법. 주로 px을 사용함. -->
+    <p style="font-size: xx-small">xx-small적용</p>
+    <p style="font-size: x-small">x-small적용</p>
+    <p style="font-size: small">small적용</p> <!-- medium보다 작음  -->
+    <p style="font-size: medium">medium적용</p> <!-- 기본글자 크기  -->
+    <p>아무것도 적용하지 않음</p> <!-- 상위 스타일에서 10px로 지정하였으므로 10px출력  -->
+    <p style="font-size: large">large적용</p> <!-- medium보다 큼  -->
+    <p style="font-size: x-large">x-large적용</p>
+    <p style="font-size: xx-large">xx-large적용</p>
+    <p style="font-size: xxx-large">xxx-large적용</p>
+
+    <h1>상대크기</h1>
+    <!-- 기준값이 있고 그 값의 몇배인지 표현하는 방법. 주로 %나 em사용 -->
+    <p>아무것도 적용하지 않음</p> <!-- 상위 스타일에서 10px로 지정하였으므로 10px출력  -->
+    <p style="font-size: larger">larger적용</p> <!-- 10px보다 조금 크게 -->
+    <p style="font-size: larger">larger적용</p> <!-- 두번 적용한다고 해서 larger*2가 되진 않음  -->
+    <p style="font-size: smaller">smaller적용</p> <!-- 10px보다 조금 작게  -->
+    <p style="font-size: smaller">smaller적용</p> <!-- 두번 적용한다고 해서 smaller*2가 되진 않음  -->
+    <p style="font-size: 120%">120%적용</p> <!-- 10px의 120% (1.2배 = 1.2em) -->
+    <p style="font-size: 80%">80%적용</p> <!-- 10px의 80% (0.8배 = 0.8em) ->
+
+//todo font-style, font-weight 추가적용해볼것
+
+</body>
+</htm1l>
