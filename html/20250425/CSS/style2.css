@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.test {
+    font: 1em/1.8em 'Nanum Myeongjo'; /*  글꼴 : 나눔 명조 / 글자 크기 : 1em / 문장(줄)간의 간격 : 1.8em */
+    word-spacing: 0.5em; /* 단어간 간격 : 0.5em */
+    letter-spacing: 2px; /* 글자간의 간격(자간) : 2px */
+    text-indent: 3em; /* 첫 문단 들여쓰기 : 3em */
+    color: sienna; /* 글자 색상 : Sienna */
+    width: 800px; height: 260px; /* 문단(div)의 크기(너비 * 높이) : 800px * 260px */ 
+    border-width: 4px; /* 문단 외곽선 굵기 : 4px */
+    border-color: rosybrown; /*  문단 외곽선 색상 : RosyBrown */
+    border-style: double; /* 문단 외곽선 형태 : 이중선(double) */
+    background: snow; /* 문단 배경색상 : Snow */
+    padding: 15px 20px; /* 문단 내부 간격(외곽선과의 간격) - 상하/좌우 :15px 20px */
+}

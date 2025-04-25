@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* nanum-gothic-regular - korean */
+		@font-face {    /* 커스텀 폰트를 직접 정의하고 적용하는 규칙 */
+		  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		  font-family: 'Nanum Gothic';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: url('./font/nanum-gothic-v26-korean_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+		}
+
+        .fnt {
+            font-family: 'Nanum Gothic';
+            color:blue;
+            font-size : 10em;
+        }
+    </style>
+</head>
+<body>
+    <span class="fnt">나눔 고딕입니다.</span>
+</body>
+</html>

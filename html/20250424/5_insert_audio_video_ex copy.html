@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>상품 소개 페이지</title>
+</head>
+<body>
+  <h1>레드향을 이용한 샐러드</h1>
+  <!-- HTML5에서는 음성과 영상에 대해서 자동재생을 하지 않는 것이 권고됨 (사용자 편의성 등) -->
+  <!-- 정지상태에서 사용자가 실행시키는 방향으로 설정해야 하며, 부득이한 경우(배경영상 재생 등) 음소거(mute)를 실시해야 함.-->
+
+  <!-- 1. object 활용 삽입 -->
+  <!-- PDF, 오디오, 비디오 등 다양한 멀티미디어 파일 삽입가능 -->
+  <p>PDF파일 삽입하기</p>
+  <object width="900" height="800" data="pdf/product.pdf"></object>
+
+  <!-- 단, 음성과 영상은 audio, video를 사용 추천-->
+  <!--
+  <p>음성파일 삽입하기</p>
+  <object data="medias/spring.mp3"></object> 
+
+  <p>영상파일 삽입하기</p>
+  <object width="400" height="225"data="medias/salad.mp4"></object>
+  -->
+
+  <!-- 2. embed를 활용 활용 삽입 -->
+  <!-- audio, video, object 태그를 지원하지 않는 웹브라우저 고려시 적용 -->
+  <!-- </embed>를 작성하지 않음에 유의-->
+
+  <!--
+  <p>오디오 삽입하기</p>
+  <embed src="medias/spring.mp3">
+
+  <p>영상파일 삽입하기</p>
+  <embed width="400" height="225" src="medias/salad.mp4">
+  -->
+
+  <!-- 3. audio 삽입-->
+  <!-- HTML5는 video를 이용해서 영상을 넣는 것이 좋음.-->
+  <p>음성파일 삽입</p>
+  <audio src="medias/spring.mp3" controls loop preload="none"></audio>
+  
+  <!-- 4. video 영상 삽입 -->
+  <!-- HTML5는 video를 이용해서 영상을 넣는 것이 좋음.-->
+  <p>샐러드 만들기 영상</p>
+  <video src="medias/salad.mp4" controls width="400" poster="images/salad.jpg"></video>
+
+  <!-- audio와 video의 여러가지 속성 -->
+  <!-- 
+    1. controls - 플레이화면에 컨트롤러 표시. 대부분의 경우 반드시 넣어야하는 속성
+    2. autoplay - 자동으로 실행. 대부분의 경우 넣지 말아야 할 속성
+    3. mute - 음소거. 부득이하게 autoplay를 집어넣는다면 반드시 넣어야 할 속성
+    4. loop - 영상이 자동으로 루프. 
+    5. width, height - 가로세로
+    6. preload - 얼마나 미리 로드할지. 자세한 것은 아래에 추가설명
+    7. poster="이미지 이름" - <video>한정 속성. thumbnail 이미지 추가. poster를 넣지 않는다면 기본 검정바탕의 플레이어가 설정됨. 반드시 넣는것을 추천
+  -->
+
+
+  <!--
+  HTML의 <audio>와 <video> 태그에서 preload 속성은 미디어 파일을 어떻게 로드할지를 결정. 총 3가지 방법
+
+    1. auto
+    브라우저가 가능한 한 미디어 파일을 미리 로드
+    사용자가 재생 버튼을 누르기 전에 전체 미디어를 다운로드할 수 있어 네트워크 트래픽이 증가
+    
+      장점: 빠른 재생 시작 가능
+      단점: 불필요한 데이터 사용 가능
+    
+    2. metadata
+    미디어의 메타데이터(길이, 크기, 첫 프레임 등)만 로드
+    본격적인 파일 로드는 사용자가 재생을 시작할 때 진행
+    
+      장점: 페이지 로딩 속도 개선 & 네트워크 사용 최소화
+      단점: 재생 시작 시 약간의 지연이 있을 수 있음
+    
+    3. none
+    브라우저가 미디어 파일을 미리 로드하지 않음
+    사용자가 재생 버튼을 눌러야 비로소 파일이 로드
+    
+      장점: 네트워크 트래픽을 최소화 & 불필요한 데이터 다운로드 방지
+      단점: 사용자가 재생을 시작하면 파일 로딩 시간이 발생할 수 있음
+    
+    -결론-
+    preload="auto"는 영상이나 음악이 즉시 재생될 필요가 있을 때
+    preload="metadata"는 미디어 파일 크기를 고려하여 네트워크를 절약할 때
+    preload="none"은 데이터 사용을 최소화하고 싶을 때
+    -->
+
+</body>
+</html>

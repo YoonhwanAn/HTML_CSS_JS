@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            position:absolute;
+            left:500px;
+            top:100px;
+            width:400px;
+            height:400px;
+            background:yellow;
+        }
+
+        .child {
+            position:absolute;
+            left:50px;
+            top:50px;
+            width:100px;
+            height:100px;
+            background:orange;
+            z-index:2
+        }
+
+        .fixed {
+            position:fixed;
+            left:200px;
+            top:200px;
+            width:200px;
+            height:200px;
+            background:cyan;
+            z-index:2
+        }
+
+        .relative {
+            position:relative;
+            left:300px;
+            top:300px;
+            width:100px;
+            height:100px;
+            background: green;
+            z-index:2
+        }
+    </style>
+</head>
+<body style="margin:0">
+
+    <div class="parent"> <!-- 상위 태그 : 상위 태그가 없으면 fixed 처럼 웹 브라우저의 절대 원점이 기준 원점이 됨 -->        
+        <div style="font-size:30px;">parent</div>
+        <div class="child">child-1(absolute)</div> <!-- 상위 태그(div.parent)의 원점이 기준 원점이 됨 -->
+        <div class="fixed">fixed</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
+        <div class="relative">relative</div> <!-- 상위 태그(div.parent)에서 parent 라는 글자의 세로 크기를 더한 원점이 기준 원점이 됨-->
+    </div>
+
+    <div class="child">child2(fixed)</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
+
+    <div class="relative">relative</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.container {
+    display: flex; /* 가로 정렬 */
+    gap: 10px; /* 요소 사이 간격 */
+}
+
+.add-cart {
+    width: 250px; /* 가로 크기 */
+    height: 50px; /* 세로 크기 */
+    background-color: white; /* Copilot 스타일 블루 */
+    border: 1px solid #346AFF;
+    border-radius: 2px; /* 모서리 둥글기 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #346AFF;
+    margin: 3px 3px;
+    font-size: 16px;
+}
+
+.buy-now {
+    width: 150px; /* 가로 크기 */
+    height: 50px; /* 세로 크기 */
+    background-color: #346AFF; /* Copilot 스타일 블루 */
+    border: 1px solid #346AFF;
+    border-radius: 2px; /* 모서리 둥글기 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 3px 3px;
+    font-size: 16px;
+}
+
+
+/* 버튼 anchor 옵션변경 */
+.btn {
+    text-decoration: none; /* 버튼 고유의 및줄 제거 */
+}

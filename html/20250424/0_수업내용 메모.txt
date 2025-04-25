@@ -5,86 +5,59 @@ path : windows
 (ex)CD/DVD/bluray/HDD/SSD/flash/USB/가상 드라이버/클라우드 등
 
 // 2. 경로의 종류
-(참고 주소1. 경로에 대한 참고)
-https://ko.wikipedia.org/wiki/URL
-https://wikidocs.net/205876
+    (참고 주소1. 경로에 대한 참고)
+    https://ko.wikipedia.org/wiki/URL
+    https://wikidocs.net/205876
 
-(참고 주소2. 윈도우 명령에 대한 참고)
-https://learn.microsoft.com/ko-kr/windows-server/administration/windows-commands/windows-commands
-https://namu.wiki/w/%EB%AA%85%EB%A0%B9%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8/%EB%AA%85%EB%A0%B9%EC%96%B4
-https://inpa.tistory.com/entry/Window-%F0%9F%92%BB-%EC%9C%88%EB%8F%84%EC%9A%B0-CMD-%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%AA%A9%EB%A1%9D
+    0. 경로의 기초
+        경로 path, url, uri, .., .
+            path : 파일이나 프로그램의 위치를 알려주는 주소
+            path 구분 : { Windows: \, Linux: / }
+            URI (Uniform Resource Identifier) : 인터넷 자원을 나타내는 고유 식별자
+            URL (Uniform Resource Locator) : 인터넷에서, 어느 사이트에 접속하기 위해서 입력해야 하는 주소
 
-(참고 주소3. HTML 이미지 확장자)
-    //TODO 이미지 확장자 링크 넣기
+    A. 절대 경로 (absolute path)
+        파일의 ROOT를 기준으로 해당 파일까지의 전체 경로
+        Windows ROOT : C:\, D:\, E:\, 경로 구분자 \
+        Linux ROOT : /, 경로 구분자 /
+        Web, FTP Server ROOT : 설정에 따라 위치는 달라지나 개념은 동일
+        Web : https://thedata.kr/, 경로 구분자 /
+        
+        (예1) 하드내 경로 (C:\abcd\efgh.java)
+            명령프롬프트에서 cd()를 통해서 직접 입력해서 이동가능.
 
-(참고 주소4. 웹성능 향상관련 책자)
-https://www.yes24.com/product/goods/115209526
-등등 책 찾아보기
+        (예2) URL 주소 (예시- 인터넷 주소 (https://www.naver.com))
 
-(참고 주소5. 파비콘)
-https://ko.wix.com/blog/post/what-is-favicon-how-to-make
+    B. 상대 경로 (relative path)
+        현재 파일의 위치를 기준으로 해당 파일까지의 전체 경로
+        상대경로를 찾아가는게 절대경로보다 속도가 빠름.
+        .. : 상위
+        . : 현재(생략 가능)
 
-(참고 주소6. HTML의 오디오/동영상 확장자)
-    //TODO 오디오/동영상 확장자 링크 넣기
+        (예1) E:\abcd\efgh>cd ..
+            =>  E:\abcd> 상위로 이동
+        (예2) E:\abcd\efgh>cd .\ijkl
+            =>  E:\abcd\efgh\ijkl> 하위로 이동
+            (비고!!!) 명령 프롬프트를 추가적으로 알아야 할 필요가 있음. -> (참고 주소2) 참조
 
-(참고 주소7. 크롬 브라우저에서 영상 자동실행 문제)
-https://ddunnimlabs.tistory.com/94
-
-(참고 주소8. srcset)
-
-(참고 주소9. 피들러)
-https://jsfiddle.net/
-https://codepen.io/ 
-
-(참고 주소10. 문장부호)
-https://jdm.kr/blog/87
-https://blog.naver.com/yanadooblog/222953595987
-https://www.korean.go.kr/front/etcData/etcDataView.do?mn_id=46&etc_seq=431
-https://nolboo.kim/blog/2017/08/26/han-punctuation/
-https://www.youtube.com/watch?v=iJ0b3bXrg_c
-
-(참고 주소11. 스타일가이드)
-https://brunch.co.kr/@mobiinside/2655
-https://www.yes24.com/product/search?domain=BOOK&query=%25EB%25B0%25B0%25EC%2583%2589%2520%25EC%2582%25AC%25EC%25A0%2584
-
-
-0. 경로의 기초
-    경로 path, url, uri, .., .
-        path : 파일이나 프로그램의 위치를 알려주는 주소
-        path 구분 : { Windows: \, Linux: / }
-        URI (Uniform Resource Identifier) : 인터넷 자원을 나타내는 고유 식별자
-        URL (Uniform Resource Locator) : 인터넷에서, 어느 사이트에 접속하기 위해서 입력해야 하는 주소
-
-A. 절대 경로 (absolute path)
-    파일의 ROOT를 기준으로 해당 파일까지의 전체 경로
-    Windows ROOT : C:\, D:\, E:\, 경로 구분자 \
-    Linux ROOT : /, 경로 구분자 /
-    Web, FTP Server ROOT : 설정에 따라 위치는 달라지나 개념은 동일
-    Web : https://thedata.kr/, 경로 구분자 /
-    
-    (예1) 하드내 경로 (C:\abcd\efgh.java)
-        명령프롬프트에서 cd()를 통해서 직접 입력해서 이동가능.
-
-    (예2) URL 주소 (예시- 인터넷 주소 (https://www.naver.com))
-
-B. 상대 경로 (relative path)
-    현재 파일의 위치를 기준으로 해당 파일까지의 전체 경로
-    상대경로를 찾아가는게 절대경로보다 속도가 빠름.
-    .. : 상위
-    . : 현재(생략 가능)
-
-    (예1) E:\abcd\efgh>cd ..
-        =>  E:\abcd> 상위로 이동
-    (예2) E:\abcd\efgh>cd .\ijkl
-        =>  E:\abcd\efgh\ijkl> 하위로 이동
-        (비고!!!) 명령 프롬프트를 추가적으로 알아야 할 필요가 있음. -> (참고 주소2) 참조
+    (참고 주소2. 윈도우 명령에 대한 참고)
+    https://learn.microsoft.com/ko-kr/windows-server/administration/windows-commands/windows-commands
+    https://namu.wiki/w/%EB%AA%85%EB%A0%B9%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8/%EB%AA%85%EB%A0%B9%EC%96%B4
+    https://inpa.tistory.com/entry/Window-%F0%9F%92%BB-%EC%9C%88%EB%8F%84%EC%9A%B0-CMD-%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%AA%A9%EB%A1%9D
 
 // 3. 지원되는 이미지파일 확장자에 유의할 것
     // TODO 관련 링크 첨부해 둘 것 (참고 주소3)
 
+    (참고 주소3. HTML 이미지 확장자)
+        //TODO 이미지 확장자 링크 넣기
+
 // 4. 이미지 사이즈를 줄이는 경우 웹성능에 문제가 생길 수 있음.
     thumbnail을 준비할 것
     성능 향상은 (참고 주소4)의 책자를 참고
+
+    (참고 주소4. 웹성능 향상관련 책자)
+    https://www.yes24.com/product/goods/115209526
+    등등 책 찾아보기
 
 // 5. 실행환경에서 F12(개발환경)를 통해서 이미지를 조정해서 참고해 볼 수 있음.
 
@@ -94,11 +67,22 @@ B. 상대 경로 (relative path)
     그 외에도 브라우저의 북마크바나 방문 기록, 검색 결과에서 페이지 url과 함께 표시되기도 함
     (참고 주소5) 참조
 
+
+    (참고 주소5. 파비콘)
+    https://ko.wix.com/blog/post/what-is-favicon-how-to-make
+
 // 7. 지원되는 audio/video 파일 확장자에 유의할 것
     // TODO 관련 링크 첨부해 둘 것 (참고 주소6)
 
+    (참고 주소6. HTML의 오디오/동영상 확장자)
+        //TODO 오디오/동영상 확장자 링크 넣기
+
 // 8. 크롬에서의 비디오 자동실행 문제
     (참고 주소7) 참고할 것.
+
+
+    (참고 주소7. 크롬 브라우저에서 영상 자동실행 문제)
+    https://ddunnimlabs.tistory.com/94
 
 // 9. sreset활용
     srcset 속성과 sizes 속성으로 반응형 이미지를 구현한다는 의미
@@ -110,15 +94,30 @@ B. 상대 경로 (relative path)
     "
     src="heart-large-1000px.jpg" (srcset이 설정되면 scr는 완전히 무시됨. 즉 1200w에서는 scrset 1000w가 가장 근사치므로, 위의 조건으로 출력)
     alt="하트"> 
+    
+    (참고 주소8. srcset)
     https://codingeverybody.kr/html-img-srcset-%EC%86%8D%EC%84%B1%EA%B3%BC-sizes-%EC%86%8D%EC%84%B1/
+
 
 // 10. 피들러를 이용하여 test할수 있다.
     피들러 Fiddler 는 HTTP와 HTTPS의 프로토콜을 캡처하고 분석할 수 있는 웹디버깅 툴이다.
     (참고 주소 9) 참고
 
+
+    (참고 주소9. 피들러)
+    https://jsfiddle.net/
+    https://codepen.io/ 
+
 // 11. 문장부호 읽는법
     특수기호를 영어, 한국어로 읽는 방법 반드시 익히기!!!!ㄴ
     (참고 주소 10) 참고
+
+    (참고 주소10. 문장부호)
+    https://jdm.kr/blog/87
+    https://blog.naver.com/yanadooblog/222953595987
+    https://www.korean.go.kr/front/etcData/etcDataView.do?mn_id=46&etc_seq=431
+    https://nolboo.kim/blog/2017/08/26/han-punctuation/
+    https://www.youtube.com/watch?v=iJ0b3bXrg_c
 
 // 12. mapUnderscoreToCamelCase
     Snaekcase("_", Underscore)로 표시된것을 Camelcase로 변경해주는 것.
@@ -133,6 +132,11 @@ B. 상대 경로 (relative path)
     HEX 코드, CMYK 및 RGB값
     문장의 톤 (Tone of Voice)
     코드문서
+
+    (참고 주소11. 스타일가이드)
+    https://www.krds.go.kr/html/site/style/style_01.html
+    https://brunch.co.kr/@mobiinside/2655
+    https://www.yes24.com/product/search?domain=BOOK&query=%25EB%25B0%25B0%25EC%2583%2589%2520%25EC%2582%25AC%25EC%25A0%2584
 
 // 14. css의 경량화 (minify)
     경량화 되어야 빠름

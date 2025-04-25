@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.header {
+    display: flex; /* 가로 배치 */
+}
+
+.left-section {
+    width: 100px; height: 130px; /* 좌측 120px */
+    background-color: #4285F4;
+    color: white;
+    float:left;
+    text-align: center;
+}
+
+.right-section {
+    width: 1000px; /* 우측 1000px */
+    display: flex;
+    flex-direction: column; /* 내부를 위아래로 배치 */
+    gap: 1px;
+}
+
+.top-right, .bottom-right {
+    height: 50%; /* 반씩 나눠서 배치 */
+    background-color: lightblue;
+}

@@ -1,0 +1,59 @@
+// 1. CSS 브라우저별 호환성
+    브라우저별 CCS 속성(property)의 호환성을 체크하고 작업하는 것이 좋음.
+    https://caniuse.com/
+
+// 2. Cheat Sheet활용
+    속성을 빠르게 찾기 위하여 영어/한국어로 찾기 좋도록 저장해 둘 것. (즐겨찾기, 파일, 개인정리 등)
+
+// 3. 선택자(selector) {속성:값; ... 속성:값}
+    style 속성 => 인라인
+    style 태그 => 문서내에서 전체 적용
+    link, sytle 태그 @import => 외장형 CSS
+
+// 4. 글자(텍스트)
+    속성은 kebab-case라고 함. (ex) font-weight, font-family ...
+    공통속성(특성) : font, border, background
+        공통속성은 한번에 주는게 유리함.
+
+// 5. 작성 중 찾아보고 싶은게 있으면..
+    (예시) 테두리(외곽선) => border
+        => MDN, cssreference.io
+        => 분야(modules/collections)
+        => 알파벳 순(속성)
+        => 설명/예제
+
+// 6. obj, 
+
+// 7. 디바이스 독립적인 폰트
+
+// 8. icon
+    
+
+// 9. 색상환
+    색상에 대해서 알고 있으면 좋음.
+
+// 10. 그라데이션
+    CSS에서도 가능하고, 만들어주는 프로그램도 있으나 데이터 많이 잡아먹음.(브라우저가 버벅거리는 등 리소스를 갉아먹음)
+
+// 11. text-align
+    텍스트의 정렬
+    여러언어를 지원해야하면 start, end 사용 (아랍어는 우측부터 쓰는데 left로 하면 좌측 정렬되기 때문에 문제가 있을 수 있음.)
+    starts는 ltr 언어는 좌측정렬, rtl 언어는 우측정렬 시켜줌
+
+// 12. line-height
+
+// 13. text-decoraion
+    윗줄, 밑줄, 취소선 표시.
+    스타일시트로 주지않고도 일부는 html로 사용가능하니, 참고요.
+    취소선: <s><del>, 언더라인: <u><ins>
+
+// 14. text-shadow
+    단점 : 남발하면 보기 좋지 않음.
+    장점 : 타이포그래피가 필요한 경우 포토샵의 도움 없이 출력가능
+
+// 15. text-transform
+    영문자에만 적용. 대문자 소문자로 변경해주는
+
+// 16. letter-spacing, word-spacing
+    letter-spacing : 자간조정 (CSS는 주로 이걸로 사용할 것)
+    word-spacing : 단어사이 간격조정

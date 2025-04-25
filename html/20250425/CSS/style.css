@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.fnt-style {
+    text-decoration: overline;
+}
+
+/* 버튼 anchor 옵션변경 */
+.btn {
+    text-decoration: none; /* 버튼 고유의 및줄 제거 */
+    color:orange; /*버튼 색상 변경 */
+}
