@@ -12,7 +12,8 @@
 		  font-style: normal;
 		  font-weight: 400;
 		  src: url('./font/nanum-gothic-v26-korean_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-		}
+		/* 저장된 폴더의 url 적용(장점: 인터넷이 끊겨도 적용가능, 단점: 항상 실행 폴더에 저장시켜야 하므로 복잡해짐. 저작권 문제 有) */
+        }
 
         .fnt {
             font-family: 'Nanum Gothic';
@@ -22,6 +23,6 @@
     </style>
 </head>
 <body>
-    <span class="fnt">나눔 고딕입니다.</span>
+    <span class="fnt">첨부된 파일에서 폰트를 로딩합니다.(나눔 고딕)</span>
 </body>
 </html>
