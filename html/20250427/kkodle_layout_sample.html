@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>꼬들 레이아웃 예시</title>
+    <style>
+        #layout {
+            max-width: 80rem;
+            padding: 32px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #header {
+            display: flex;
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 32px;
+            align-items: center;
+        }
+        #title {
+            display:inline-block;
+            width: 192px;
+            height: 32px;
+        }
+        .name {
+            width: 192px;
+            height: 32px;
+            font-size: 20px;
+            line-height: 32px;
+            margin: 0px 0px;
+        }
+        .icon {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            flex-direction: row; /* 요소를 가로로 배치 */
+            width: 32px;
+            height: 32px;
+        }
+        #main {
+            padding: 0px 0px 24px;
+        }
+        .line1 {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            margin-bottom: 4px;
+        } 
+        .box1 {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            width: 52px;
+            height: 52px;
+            margin: 0px 2px;
+            border: 2px solid lightgray;
+            border-radius: 5px;
+        }
+        .line2 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4px;
+        }
+        .box2 {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            width: 40px;
+            height: 58px;
+            margin: 0px 2px;
+            background: rgb(235, 235, 235);
+            border-radius: 5px;
+            border-style: none;
+        }
+        .box3 {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            width: 65.4px;
+            height: 58px;
+            margin: 0px 2px;
+            background: rgb(235, 235, 235);
+            border-radius: 5px;
+            border-style: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <header id="header">
+            <div id="title">
+                <h2 class="name">꼬들-한국어</h2>
+            </div>
+            <div class="icon">
+                <span class="material-symbols-outlined">experiment</span>
+            </div>
+            <div class="icon">
+                <span class="material-symbols-outlined">settings</span>
+            </div>
+            <div class="icon">
+                <span class="material-symbols-outlined">help</span>
+            </div>
+            <div class="icon">
+                <span class="material-symbols-outlined">signal_cellular_alt</span>
+            </div>
+        </header>
+        
+        <main id="main">
+            <div class="line1">
+                <div class="box1">ㄱ</div>
+                <div class="box1">ㄴ</div>
+                <div class="box1">ㄷ</div>
+                <div class="box1">ㄹ</div>
+                <div class="box1">ㅁ</div>
+                <div class="box1">ㅂ</div>
+            </div>
+            <div class="line1">
+                <div class="box1">ㄱ</div>
+                <div class="box1">ㄴ</div>
+                <div class="box1">ㄷ</div>
+                <div class="box1">ㄹ</div>
+                <div class="box1">ㅁ</div>
+                <div class="box1">ㅂ</div>
+            </div>
+            <div class="line1">
+                <div class="box1">ㄱ</div>
+                <div class="box1">ㄴ</div>
+                <div class="box1">ㄷ</div>
+                <div class="box1">ㄹ</div>
+                <div class="box1">ㅁ</div>
+                <div class="box1">ㅂ</div>
+            </div>
+            <div class="line1">
+                <div class="box1">ㄱ</div>
+                <div class="box1">ㄴ</div>
+                <div class="box1">ㄷ</div>
+                <div class="box1">ㄹ</div>
+                <div class="box1">ㅁ</div>
+                <div class="box1">ㅂ</div>
+            </div>
+            <div class="line1">
+                <div class="box1">ㄱ</div>
+                <div class="box1">ㄴ</div>
+                <div class="box1">ㄷ</div>
+                <div class="box1">ㄹ</div>
+                <div class="box1">ㅁ</div>
+                <div class="box1">ㅂ</div>
+            </div>
+            <div class="line1">
+                <div class="box1">ㄱ</div>
+                <div class="box1">ㄴ</div>
+                <div class="box1">ㄷ</div>
+                <div class="box1">ㄹ</div>
+                <div class="box1">ㅁ</div>
+                <div class="box1">ㅂ</div>
+            </div>
+        </main>
+        <div id="keyboard">
+            <div class="line2">
+                <button class="box2">ㅂ</button>
+                <button class="box2">ㅈ</button>
+                <button class="box2">ㄷ</button>
+                <button class="box2">ㄱ</button>
+                <button class="box2">ㅅ</button>
+                <button class="box2">ㅛ</button>
+                <button class="box2">ㅕ</button>
+                <button class="box2">ㅑ</button>
+            </div>
+            <div class="line2">
+                <button class="box2">ㅁ</button>
+                <button class="box2">ㄴ</button>
+                <button class="box2">ㅇ</button>
+                <button class="box2">ㄹ</button>
+                <button class="box2">ㅎ</button>
+                <button class="box2">ㅗ</button>
+                <button class="box2">ㅓ</button>
+                <button class="box2">ㅏ</button>
+                <button class="box2">ㅣ</button>
+            </div>
+            <div class="line2">
+                <button class="box3">입력</button>
+                <button class="box2">ㅋ</button>
+                <button class="box2">ㅌ</button>
+                <button class="box2">ㅊ</button>
+                <button class="box2">ㅍ</button>
+                <button class="box2">ㅠ</button>
+                <button class="box2">ㅜ</button>
+                <button class="box2">ㅡ</button>
+                <button class="box3">삭제</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
