@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #product_window {
+            width: 1200px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .product_image {
+            float: left;
+            width: 550px;
+            height: 1200px;
+            background-image: url("images/shinramyeon.PNG");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: bisque;
+        }
+        .product_detail {
+            float: left;
+            width: 650px;
+            height: 1200px;
+            /* background-color: papayawhip; */
+        }
+        .product_title {
+            width: 650px;
+            height: 92px;
+            border-width: 0 0 1px 0;
+            border-color: #CCC;
+            border-style: solid
+        }
+        .product_name {
+            float: left;
+            width: 550px;
+            height: 86px;
+            padding: 6px 0 0 0;
+        }
+        .product_link {
+            float: left;
+            width: 100px;
+            height: 90px;
+            padding: 2px 0 0 0;
+        }
+        .product_price_and_coupon {
+            width: 650px;
+            height: 130px;
+            border-width: 0 0 1px 0;
+            border-color: #ccc;
+            border-style: solid;
+        }
+        .product_price {
+            float: left;
+            width: 550px;
+            height: 112px;
+            padding: 18px 0 0 0;
+
+        }
+        .product_coupon {
+            float: left;
+            width: 100px;
+            height: 115px;
+            padding: 15px 0 0 0;
+
+        }
+        .additional_option {
+            width: 650px;
+            height: 400px;
+            /* background-color: yellow; */
+        }
+        .option_title {
+            width: 650px;
+            height: 49px;
+        }
+        .more_option {
+            float: left;
+            width: 520px;
+            height: 49px;
+        }
+        
+        .include_dlivery_fee {
+            float: left;
+            width: 130px;
+            height: 49px;
+        }
+        .select_option {
+            float: left;
+            width: 100px;
+            height: 66px;
+        }
+        
+        .option_price {
+            float: left;
+            width: 550px;
+            height: 66px;
+        }
+        .option_detail1 {
+            width: 650px;
+            height: 66px;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #ccc;
+            /* background-color: rgb(24, 143, 0); */
+        }
+        .option_detail2 {
+            width: 650px;
+            height: 66px;
+            /* background-color: rgb(24, 143, 0); */
+        }
+        .gray {
+            color: #768695;
+
+        }
+        .red {
+            color: #CB1400;
+        }
+        .font-15 {
+            font-size: 15px;
+        }
+        .font-10 {
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="product_window">
+        <div class="product_image">
+        </div>
+        <div class="product_detail">
+            <!-- 첫번째 라인 -->
+            <div class="product_title">
+                <div class="product_name">
+                    <b>농심 신라면 120g, 10개</b><br>
+                    원산지: 상품 상세설명 참조<br>
+                    별별별별별 653,322개 상품평<br>
+                </div>
+                <div class="product_link">
+                    <img src="images/like_btn.PNG">
+                    <img src="images/link_btn.PNG">
+                </div>
+            </div>
+            <!-- // 첫번째 라인 -->
+            <!-- 두번째 라인 -->
+            <div class="product_price_and_coupon">
+                <div class="product_price">
+                    10% 8,300원<br>
+                    <span class="gray font-15">8,300원</span> <span class="gray font-10">(1개당 830원) 쿠팡판매가</span><br>
+                    <span class="red font-15">7,470원</span> <span class="red font-10">(1개당 747원) 쿠폰할인</span><br>
+                    ㄴ 쿠폰 적용됨
+                </div>
+                <div class="product_coupon">
+                    <img src="images/download_coupon_btn.PNG">
+                </div>
+            </div>
+            <!-- // 두번째 라인 -->
+
+            <!-- 세번째라인 (더 많은 옵션)-->
+            <div class="additional_option">
+                <div class="option_title">
+                    <div class="more_option">
+                    더 많은 옵션보기
+                    </div>
+                    <div class="include_dlivery_fee">
+                        배송비포함
+                    </div>
+                </div>
+                <div class="option_detail1">
+                    <div class="select_option">
+                        1개
+                    </div>
+                    <div class="option_price">
+                        <b>810원</b><br>
+                        배송비 2,500원
+                    </div>
+                </div>
+                <div class="option_detail1">
+                    <div class="select_option">
+                        10개
+                    </div>
+                    <div class="option_price">
+                        <b>7,470원</b> 쿠폰할인<br>
+                        1개당 747원
+                    </div>
+                </div>
+                <div class="option_detail1">
+                    <div class="select_option">
+                        20개
+                    </div>
+                    <div class="option_price">
+                        <b>14,940원</b> 쿠폰할인<br>
+                        1개당 747원
+                    </div>
+                </div>
+                <div class="option_detail2">
+                    <div class="select_option">
+                        30개
+                    </div>
+                    <div class="option_price">
+                        <b>21,000원</b><br>
+                        1개당 700원 <span class="red_font">(최저단위가)</span>
+                    </div>
+                </div>
+                <div>
+                    모든 옵션 보기
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+background관련은 잘 알아둘 것 (자주 사용)
+
+// 1. background-color
+    16진수, rgb 등을이용해서 
+    background-clip컬러를 넣을 수 있음. 
+    하위값에 상속되지 않음.(하위값 기본 투명)
+
+// 2. background-clip: border-box | padding-box | content-box
+    배경색을 어디까지 지정하는가? (background-clip:배경색, background-origin:배경이미지)
+    border border포함(기본값) 
+    padding border제외 padding부터
+    content padding제외 내용만
+
+// 3. background-image: url('이미지경로;)
+    이미지를 배경화면으로 설정. 반복됨.
+
+// 4. background-repeat: repeat | repeat-x | repeat-y | no-repeat
+    배경의 반복여부. 
+    repeat 범위내 싸그리 반복 (기본값)
+    repeat-x X축으로만 반복
+    repeat-y y축으로만 반복
+    no-repeat 반복 X (이미지 1장만 출력)
+
+// 5. background-position: <수평위치> <수직위치>
+    수평위치: left | center | right | <백분율> | <길이의 값>
+    수직위치: top | center | bottom | <백분율> | <길이의 값>
+    수평위치와 수직위치를 통해서 이미지의 위치를 지정할 수 있음.
+
+// 6. background-origin: padding-box | content-box | border-box
+    배경이미지의 원점 지정 (background-clip:배경색, background-origin:배경이미지)
+    padding-box border제외 padding부터 원점(기본값)
+    content-box 내용위치부터 원점
+    border-box border구간부터 원점
+
+
+// 7. background-attachment: scroll | fixed
+    scroll 화면스크롤 시 이미지도 같이 스크롤 됨(기본값)
+    fixed 화면이 스크롤 되더라도 이미지는 고정됨
+
+// 8. background
+    잘 활용하면 단축해서 사용가능
+    https://developer.mozilla.org/ko/docs/Web/CSS/background
+
+// 9. background-size: auto | contain | cover | <크기> | <백분율>
+    배경으로 적용된 이미지가 너무 클 경우, 크기를 조정가능.
+    auto 원본이미지 사이즈 적용(기본값)
+    contain 요소안에 이미지가 모두 들어오도록 이미지 확대 축소 (이미지가 짤리지 않음)
+    cover 요소를 모두 덮도록 이미지를 확대 축소 (이미지가 짤림)
+    <크기> 너비와 높이 지정, 하나만 지정될 경우 너비로 판단하며 높이는 자동 계산
+    <백분율> 요소의 크기 기준으로 백분율에 맞춰 이미지를 확대 축소
+
+// 10. background: linear-gradient(to <방향> 또는 <각도>, <색상중지점>, [<색상중지점>, ...])
+    이전에는 포토샵으로 만든 이미지를 넣어야 했으나, css3에서는 그라데이션이 적용되어서 활용하면 컴퓨터 resource를 절약할 수 있음.
+    하지만 그라데이션 남발은 가독성을 떨어뜨리며 느려짐.
+    각도 적용시 deg단위
+
+// 11. background: radial-gradient(<모양> <크기> at <위치>, <색상중지점>, [<색상중지점>, ...])
+    원형 그라데이션. 별로 쓸일 없음.
+
+// 12. 그라데이션 반복
+    background: repeat-linear-gradient - 선형 그라데이션 반복
+    background: repeat-radial-gradient - 원형 그라데이션 반복
+
+// 13. 시작과 끝에 참조 걸어두면 가독성 좋아짐
+
+// 14. justfy-content: 

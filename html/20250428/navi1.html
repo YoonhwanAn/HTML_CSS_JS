@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>가로 내비게이션바</title>
+  <style>
+  /*  width 없으면 기본적으로 100%(화면 길이) */
+    ul  
+    {
+           list-style-type: none;
+           margin: 0;
+           padding: 0;
+           overflow: hidden;
+           background-color: #333;
+           width:500px;
+     }
+ 
+    li 
+    {
+        float: left;
+    }
+ 
+    /* padding: 0px 15px (상하) (좌우)
+       padding: 0px 15px 0px 15px 상우하좌
+       
+        */
+    li a 
+    {
+           display: block;
+           color: white;
+           text-align: center;
+           padding: 15px 15px 15px 15px;
+           text-decoration: none;
+    }
+ 
+    li a:hover 
+    {
+        background-color: white;
+        color:black;
+        font-weight:bold;
+    }
+    </style>
+ </head>
+ <body>
+ 
+    <h3>가로 Navigation Bar</h3>
+ 
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+ </body>
+</html> 

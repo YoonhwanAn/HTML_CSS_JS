@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #linear {
+            width: 200px;
+            height: 200px;
+            border: 2px solid gray;
+            padding: 10px;
+            /* background: linear-gradient(to <방향> 또는 <각도>, <색상중지점>, [<색상중지점>, ...]) */
+            background: linear-gradient(to right bottom, red,white,blue)
+        }
+        #doge {
+            width: 200px;
+            height: 200px;
+            border: 2px solid gray;
+            background-image: radial-gradient(circle, rgba(255,0,0,0), rgba(255,255,255,0.1),blue), url(./images/doge.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 10px;
+            color: white;
+            font-weight: 900;
+            text-shadow: 0 0 6px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="linear">
+        test
+    </div>
+    <div id="doge">
+        WOW!
+    </div>
+</body>
+</html>

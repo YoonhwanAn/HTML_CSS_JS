@@ -48,15 +48,15 @@
 <body style="margin:0">
 
     <div class="parent"> <!-- 상위 태그 : 상위 태그가 없으면 fixed 처럼 웹 브라우저의 절대 원점이 기준 원점이 됨 -->        
-        <div style="font-size:30px;">parent</div>
-        <div class="child">child-1(absolute)</div> <!-- 상위 태그(div.parent)의 원점이 기준 원점이 됨 -->
-        <div class="fixed">fixed</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
-        <div class="relative">relative</div> <!-- 상위 태그(div.parent)에서 parent 라는 글자의 세로 크기를 더한 원점이 기준 원점이 됨-->
+        <div style="font-size:30px;">parent(absolute)</div>
+        <div class="child">child-1(parent 하위 absolute)</div> <!-- 상위 태그(div.parent)의 원점이 기준 원점이 됨 -->
+        <div class="fixed">fixed(parent 하위 fixed)</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
+        <div class="relative">relative(parent 하위 fixed)</div> <!-- 상위 태그(div.parent)에서 parent 라는 글자의 세로 크기를 더한 원점이 기준 원점이 됨-->
     </div>
 
-    <div class="child">child2(fixed)</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
+    <div class="child">child2(단독 absolute)</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
 
-    <div class="relative">relative</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
+    <div class="relative">relative(단독 relative)</div> <!-- 웹 브라우저 절대 원점이 기준 원점 -->
     
 </body>
 </html>

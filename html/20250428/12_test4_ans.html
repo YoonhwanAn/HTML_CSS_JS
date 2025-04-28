@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑상세페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 상품 레이아웃 */		
+        div#product_box {
+            width: 320px; /* 너비 : 320px */
+            height: 500px; /* 높이 : 500 px */ 
+        }
+        
+        /* 상품 이미지 */
+        div#product_image {
+            width: 280px;
+            height: 280px;
+            padding: 20px;
+            /* 너비 : 280px */
+		    /* 높이 : 280px */
+		    /* 내부 간격 : 20px */
+            /* background-color: blue;	 */
+        }
+        
+        /* 상품 설명 및 로그인 페이지 이동 */
+        div#product_detail_login_move {
+            width: 280px;
+            height: 80px;
+            padding: 0 20px;		
+            /* 너비 : 280px */
+            /* 높이 : 80px */
+            /* 내부 간격 : 좌우 20px 상하 0 */
+            /* background-color: orange; */
+        }
+        
+        /* 상품 설명 */
+        div#product_detail {
+            float: left;
+            width: 230px;
+            height: 80px;
+            /* 플로팅 : 좌측 */
+            /* 너비 : 230px */
+            /* 높이 : 80px */
+        }
+        
+        /* 로그인 페이지 이동 */
+        div#login_move {
+            float: left;
+            width: 50px;
+            height: 80px;
+            /* 플로팅 : 좌측 */
+            /* 너비 : 50px */
+            /* 높이 : 80px */
+        }
+        
+        /* 상품 가격 */
+        div#product_price {
+            width: 280px;
+            height: 30px;
+            padding: 0 20px;
+            font: 1.2em "nanum Gothic";
+            /* 너비 : 280px */
+            /* 높이 : 30px */		
+            /* 내부 간격 : 좌우 20px 상하 0 */
+            /* 글꼴 : 나눔 고딕 */
+            /* 글꼴 크기 : 1.2em */
+            /* background-color: pink; */
+        }
+        
+        /* 배송비 */
+        div#shipping_price {
+            width: 280px;
+            height: 30px;
+            padding: 0 20px;
+            font-size: 9pt;
+            /* 너비 : 280px */
+            /* 높이: 30px */
+            /* 내부 간격 : 좌우 20px 상하 0 */		
+            /* 글꼴 크기 : 9pt */
+            /* background-color: purple; */
+        }
+        
+        /* 구매 현황 및 장바구니 메뉴 */
+        div#purchase_state_cart_move {
+            width: 280px;
+            height: 40px;
+            padding: 0 20px;
+            /* 너비 : 280px */
+            /* 높이: 40px */
+            /* 내부 간격 : 좌우 20px 상하 0 */
+            /* background-color: green;				 */
+        }
+        
+        /* 구매 현황 */
+        div#purchase_state {
+            float:left;
+            width: 230px;
+            height: 40px;
+            font-size: 9pt;
+            /* 플로팅 : 좌측 */
+            /* 너비 : 230px */
+            /* 높이: 40px */	
+            /* 글꼴 크기 : 9pt */
+        }
+        
+        /* 장바구니 메뉴 */
+        div#cart_move {
+            float: left;
+            width: 50px;
+            height: 40px;
+            /* 플로팅 : 좌측 */
+            /* 너비 : 50px */
+            /* 높이: 40px */			
+        }
+        </style>
+</head>
+<body>
+    
+	<!-- 위의 주석(설명)을 참고하여 아래의 비어있는 레이어(div)를 완성하십시오 -->
+	<!-- 상품 패널 레이아웃 -->
+	<div id="product_box">
+		
+		<!-- 상품 이미지 -->
+		<div id="product_image">
+            <img src="images/pro1.jpg">
+        </div>
+		<!--// 상품 이미지 -->
+		
+		<!-- 상품 설명 및 로그인 페이지 이동 -->
+		<div id="product_detail_login_move">
+			<!-- 상품 설명 -->
+			<div id="product_detail">
+                제벡스 상품명 제벡스 Z-3220 CCD 바코드스캐너 (유통/의류/문구)
+            </div>
+            <!--// 상품 설명 -->	
+			
+			<!-- 로그인 페이지 이동 -->			
+			<div id="login_move">
+                <img src="images/login_btn.png">
+            </div>
+            <!--// 로그인 페이지 이동 -->
+        </div>
+		<!--// 상품 설명 및 로그인 페이지 이동 -->	
+
+		<!-- 상품 가격 -->
+		<div id="product_price">
+			<b>36,000</b>원
+		</div>
+		<!--// 상품 가격 -->
+		
+		<!-- 배송비 -->
+		<div id="shipping_price">
+            무료배송
+        </div>
+		<!--// 배송비 -->
+		
+		<!-- 구매 현황 및 장바구니 메뉴 -->
+		<div id="purchase_state_cart_move">
+
+			<!-- 구매 현황 -->
+            <div id="purchase_state">
+                구매 1,102
+            </div>
+			<!--// 구매 현황 -->
+			
+			<!-- 장바구니 메뉴 -->
+            <div id="cart_move">
+                <img src="images/cart_btn.png">
+            </div>
+			<!--// 장바구니 메뉴 -->
+			
+		</div>
+		<!--// 구매 현황 및 장바구니 이동 메뉴 -->
+		
+	</div>
+	<!--// 상품 패널 레이아웃 -->
+	
+
+</body>
+</html>

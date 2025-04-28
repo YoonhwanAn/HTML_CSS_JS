@@ -1,0 +1,285 @@
+@CHARSET "UTF-8";
+
+/* 전체 적용   */
+/*   
+	외부간격 : 0;
+	글꼴 종류 : 시스템별(운영체제별) 기본 글꼴(시스템 폰트) 적용;
+	글꼴 크기 : 12px;
+*/
+
+* {
+	margin: 0;
+	font-size: 12px;
+}
+
+/* 1. 상품 구매 리스트 박스 */
+/*
+	너비 : 720px
+	높이 : 170px (테두리 포함시 172px)
+	외곽선 형태 : 실선
+	외곽선 색 : 회색
+	외곽선 굵기 : 상하 1px 좌우 0
+*/
+.product_buy_list 
+{
+	width: 720px;
+	height: 170px;
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px 0;
+}
+
+/* 2. 좌측 : 상품 구매일자/결제번호/결제내역/영수증출력 */
+/*
+	플로팅 : 좌측
+	너비 : 170px
+	높이 : 170px
+	외곽선 형태 : 실선
+	외곽선 색 : lightgray
+	외곽선 굵기 : 상우하좌 = 0 1px 0 0)
+*/
+.product_pay_list
+{
+	float: left;
+	width: 170px;
+	height: 170px;
+	border-style: solid;
+	border-color: lightgray;
+	border-width: 0 1px 0 0;
+
+}
+
+/* 2-1. 좌측 상단 : 상품 구매일자/결제번호 */
+/*
+	너비 : 170px
+	높이 : 30px
+	외곽선 형태 : 실선
+	외곽선 색 : lightgray
+	문단 가로 정렬 : 중앙정렬
+	내부 간격 : 상우하좌 = 20px 0 0 0  
+*/
+.product_pay_date_no
+{
+	width: 170px;
+	height: 30px;
+	border-style: solid;
+	border-color: lightgray;
+	border-width: 0 0 1px 0;
+	text-align: center;
+	padding: 20px 0 0 0;
+
+}
+
+/* 이미지 외곽선 제거 */
+img { 
+
+}
+
+/* 2-1. 결제번호 버튼 */
+/*
+	글꼴 색 : #777
+	글자 치장(여부) : 없음
+*/
+a.pay_no_btn {
+	color: #777;
+	text-decoration: none;
+}
+
+/*
+  공통 - 글자 치장 : 밑줄 
+*/
+a.pay_no_btn:hover 
+{
+	text-decoration: underline;
+}
+
+/* 2-2. 결제금액 */
+.money_stl
+{
+	font-size : 18px;
+}
+
+
+/* 2-2. 주문상세보기/영수증출력/문의하기/주문내역삭제 버튼 */
+a.order_misc_btn 
+{
+	font-size : 11px;
+	font-family : 굴림;
+	color : #3366ff;
+}
+
+/* 2-2. ▶  버튼 */
+a.order_misc_btn2
+{
+	font-size : 7px;
+	color : #3366ff;
+	text-decoration : none;
+}
+
+/* 2-2. 좌측 하단 : 상품 결제내역/주문상세보기/영수증출력 */
+/*
+	너비 : 155px
+	높이 : 105px
+	내부 간격 : 상우하좌 = 15px 0 0 15px
+	줄간격 : 27px
+*/
+.product_pay_detail
+{
+	width: 155px;
+	height: 105px;
+	margin: 15px 0 0 15px;
+	line-height: 27px;
+}
+
+/* 3. 우측 : 상품 썸네일이미지/상품내역/판매자/주문처리/신용카드출력 등 */
+.product_contents_order_list
+{
+	float : left;
+	width : 548px;
+	height : 170px;
+}
+
+/* 3-1. 우측 상단 : 상품 썸네일(thumbnail) 이미지/상품내역/판매자/주문처리 */
+.product_contents_order_proc
+{
+	width : 548px;
+	height : 110px;
+	border-style : solid;
+	border-color : lightgray;
+	border-width : 0 0 1px 0;
+}
+
+/* 3-1-1. 상품 썸네일(thumbnail) 이미지 */
+.product_small_img
+{
+	float : left;
+	width : 98px;
+	height : 95px; /* 110px = 95px + padding(15px)*/ 
+	text-align : center;
+	padding : 15px 0 0 0;
+}
+
+/* 3-1-2. 상품 설명 */
+.product_content_detail
+{
+	float : left;
+	width : 220px;
+	height : 85px; /* 110px = 85px + padding(25px)*/ 
+	padding : 25px 20px 0 0;
+	color : #333;
+}
+
+/* 3-1-2. 상품 설명 버튼 */
+a.product_content_btn {
+	color : #333;
+	text-decoration : none;			
+}
+
+/* 3-1-2. 상품 설명 버튼 : hover */
+a.product_content_btn:hover 
+{
+	text-decoration : underline;
+}
+
+/* 3-1-2. 주문 번호 */
+.order_no 
+{
+	font-size : 11px;
+	color : gray;
+}
+
+/* 3-1-3. 상품 판매처 */
+/*
+	플로팅 : 좌측
+	너비 : 110px
+	높이 : 85px
+	내부 간격 : 상우하좌 = 25px 0 0 0 
+	글꼴 색 : #333
+*/
+.product_seller
+{
+	float: left;
+	width: 110px;
+	height: 85px;
+	padding: 25px 0 0 0;
+	color: #333;
+}
+
+/* 3-1-4. 주문 처리 */
+/*
+	플로팅 : left
+	너비 : 100px
+	높이 : 90px
+	내부 간격 : 20px 0 0 0
+	글꼴 색 : #333
+	글꼴 크기 : 11px
+	문단 정렬(가로) : 중앙정렬 
+*/
+.order_proc
+{
+	float: left;
+	width: 100px;
+	height: 90px;
+	padding: 20px 0 0 0;
+	color: #333;
+	font-size: 11px;
+	text-align: center;
+}
+
+/* 3-1-4. 주문/배송 처리 메시지 라벨 */
+/*
+	글꼴색 : 빨강
+	글꼴 굵기 : 굵게
+	줄간격 : 24px
+*/
+.shipping_proc
+{
+	color: red;
+	font-weight: bold;
+	line-height: 24px;
+} 
+
+/* 3-2. 우측 하단 : 영수증 출력/문의/주문내역삭제/상품평 쓰기 */
+/*
+	너비 : 548px
+	높이 : 60px
+	글꼴 크기 : 11px
+	글꼴 색 : #333
+*/
+.order_misc_list
+{
+
+}
+
+/* 3-2-1. 우측 하단(좌측) : 영수증 출력/문의/주문내역삭제 */
+/*
+	플로팅 : 좌측
+	너비 : 420px
+	높이 : 40px
+	내부 간격 : 상우하좌 = 20px 0 0 0
+	들여쓰기 : 20px 
+*/
+.order_misc_btns
+{
+	float: left;
+	width: 420px;
+	height: 40px;
+	padding: 20px 0 0 0;
+	text-indent: 20px;
+
+}
+
+/* 3-2-2. 우측 하단(우측) : 상품평 쓰기 */
+/*
+	플로팅 : 좌측
+	너비 : 128px
+	높이 : 45px
+	내부 간격 : 상우하좌 = 15px 0 0 0 
+*/
+.order_eval_btn
+{
+	float: left;
+	width: 128px;
+	height: 45px;
+	padding: 15px 0 0 0;
+}
