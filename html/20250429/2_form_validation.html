@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+		<meta charset="UTF-8">
+		<title>로그인</title>
+  </head>
+  <body>
+	<form method="get" action="#"> <!-- nobalidate를 입력해서 폼점검 기능 정지가능 <form method="get" action="#" novalidate>  -->
+    <fieldset>
+      <!-- 표준 -->
+      <input type="text" id="member_id" name="member_id" 
+            placeholder="8자 내로 입력해주세요" size="7" maxlength="8"
+            required
+            pattern="[가-힣]{2,4}"
+            title="한글만 입력하십시오"/>
+            <!-- form validation(폼 데이터 유효성 점검) -->
+              <!-- required : 필수입력 항목 -->
+              <!-- pattern : 정규식(regex) 입력 제한(제약)사항 등록 -->
+              <!-- pattern="[가-힣]{2,4}" - 한글만으로 2~4자로 입력 -->
+      <p></p>
+
+      <!-- 부트스트랩 가져오기 -->
+      <input type="text" name="birthday" pattern="\d{4}-\d{1,2}-\d{1,2}"
+      placeholder="2025-4-29형식으로 입력해주세요" required title="2025-4-29형식으로 입력해주세요"/>
+      <p></p>
+
+      <input type="text" name="email" required placeholder="e-mail 입력" pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*" title="올바르지 않은 이메일 형식을 입력하셨습니다."/>
+      <!-- email의 required시 @만 검사함. 정확한 주소가 필요하다면 email regex 참고해서 patten으로 점검 해야함. -->
+
+      <button type="submit">전송</button>
+    
+    
+    </fieldset>
+  </form>
+  </body>
+</html>

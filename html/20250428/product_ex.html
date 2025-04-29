@@ -78,25 +78,34 @@
         }
         .more_option {
             float: left;
-            width: 520px;
-            height: 49px;
+            width: 510px;
+            height: 40px;
+            padding: 9px 0 0 0;
         }
         
         .include_dlivery_fee {
             float: left;
-            width: 130px;
-            height: 49px;
+            width: 90px;
+            height: 40px;
+            padding: 9px 0 0 0;
+        }
+        .dilivery_fee_switch {
+            float: left;
+            width: 50px;
+            height: 40px;
+            padding: 9px 0 0 0;
         }
         .select_option {
             float: left;
             width: 100px;
-            height: 66px;
+            height: 50px;
+            padding: 16px 0 0 0;
         }
-        
         .option_price {
             float: left;
             width: 550px;
-            height: 66px;
+            height: 60px;
+            padding: 6px 0 0 0;
         }
         .option_detail1 {
             width: 650px;
@@ -111,18 +120,39 @@
             height: 66px;
             /* background-color: rgb(24, 143, 0); */
         }
+        .all_option{
+            width: 648px;
+            height: 32px;
+            border: 1px solid #4285F4;
+            text-align: center;
+            padding: 6px 0 0 0;
+        }
         .gray {
+            color: #454F5B;
+        }
+        .lightgray {
             color: #768695;
-
         }
         .red {
             color: #CB1400;
         }
-        .font-15 {
-            font-size: 15px;
+        .blue {
+            color: #4285F4;
         }
         .font-10 {
-            font-size: 10px;
+            font-size: 10pt;
+        }
+        .font-13 {
+            font-size: 13pt;
+        }
+        .font-15 {
+            font-size: 15pt;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .kebab {
+            text-decoration: line-through;
         }
     </style>
 </head>
@@ -135,9 +165,9 @@
             <!-- 첫번째 라인 -->
             <div class="product_title">
                 <div class="product_name">
-                    <b>농심 신라면 120g, 10개</b><br>
-                    원산지: 상품 상세설명 참조<br>
-                    별별별별별 653,322개 상품평<br>
+                    <span class="font-13 bold">농심 신라면 120g, 10개</span><br>
+                    <span class="gray">원산지: 상품 상세설명 참조</span><br>
+                    별별별별별 <span class="blue font-10">653,322개 상품평</span>
                 </div>
                 <div class="product_link">
                     <img src="images/like_btn.PNG">
@@ -148,9 +178,9 @@
             <!-- 두번째 라인 -->
             <div class="product_price_and_coupon">
                 <div class="product_price">
-                    10% 8,300원<br>
-                    <span class="gray font-15">8,300원</span> <span class="gray font-10">(1개당 830원) 쿠팡판매가</span><br>
-                    <span class="red font-15">7,470원</span> <span class="red font-10">(1개당 747원) 쿠폰할인</span><br>
+                    <span class="font-10">10%</span> <span class="lightgray font-10 kebab">8,300원</span><br>
+                    <span class="lightgray font-15 bold">8,300원</span> <span class="lightgray font-10">(1개당 830원) 쿠팡판매가</span><br>
+                    <span class="red font-15 bold">7,470원</span> <span class="red font-10">(1개당 747원) 쿠폰할인</span><br>
                     ㄴ 쿠폰 적용됨
                 </div>
                 <div class="product_coupon">
@@ -163,10 +193,13 @@
             <div class="additional_option">
                 <div class="option_title">
                     <div class="more_option">
-                    더 많은 옵션보기
+                    <span class="font-15 bold">더 많은 옵션보기</span>
                     </div>
                     <div class="include_dlivery_fee">
-                        배송비포함
+                        <span class="gray">배송비 포함</span>
+                    </div>
+                    <div class="dilivery_fee_switch">
+                        <img src="images/dilivery_fee_switch.PNG">
                     </div>
                 </div>
                 <div class="option_detail1">
@@ -174,7 +207,7 @@
                         1개
                     </div>
                     <div class="option_price">
-                        <b>810원</b><br>
+                        <span class="font-13 bold">810원</span><br>
                         배송비 2,500원
                     </div>
                 </div>
@@ -183,7 +216,7 @@
                         10개
                     </div>
                     <div class="option_price">
-                        <b>7,470원</b> 쿠폰할인<br>
+                        <span class="font-13 bold">7,470원</span> 쿠폰할인<br>
                         1개당 747원
                     </div>
                 </div>
@@ -192,7 +225,7 @@
                         20개
                     </div>
                     <div class="option_price">
-                        <b>14,940원</b> 쿠폰할인<br>
+                        <span class="font-13 bold">14,940원</span> 쿠폰할인<br>
                         1개당 747원
                     </div>
                 </div>
@@ -201,12 +234,12 @@
                         30개
                     </div>
                     <div class="option_price">
-                        <b>21,000원</b><br>
-                        1개당 700원 <span class="red_font">(최저단위가)</span>
+                        <span class="font-13 bold">21,000원</span><br>
+                        1개당 700원 <span class="red">(최저 단위가)</span>
                     </div>
                 </div>
-                <div>
-                    모든 옵션 보기
+                <div class="all_option blue bold">
+                    모든 옵션 보기 >
                 </div>
             </div>
 

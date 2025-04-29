@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+		<meta charset="UTF-8">
+		<title>로그인</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+	<form method="post" action="#"> 
+    <fieldset>
+      <!-- 포스트에서는 전송 시 암호화되어서 주소 표시줄에 뜨지 않기 때문에 
+       전송버튼을 누르면 페이지에러 뜸 -->
+      <input type="text" id="member_id" name="member_id" 
+            placeholder="8자 내로 입력해주세요" size="10" maxlength="8"/>
+      <P></P>
+
+      <button type="submit">전송</button>
+      <button type="reset">취소</button>
+    
+    </fieldset>
+  </form>
+  </body>
+</html>

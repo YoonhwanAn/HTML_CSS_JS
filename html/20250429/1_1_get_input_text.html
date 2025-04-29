@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+		<meta charset="UTF-8">
+		<title>로그인</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+      /* input의 type이 text인 것에 대해서 적용한다. */
+      #wrap input[type="text"]{
+        font-size: 1em;
+        padding:0.5em;
+        width: 20em;
+        text-indent: 0.5em;
+        border:1px solid navy; 
+        border-radius: 0.5em;
+        background-color: blanchedalmond;
+      }
+      .bt-custom-len {
+        width: 200px;
+        background: rgb(255, 255, 243);
+      }
+    </style>
+    </style>
+  </head>
+  <body>
+	<form method="get" action="#"> <!-- nobalidate를 입력해서 폼점검 기능 정지가능 <form method="get" action="#" novalidate>  -->
+    <fieldset>
+      <!-- 표준 -->
+      <div id="wrap"> <!-- wrap으로 싼 이유는 부트스트랩에서 가져온 css를 덮어서 적용되기에 -->
+        <input type="text" id="member_id" name="member_id" 
+              placeholder="8자 내로 입력해주세요" size="7" maxlength="8"/>
+              <!-- 기타 --> 
+              <!-- readonly(수정안됨, (ex)개인정보 수정시 user id), -->
+              <!-- disable(입력자체를 불가능하게)-->
+              <!-- value(고정값 입력) -->
+      </div>
+      <p></p>
+      <!-- 히든 필드 / 표시되지 않으나 제출 시 정보는 넘어감 -->
+      <input type="hidden" id="hidden" name="hidden" value="ㅇㅇㅇ"/>
+
+      <p></p>
+      <!-- 부트스트랩 가져오기 -->
+      <input type="text" id="birthday" name="birthday"class="form-control"
+              placeholder="2025-4-29형식으로 입력해주세요"/>
+      <p></p>
+
+      <!-- 부트스트랩 수정 시 -->
+      <input type="text" id="etc" name="etc" class="form-control bt-custom-len" placeholder="입력해주세요" />
+      
+      <!-- 입력한 값 전송 -->
+      <button type="submit">전송</button>
+      <!-- 입력한 값 모두 삭제 -->
+      <button type="reset">취소</button>
+    
+    </fieldset>
+  </form>
+  </body>
+</html>

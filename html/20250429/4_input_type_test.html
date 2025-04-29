@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input type test</title>
+    <style>
+        #fieldset_layout {
+            width:900px;
+        }
+        .text {
+            float:left;
+            width: 120px;
+            line-height:1.56em;
+        }
+        .input {
+            float:left;
+            width: 200px;
+            padding-left: 5px;
+        }
+        .detail {
+            float:left;
+            width: 550px;
+            padding-left: 5px;
+            line-height:1.56em;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+        .border_right{
+            border-right: 2px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset id="fieldset_layout">
+            <legend class="underline">제공되는 다양한 기본 타입들</legend>
+            <div class="text border_right">
+                text<br>
+                email<br>
+                password<br>
+                url<br>
+                search<br>
+                tel<br>
+                hidden<br>
+                month<br>
+                week<br>
+                date<br>
+                datetime-local<br>
+                <s>datetime</s><br>
+                time<br>
+                range<br>
+                file<br>
+                radio<br>
+                checkbox<br>
+                color<br>
+                button<br>
+                number<br>
+                image<br>
+                submit<br>
+                reset<br>
+            </div>
+            <div class="input border_right">
+                <input type="text"><br>
+                <input type="email"><br>
+                <input type="password"><br>
+                <input type="url"><br>
+                <input type="search"><br>
+                <input type="tel"><br>
+                <input type="hidden"><br>
+                <input type="month"><br>
+                <input type="week"><br>
+                <input type="date"><br>
+                <input type="datetime-local"><br>
+                <input type="datetime"><br>
+                <input type="time"><br>
+                <input type="range"><br>
+                <input type="file"><br>
+                <input type="radio"><br>
+                <input type="checkbox"><br>
+                <input type="color"><br>
+                <input type="button"><br>
+                <input type="number"><br>
+                <input type="image"><br>
+                <input type="submit"><br>
+                <input type="reset"><br>
+            </div>
+            <div class="detail">
+                text를 입력가능<br>
+                text와 유사하나 유효성 검사 실시 (@를 감지)<br>
+                text와 유사하나 입력값을 * 또는 &#183; 로 표기됨<br>
+                text와 유사하나 동적 키보드를 지원하는 브라우저 및 기기에서 유효성 검사<br>
+                검색 문자열을 입력하는 단일 줄 텍스트 필드<br>
+                전화번호를 입력, 동적 키패드가 있는 일부 기기에서는 전화 키패드를 표시<br>
+                표시는 되지 않지만 값이 서버로 전송되는 컨트롤<br>
+                월 입력 (년/월)<br>
+                주 입력 (년/월/주)<br>
+                날짜 입력 (년/월/일)<br>
+                날짜+시간 입력 (년/월/일/시/분)<br>
+                더 이상 사용되지 않음<br>
+                시간입력<br>
+                정확한 값이 중요하지 않은 입력 컨트롤러<br>
+                파일 업로드 시<br>
+                여러개의 버튼 중 하나를 선택할 때<br>
+                단일 값을 선택하거나 선택 취소할 수 있는 체크 박스<br>
+                색상을 지정하기 위한 컨트롤<br>
+                속성 값을 표시하는 기본 동작이 없는 푸시 버튼<br>
+                숫자입력, 기본스피너 내장, 유효성검사<br>
+                submit 버튼을 별도의 이미지로 대체<br>
+                입력값 송신<br>
+                작성된 값 전부 제거<br>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
