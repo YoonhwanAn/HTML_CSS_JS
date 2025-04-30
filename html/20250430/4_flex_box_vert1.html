@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- TODO child1의 align-self 정리 + align-content, gap 추가정리 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -29,9 +28,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            align-self: flex-start;
+            align-self: self-end;
             /* container의 align-items와 별개로 개별 child만 교차축방향 정렬하고 싶을때.
-            TODO! 내용 추가
+                auto - 부모요소의 align-items를 사용하여 정렬(기본값)
+                normal - 레이이아웃 형태나 브라우저에 따라 다르게 정렬
+                flex-start - 플럭스 컨테이너의 시작점 정렬
+                flex-end - 플럭스 컨테이너의 끝점 정렬
+                self-start - 플럭스 항목의의 시작점 정렬
+                self-end - 플럭스 항목의 끝점 정렬
+                center - 플럭스 컨테이너의 중앙 정렬
+                baseline - 플럭스 항목의 기준선에 맞춰 정렬
+                stretch - 플렉스 컨테이너의 높이에 가득차게 늘려서 정렬
              */
         }
         div #child2 {
