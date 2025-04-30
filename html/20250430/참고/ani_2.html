@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Animation Effect2</title>
+
+	<script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+	<style>
+	/*
+	ease : 처음에는 천천히 변화 중간에 빨라지다가 끝나면서 감속.
+		    cubic-bezier(0.25, 0.1, 0.25, 1)과 동일함.
+
+	linear : 일정 속도로 변화함.
+			 cubic-bezier(0, 0, 1, 1)과 동일함.
+
+	ease-in : 처음에는 천천히 시작하다가 그 후에 빨라짐.
+			  cubic-bezier(0.42, 0, 1, 1)과 동일함.
+
+	ease-out : 처음에는 빨리 시작하다가 그 후에 천천리 마무리.
+			   cubic-bezier(0, 0, 0.58, 1)과 동일함.
+
+	ease-in-out : 천천히 시작해서 서서히 빨라지다가 감속하면서 마무리.
+				  cubic-bezier(0.42, 0, 0.58, 1)과 동일함.  
+	
+	step-start : steps(1, start)와 동일.
+
+	step-end : steps(1, end)와 동일.
+
+	steps(스텝수, start 또는 end)
+	: 지정한 횟수 만큰 등간격으로 분할하여 변화.
+	첫번째 값은 몇단계로 변화할 것인지를 1이상의 수로 기입.
+	- start : 시작시 맨 처음 스텝이 일어남.
+	- end : 완료시 맨 마지막 스템일 일어남.
+	두번째 인자 생략시 end로 간주.
+
+	cubic-bezier(x1, y1, x2, y2)
+	: 변화의 양상을 3차원 베지어 곡선을 사용하여 지정함.
+
+	transition-delay : 지연시간
+  
+    */
+	@keyframes myanimation {
+
+		0% {
+			left: 0px;
+			width: 100px;
+		}
+
+		100% {
+			left: 0px;
+			width: 400px;
+		}
+	}	
+	/*
+	@-webkit-keyframes myanimation {
+
+		0% {
+				left:0px;
+				width:100px;
+		}
+
+		100% {
+				left:0px;
+				width:400px;
+		}
+	}
+	*/
+	
+	div {
+		margin: 1px;
+		width: 100px;
+		height: 50px;
+		color: yellow;
+		position: relative;
+		background-color: blue;
+		font-weight: bold;
+		
+		/* 지연 시간 */
+
+		/* 애니메이션 진행 방향 
+
+			1) normal : 지정된 실행 방향
+		
+			2) reverse : 반대 방향
+			
+			3) alternate : 회중 시계(똑딱이)효과-1
+							홀수번 : 정방향, 짝수번 : 반대방향
+			
+			4) alternate-reverse : 회중 시계(똑딱이)효과-2
+							홀수번 : 반대방향, 짝수번 : 정방향			                       
+		*/
+
+		animation-name: myanimation;
+		animation-duration: 5s;
+		animation-delay: 2s;
+		/* 지연 시간 */
+		animation-iteration-count: 3;
+		/* infinite = 무한 반복 */
+
+		/*
+		-webkit-animation-name: myanimation;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 3;
+		-webkit-animation-delay: 2s;
+		*/
+	}
+
+	#sample1 {		
+		animation-timing-function: ease;
+		/* -webkit-animation-timing-function: ease; */
+	}
+
+	#sample2 {		
+		animation-timing-function: linear;
+		/* -webkit-animation-timing-function: linear; */
+	}
+
+	#sample3 {		
+		animation-timing-function: ease-in;
+		/* -webkit-animation-timing-function: ease-in; */
+	}
+
+	#sample4 {		
+		animation-timing-function: ease-out;
+		/* -webkit-animation-timing-function: ease-out; */
+	}
+
+	#sample5 {
+		animation-timing-function: ease-in-out;
+		/*-webkit-animation-timing-function: ease-in-out; */
+	}
+
+	div:hover {
+		/* running(일시 정지 중인 것을 다시 실행)
+				paused(실행 중인 애니메이션을 일시정지)  */		
+		animation-play-state: paused;
+		/* -webkit-animation-play-state: paused; */
+	}
+	</style>
+</head>
+
+<body>
+
+	<div is="sample1">ease</div>
+	<div is="sample2">linear</div>
+	<div is="sample3">ease-in</div>
+	<div is="sample4">ease-out</div>
+	<div is="sample5">ease-in-out</div>
+
+</body>
+
+</html>

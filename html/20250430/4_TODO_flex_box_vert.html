@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- TODO child1의 align-self 정리 + align-content, gap 추가정리 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[id^=container] {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            background: beige;
+            display: flex;
+            align-items: baseline;
+            /* 교차축의 정렬방법 지정 
+                flex-start(start) - 교차축의 시작점 정렬
+                flex-end(end) - 교차축의 끝점 정렬
+                center - 교차축의 중앙 정렬
+                baseline - 교차축의 문자 기준선에 맞춰 정렬
+                stretch - 플렉스 항목을 늘려 교차축에 가득차게 정렬(기본값) (child가 교차축 방향의 값이 있다면 작동X)
+            */
+        }
+
+        div #child1 {
+            width: 98px;
+            background: yellow;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: flex-start;
+            /* container의 align-items와 별개로 개별 child만 교차축방향 정렬하고 싶을때.
+            TODO! 내용 추가
+             */
+        }
+        div #child2 {
+            width: 98px;
+            height: 200px;
+            background: yellow;
+            border: 1px solid black;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+        }
+        div #child3 {
+            width: 98px;
+            height: 120px;
+            background: yellow;
+            border: 1px solid black;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+        div #child4 {
+            width: 98px;
+            height: 50px;
+            background: yellow;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>컨테이너 내부에서 content의 이동</h1>
+    <div id="container1">
+        <div id="child1">content1</div>
+        <div id="child2">content2</div>
+        <div id="child3">content3</div>
+        <div id="child4">content4</div>
+    </div>
+</body>
+</html>

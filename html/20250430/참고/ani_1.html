@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>Animation Effect</title>
+  
+  <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+  <style>
+  /*
+    애니메이션 데모 :
+	좌측 상단에서 시작하여 전체의 40%가 진행된 시점에서
+	좌에서 우로 200px, 70%가 진행된 시점에서는 상에서 하로
+	200px, 최종적으로 좌에서 우로 200px 이동.
+
+	ease : 처음에는 천천히 변화 중간에 빨라지다가 끝나면서 감속.
+		    cubic-bezier(0.25, 0.1, 0.25, 1)과 동일함.
+
+	linear : 일정 속도로 변화함.
+			 cubic-bezier(0, 0, 1, 1)과 동일함.
+
+	ease-in : 처음에는 천천히 시작하다가 그 후에 빨라짐.
+			  cubic-bezier(0.42, 0, 1, 1)과 동일함.
+
+	ease-out : 처음에는 빨리 시작하다가 그 후에 천천리 마무리.
+			   cubic-bezier(0, 0, 0.58, 1)과 동일함.
+
+	ease-in-out : 천천히 시작해서 서서히 빨라지다가 감속하면서 마무리.
+				  cubic-bezier(0.42, 0, 0.58, 1)과 동일함.  
+	
+	step-start : steps(1, start)와 동일.
+
+	step-end : steps(1, end)와 동일.
+
+	steps(스텝수, start 또는 end)
+	: 지정한 횟수 만큰 등간격으로 분할하여 변화.
+	첫번째 값은 몇단계로 변화할 것인지를 1이상의 수로 기입.
+	- start : 시작시 맨 처음 스텝이 일어남.
+	- end : 완료시 맨 마지막 스템일 일어남.
+	두번째 인자 생략시 end로 간주.
+
+	cubic-bezier(x1, y1, x2, y2)
+	: 변화의 양상을 3차원 베지어 곡선을 사용하여 지정함.
+
+	transition-delay : 지연시간
+  
+  */
+  	@keyframes myanimation {
+
+		0% {
+				left:0px;
+				top:0px;
+		}
+
+		40% {
+				left:200px;
+				top:0px;
+		}
+
+		70% {
+				left:200px;
+				top:200px;
+		}
+
+		100% {
+				left:400px;
+				top:200px;
+		}
+	}
+    /*
+	@-webkit-keyframes myanimation {
+
+		0% {
+				left:0px;
+				top:0px;
+		}
+
+		40% {
+				left:200px;
+				top:0px;
+		}
+
+		70% {
+				left:200px;
+				top:200px;
+		}
+
+		100% {
+				left:400px;
+				top:200px;
+		}
+	}
+	*/
+	
+	div {
+			width:100px;
+			height:100px;
+			color:yellow;
+			position:absolute;
+			background-color:green;
+			font-weight:bold;
+			
+			animation-name:myanimation;
+			animation-duration:5s;
+			/*
+			-webkit-animation-name:myanimation;
+			-webkit-animation-duration:5s;
+			*/
+	}
+  </style>
+ </head>
+ 
+ <body>
+
+	<div>Animation Demo</div> 
+ 
+ </body>
+</html>

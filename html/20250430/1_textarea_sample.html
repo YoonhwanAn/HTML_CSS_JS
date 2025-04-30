@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #textarea {
+            border: 2px solid;
+            background-color: beige;
+            
+        }
+        #text_div {
+            border: 2px solid black;
+            width: 400px; 
+            height: 200px;
+            overflow:auto; 
+            background: beige;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>textarea 예제</legend>
+            <!-- style="resize:none" 을 이용해서 사용자가 사이즈 조절을 막음. -->
+            <!-- <textarea>와 </textarea>사이의 값이 초기값으로 지정되므로 공란을 출력하려면 행을 바꾸거나 띄워쓰지 않도록 주의 -->
+            <textarea id="textarea" name="txt" cols="60" rows="10" style="resize:none" autofocus></textarea>
+            <textarea name="txt2" cols="20" rows="10"></textarea>
+            <input type="submit" value="저장">
+
+            <!-- div와 contenteditable을 이용해서 textarea와 유사한 속성을 만들 수 있음. -->
+            <!-- name을 억지로 붙였으나, 전송 시 name과 내용이 전송되지 않음. -->
+            <!-- 전송되게 하려면 자바스크립트를 사용해야함. -->
+            <div id="text_div" name="txt3" contenteditable="">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

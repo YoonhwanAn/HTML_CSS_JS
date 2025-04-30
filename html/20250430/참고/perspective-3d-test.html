@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>3d effect - perspective demo</title>
+
+	<script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+	<style>
+		body {
+			margin-top: 30px;
+			margin-left: 20px;
+			font-size: 1em;
+		}
+
+		div#wrap {
+			display: flex;
+			flex-direction: row;
+		}
+
+		#pnl1 {
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			display: flex;
+			flex-direction: row;
+
+			width: 200px;
+			height: 100px;
+			
+			perspective: 500px;
+			perspective-origin: left 0;
+			/*	
+			-webkit-perspective: 500px;
+			-webkit-perspective-origin: left 0;
+			*/
+		}
+
+		#sample1 {
+			background-color: yellow;			
+			transform: rotateY(-55deg);
+			/* -webkit-transform: rotateY(-55deg); */
+			width: 200px;
+			height: 100px;
+		}
+
+		#sample1:hover {
+			background-color: yellow;			
+			transform: rotateY(0deg);
+			/* -webkit-transform: rotateY(0deg); */
+			width: 200px;
+			height: 100px;
+		}
+
+
+		#pnl2 {
+			position: absolute;
+			left: 260px;
+			top: 100px;
+			display: flex;
+			flex-direction: row;
+
+			width: 200px;
+			height: 150px;
+			
+			perspective: 500px;
+			perspective-origin: left 0;
+			/*
+			-webkit-perspective: 500px;
+			-webkit-perspective-origin: left 0;
+			*/
+		}
+
+		#sample2 {
+			background-color: orange;			
+			transform: rotateY(-45deg);
+			/* -webkit-transform: rotateY(-45deg); */
+			width: 200px;
+			height: 137px;
+		}
+
+		#sample2:hover {
+			background-color: orange;			
+			transform: rotateY(0deg);
+			/* -webkit-transform: rotateY(0deg); */
+			width: 200px;
+			height: 150px;
+		}
+
+		#pnl3 {
+			position: absolute;
+			left: 429px;
+			top: 100px;
+			display: flex;
+			flex-direction: row;
+
+			width: 300px;
+			height: 190px;
+			
+			perspective: 500px;
+			perspective-origin: left 0;
+			/*
+			-webkit-perspective: 500px;
+			-webkit-perspective-origin: left 0;
+			*/
+		}
+
+		#sample3 {
+			background-color: cyan;
+			transform: rotateY(-40deg);
+			/* -webkit-transform: rotateY(-40deg); */
+			width: 300px;
+			height: 190px;			
+		}
+
+		#sample3:hover {
+			background-color: cyan;			
+			transform: rotateY(0deg);
+			/* -webkit-transform: rotateY(0deg); */
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+
+		<div id="pnl1">
+			<div id="sample1">
+				패널1
+			</div>
+		</div>
+
+		<div id="pnl2">
+			<div id="sample2">
+				패널2
+			</div>
+		</div>
+
+		<div id="pnl3">
+			<div id="sample3">
+				패널3
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <!-- selected가 작성되어있다면 해당 option이 기본값으로 지정됨 -->
+        <select id="hobby1" name="hobby1">
+            <option>축구</option>
+            <option>야구</option>
+            <option>농구</option>
+            <option selected>배구</option>
+            <option>----------</option>
+            <!-- 마지막 줄처럼 끝이나 초기값을 기타값으로 표기하고 싶은 경우 regex를 고려해야함.-->
+        </select>
+
+        <!-- value가 입력되어있다면 value에 설정된 값이 전송됨 -->
+        <!-- multiple이 활성화 되어있다면 1.해당태그의 항목 중복선택가능(ctrl), 2.브라우저에 모든 경우의 option이 펼쳐져서 나옴 -->
+        <select id="hobby2" name="hobby2" multiple>
+            <option value="1">독서</option>
+            <option value="2">영화감상</option>
+            <option value="3">음화감상</option>
+            <option value="4">노래하기</option>
+            <option>----------</option>
+            <!-- 마지막 줄처럼 끝이나 초기값을 기타값으로 표기하고 싶은 경우 regex를 고려해야함.-->
+        </select>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+      /* Do it! 그리드 컨테이너에서 열과 행 지정하기 */
+      * {
+        margin: 0;
+      }
+      .container {
+        display:grid;
+        /* grid-template-columns: 10vw 20vw 40vw 20vw 10vw;
+        grid-template-rows: 30vh 40vh 30vh; */
+
+        /* grid-template-columns: 100px 100px 100px; */
+        grid-auto-rows: 100px; /* 사용자가 row를 일일히 지정해 주지 않아도 표시해야할 div가 늘어나면 자동으로 줄 늘려줌 */
+
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .items{
+        border: 1px solid #222;
+        padding:10px;     
+        font-size: 20px;
+        text-align: center; 
+      }   
+      .items:nth-child(even) {
+        background-color:#ffc400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+      <div class="items">6</div>
+      <div class="items">7</div>
+      <div class="items">8</div>
+      <div class="items">9</div>
+      <div class="items">10</div>
+      <div class="items">11</div>
+      <div class="items">12</div>
+      <div class="items">13</div>
+      <div class="items">14</div>
+      <div class="items">15</div>
+
+    </div>
+  </body>
+  </html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>3d effect - perspective 2</title>
+
+  <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+  <style>
+	
+	body 
+	{ 
+		margin-top: 30px;
+		margin-left : 20px; 
+	}
+
+	div 
+	{
+		position:absolute;
+		width:200px;
+		height:100px;
+		font-size: 1em;
+		color:white;
+	}
+
+	#container 
+	{
+		border: 2px solid green;
+		
+		perspective: 500px;
+		perspective-origin: center 0;
+		/*	
+		-webkit-perspective: 500px;
+		-webkit-perspective-origin: center 0; 
+		*/
+	}
+	
+	#sample1 
+	{
+		background-color: purple;					
+		transform : rotateY(-55deg);
+		/* -webkit-transform : rotateY(-55deg);	*/
+	}
+  </style>
+ </head>
+ <body>
+  
+  <div id="container">
+
+	   <div id="sample1">
+		transform(3D) :<br>
+		perspective-origin<br>
+		center 0
+	   </div>
+
+  </div>
+
+ </body>
+</html>

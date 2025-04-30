@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>animation rotate</title>
+  
+  <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+  <style>
+
+    @keyframes myanimation {
+
+        0% {
+            transform:rotate(0deg);
+        }
+
+        20% {
+            transform:rotate(30deg);
+        }
+
+        40% {
+            transform:rotate(0deg);
+        }
+
+        60% {
+            transform:rotate(-30deg);
+        }
+
+        100% {
+            transform:rotate(0deg);
+        }
+
+    }
+    /*
+    @-webkit-keyframes myanimation {
+
+        0% {
+             -webkit-transform:rotate(0deg);
+		}
+ 
+        20% {
+              -webkit-transform:rotate(30deg);
+		}
+ 
+        40% {
+              -webkit-transform:rotate(0deg);
+		}
+ 
+        60% {
+              -webkit-transform:rotate(-30deg);
+		}
+ 
+        100% {
+              -webkit-transform:rotate(0deg);
+		}
+ 
+    }
+    */    
+ 
+    div {
+        margin:20px 100px;
+        width:200px;
+        height:250px;          
+
+        transform-origin: center bottom;
+        animation: myanimation 8s ease-in-out 10;
+
+        /*
+        -webkit-transform-origin: center bottom;
+        -webkit-animation: myanimation 8s ease-in-out 10;
+        */
+    }  
+  </style>
+ </head>
+ 
+ <body>    
+ 
+    <div>
+        <img src="pooh.png">
+    </div>    
+  
+ </body>
+</html>
