@@ -9,35 +9,24 @@
         #layout {
             max-width: 80rem;
             padding: 32px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
         #header {
             display: flex;
             width: 320px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             margin-bottom: 32px;
+            justify-content: flex-end;
             align-items: center;
         }
         #title {
             width: 192px;
             height: 32px;
+            margin-right: auto;
         }
         .name {
-            width: 192px;
-            height: 32px;
             font-size: 20px;
-            line-height: 32px;
-            margin: 0px 0px;
-        }
-        .icon {
-            display: flex;
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
-            flex-direction: row; /* 요소를 가로로 배치 */
-            width: 32px;
-            height: 32px;
+            font-weight: bold;
         }
         #main {
             padding: 0px 0px 24px;
@@ -91,18 +80,12 @@
     <div id="layout">
         <header id="header">
             <div id="title">
-                <h2 class="name">꼬들 layout-한국어</h2>
+                <span class="name">꼬들 - 한국어</span>
             </div>
-            <div class="icon">
+            <div>
                 <span class="material-symbols-outlined">experiment</span>
-            </div>
-            <div class="icon">
                 <span class="material-symbols-outlined">settings</span>
-            </div>
-            <div class="icon">
                 <span class="material-symbols-outlined">help</span>
-            </div>
-            <div class="icon">
                 <span class="material-symbols-outlined">signal_cellular_alt</span>
             </div>
         </header>

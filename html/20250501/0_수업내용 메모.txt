@@ -1,0 +1,24 @@
+전체복습
+
+// 1. HTML (hiper text mark-up language)
+// 2. meta (metadata)
+    메타데이터는 데이터에 관한 데이터를 의미하며, 특정 데이터의 특징, 속성, 구조 등을 나타내는 데이터. 
+    즉, 다른 데이터를 설명하는 데이터라고 할 수 있습니다. 
+
+// 3. <style> - css를 불러옴. 
+    <script> - 데이터와 실행 가능한 코드를 문서에 포함할 때 사용. 주로 javascript
+
+// 4. 세멘틱 웹테그
+    세멘틱 웹테그를 이용하면 항목의 특성을 빠르게 알 수 있다.
+
+// 5. KSC5601 -> EUC-KR -> MS949(CP949) <----> UTF-8
+
+// 6. <ul> <ol> <li> 리스트를 만드나 다양하게 사용. 주로 nav 만드는데 많이 사용함.
+
+// 7. 웹디자인 추천도서
+    https://search.shopping.naver.com/book/catalog/35419868621
+    https://search.shopping.naver.com/book/catalog/46036988624
+    https://www.yes24.com/Product/Goods/103401495
+
+// 8. 시각디자인 
+    https://www.yes24.com/product/goods/103633881

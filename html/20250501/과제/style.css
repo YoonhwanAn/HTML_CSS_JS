@@ -1,0 +1,61 @@
+/* UTF-8 인코딩 방식 */
+@charset "UTF-8";
+
+/* body 태그내 외부 간격 : 10 px */    
+body {
+   margin: 10px;
+}
+/* ul 태그에 대해서 "4개의 열(컬럼)"로 패널 레이아웃 구성하되 
+   내부간격을 20픽셀로 지정하고 ul 리스트가 가지고 있는 스타일은 제거합니다. */
+ul {
+   column-count: 4;
+   padding: 20px;
+   list-style: none;
+}
+li {
+   break-inside: avoid; /* 패널 박스 출력시 컨텐츠 분할 현상 방지 */
+}
+
+img {
+   display: block;
+   width: 100%;
+   height: auto;
+   border-radius: 30px;
+   /* "블록" 단위의 디스플레이 설정 */
+   /* 너비 100% */
+   /* 높이 자동인식 설정 */
+   /* 외곽선 둥근 모서리 처리 : 30px */
+   filter: grayscale(1) opacity(0.5); /* 기본컬러 그레이스케일(회색톤) + 투명도(0.5)  */
+}
+
+/* 특정 이미지 hover시 컬러톤으로 복원  */
+/* 조건) 변환 속성 : 투명도, 변환 지속시간 : 0.3초, 타이밍 효과(함수) : ease-in, 지연시간 : 0.2초 */
+img:hover {
+   transform-origin: top left; /* 좌상단 기준 */
+   filter: grayscale(0) opacity(1);
+   transform: scale(120%, 120%);
+   border-radius: 10% 30% 50% 70%;
+   transition: flter,transform 0.3s ease-in 0.2s;
+   position: relative; /* 위치 지정 : 해당 동작을 하지 않으면 z-index 동작X */
+   z-index: 1;
+} 
+
+/* ★ 트랜지션 변환 추가
+
+추가 조건) 너비/높이 : 120%, 외곽선 굴곡(radius) : 10% 30% 50% 70%    */
+
+
+   /* 참고 : 하기사양도 가능함. 가독성을 떨어질 듯 */
+   /* img:not(:hover) {
+      filter: grayscale(1) opacity(0.5);
+   } */
+
+
+/* p 문단 태그에 글꼴 크기는 1vmax 로 가변크기 글꼴로 처리하고, 문단내의 가로 정렬은 중앙 정렬 설정합니다. */
+p {
+   font-size: 1vmax;
+   /* 화면이 가로 1000px, 세로 600px라면 5vmax는 1000px * 5% = 50px로 적용됩니다. 
+      화면이 가로 600px, 세로 1200px이라면 5vmax는 1200px * 5% = 60px가 됩니다.
+      이 단위는 특히 전체 화면을 활용하는 디자인(예: 제목 크기 조정, 배경 이미지 크기 등)에 유용하게 사용됨 */
+   text-align: center;
+}
