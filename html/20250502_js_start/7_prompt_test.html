@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+    window.onload = function() { // 얘는 window안써도 동작하지만 대부분 작성함.
+
+        var str = prompt("숫자를 입력하세요", "예) 123"); // string으로 받음
+        console.log("str : ", str);
+
+        var sum = paseInt(str) + 2; // str을 문자열로 취급하므로, 입력한숫자열2(예-123입력시 1232출력) 로 표시됨.
+        console.log(sum);
+
+        // Nan : Not A Number 숫자가 아니다 => 값(리터럴)
+
+        document.write("<b><u>감사합니다</u></b>");  // body 전체를 갈아엎음.
+    }
+    </script>
+
+</head>
+<body>
+    
+    <h1>test page</h1>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        // 제어하고자 하는 요소(태그)보다 제어코드가 후위(뒤)에 위치하면 코드를 그대로 표기
+        // 제어하고자 하는 요소(태그)보다 제어코드가 전위(앞)에 위치하면 별도의 전체 이벤트 처리를 구문내에서 표기해야함.
+        // => 별도의 제어코드가 없다면 제어 불가. (에러 유발 : F12(devtools) => Console에서 에러 메시지 확인)
+
+        // 스크립트는 순차 실행되어 뒤에서 정의된 것을 앞에서 읽을 수 없음.
+        // => window.onload = fuction()으로 코드를 이용해서 전체 실행 후 실행하도록
+        // => 따라서, 문단 내 script보다 외부 script가 우선순위가 높음(덮어씌워짐)
+
+        window.onload = function() {  // 전체 이벤트 처리 구문
+        // html 문서가 웹브라우저(window)에서 읽어 들여졌을 때(onload)
+        // 실행할 함수
+
+            var heading = document.querySelector("#heading");
+            heading.style.color = "red"; // CSS의 #heading{ color: red } 와 동일
+            heading.onmouseover = function() { // 마우스 올렸을 때, 파란색.
+                heading.style.color = "blue";
+            }
+            heading.onmouseout = function() { // 마우스 땠을 때, 빨간색.
+                heading.style.color = "red";
+            }
+            heading.onclick = function() { // 마우스 눌렀을 때, 녹색.
+                heading.style.color = "green";
+            }  
+        }
+    </script>
+
+</head>
+<body>
+    
+    <h1 id="heading">웹 개발자</h1>
+
+</body>
+</html>

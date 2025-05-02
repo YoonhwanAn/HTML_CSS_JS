@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        window.onload = function() { // 얘는 window안써도 동작하지만 대부분 작성함.
+
+            // 원형(proto-type) : 메서드의 원형
+            // 메서드의 원형을 찾아 갈 수 있어야 이해할 수 있음.
+
+                // 찾기 예제 //
+                // a) 마우스를 코드에 올리면 어디소속인지 나옴.
+
+                // b) MDN에서 찾아가기
+                // MDN -> Web API -> Interface(인터페이스) -> Document -> querySelector() method -> 페이지 하단의 Specification의 문서링크
+                // querySelector() 메서드 객체의 원형 - https://dom.spec.whatwg.org/#ref-for-dom-parentnode-queryselector%E2%91%A0
+
+                // c) 원형 확인
+                // node.querySelector(selectors) 
+                // Returns the first element that is a descendant of node that matches selectors.
+            
+            // 원형을 쓰지 않고도 사용할 수 있는 이유.
+            // Node(부모 객체) -> Document(자식 객체) : 상속
+
+            // 매개변수(parameter, 형식인자, 가인자) 부(part) : (seclecters : string)
+            // 실인자(argument, 인수) : "heading" => 문자열(string)
+
+            // var heading = document.querySelector(1111); // 문법(X) : invalid (seclecters에 필요한 실인자가 string으로 설정되어있는데 숫자가 입력됨)
+            var heading = document.querySelector("#heading"); // 문법(O) : valid 
+            // var heading = document.querySelector("[id='heading']"); // 문법(O), 잘 안씀 // id라는 속성이 heading
+            // var heading = document.querySelector("h1[id='heading']"); // 문법(O)
+            // var heading = document.querySelector("body h1[id='heading']"); // 문법(O)
+
+            // 반환(return, 리턴) 자료형(Element, 태그) => 값
+            // 'var heading =' - querySelector 메서드(함수)로 연산한 후의 결과(반환) 값(Element 자료형과 "일치"하는 값)을
+            //                  heading의 변수로 대입
+
+            // 변수를 위와 같이 설정해두었기 때문에 하단과 같이 단축해서 사용가능.
+            heading.onmouseover = function() {
+                heading.style.color = "red";
+            }
+
+            // qureySelector의 세부적인 요소인 getElementById라 치면
+            // getElementById는 id를 지정해서 받고, qureySelector는 selector를 받음
+            // getElementById ⊂ qureySelector  (qureySelector가 상위요소)
+            var heading = document.getElementById("heading"); // (O)
+            // var heading = document.getElementById("#heading"); // (X)
+
+            //undefined : "자료형이 정의되지 않은" 것(변수)에 리터럴(literal, 값)
+        };
+    </script>
+
+</head>
+<body>
+    
+    <h1 id="heading">test page</h1>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+    window.onload = function() { // 얘는 window안써도 동작하지만 대부분 작성함.
+
+        var deleteCfm = confirm("회원정보를 삭제하시겠습니까?");
+        
+        console.log("deleteCfm :" + deleteCfm);
+        // // F12 -> devetools(개발자창) -> 콘솔(console) -> 메시징
+
+        // if (deleteCfm == ture) {
+        // if (confirm("회원정보를 삭제하시겠습니까?")) {   // 이 경우로 쓰려면 상단의 변수선언을 삭제해야함.
+        if (deleteCfm) {
+            alert("회원정보 삭제");
+        } else {
+            alert("회원정보 삭제 취소");    
+        }
+    }
+    </script>
+
+</head>
+<body>
+    
+    <h1>test page</h1>
+
+</body>
+</html>

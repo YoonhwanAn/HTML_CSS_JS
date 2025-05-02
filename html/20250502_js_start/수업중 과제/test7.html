@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공동(공통) 메뉴(common/global navigation bar)</title>
+
+    <!-- google material icons : https://material.io/tools/icons/?style=baseline -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+    <!-- google icons : https://fonts.google.com/icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+
+        /* 내비게이션을 화면 기준 우측 정렬하고 우측 내부간격을 30px로 할당합니다. */ 
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            /* TODO */
+        }
+
+        /* 
+            공동메뉴 패널의 전체 길이는 900px로 할당하고, ul 태그의 자체 스타일 기능을 제거합니다.
+            또한 공동 메뉴의 간격을 플렉스 박스를 사용하며,
+            내부 정렬은 공동메뉴 내부요소들(버튼들)의 간격이 자동적으로 "균일하게" 생성될 수 있도록 조치합니다.             
+         */ 
+        ul { 
+            list-style: none;
+            width: 900px;
+            display: flex;
+            justify-content: space-around;
+            /* TODO */
+        }
+
+        /*
+            ul 태그 하위의 모든 li 태그들에 
+            글꼴 크기를 1em, 글꼴 두께를 500, 내부 간격을 상하에만 20px을 할당합니다.
+        */
+        /* TODO */
+        ul > li {
+            font-size: 1em;
+            font-weight: 500;
+            padding: 20px;
+        }
+
+
+        /*
+           클래스 속성이 txt-cmm-menu 인 li 태그(글자 버튼 메뉴들)에 너비를 100px로 설정합니다.
+        */
+        /* TODO */
+        li[class="txt-cmm-menu"] {
+            width: 100px;
+            text-align: center;
+            /* border:1px solid black; */
+        }
+
+        /*
+           클래스 속성이 icon-cmm-men 인 li 태그(최우측 아이콘 버튼 메뉴들)에 
+           너비를 20px, 글꼴크기를 1.2em으로 설정합니다.
+        */
+        /* TODO */
+        li[class="icon-cmm-men"] {
+            width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .material-symbols-outlined {
+            font-size: 1.2em;
+        }
+
+
+        li a {            
+            color: #333;
+            text-decoration: none;            
+        }
+
+        /*
+            클래스 속성이 txt-cmm-menu인 li 태그 및의 모든 a(버튼) 태그 위에 
+            마우스 포인터를 올리게 되면, 글꼴 두께가 900이 될 수 있도록 조치합니다.
+        */
+        /* TODO */
+
+        li[class="txt-cmm-menu"] a:hover {
+            font-weight: 900;
+        }
+        li[class="icon-cmm-men"]::after {
+            content: "1";
+            width: 6x;
+            height: 6px;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        nav, ul, li 태그를 이용하여 내비게이션을 구성하십시오.
+
+        단, 글자 버튼에 대한 li의 클래스 속성은 txt-cmm-menu로 지정하고,
+        우측 아이콘 버튼들에 대한 li의 클래스 속성은 icon-cmm-menu로 지정하며,
+
+        구글 아이콘 사이트(https://fonts.google.com/icons)에서
+        아이콘 모양을 검색하여 메뉴를 완성합니다.
+
+        hint) 사이트에서 Ctrl + F를 활용하여 person, shopping_cart, search 라는 검색어를 
+        활용하여 아이콘을 검색하여 li 태그들내에 a 버튼을 구성합니다. 
+
+        모든 버튼의 URL 링크는 "#"로 지정합니다.
+    -->
+    
+    <!-- TODO -->
+    <nav>
+        <ul>
+            <li class="txt-cmm-menu"><a href="#">스스로 해결</a></li>
+            <li class="txt-cmm-menu"><a href="#">전문상담</a></li>
+            <li class="txt-cmm-menu"><a href="#">서비스 안내</a></li>
+            <li class="txt-cmm-menu"><a href="#">서비스 예약</a></li>
+            <li class="txt-cmm-menu"><a href="#">소모품샵</a></li>
+            <li class="txt-cmm-menu"><a href="#">고객의소리</a></li>
+
+            <li class="icon-cmm-men">
+                <a href="#"><span class="material-symbols-outlined">person</span></a>
+            </li>
+            <li class="icon-cmm-men">
+                <a href="#"><span class="material-symbols-outlined">shopping_cart</span></a>
+            </li>
+            <li class="icon-cmm-men">
+                <a href="#"><span class="material-symbols-outlined">search</span></a>
+            </li>
+        </ul>
+    </nav>
+
+
+</body>
+</html>

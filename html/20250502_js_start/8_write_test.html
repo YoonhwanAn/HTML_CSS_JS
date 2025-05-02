@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+    window.onload = function() { // 얘는 window안써도 동작하지만 대부분 작성함.
+
+        // write
+        // 주의) 비추천 사항
+        // https://developer.mozilla.org/en-US/docs/Web/API/Document/write
+        
+        var content = "<b><u>감사합니다</u></b>";
+        var heading = document.querySelector("#heading");
+
+        // 기존내용 + 신규내용 => 출력
+        var oldContent = document.body.innerHTML;
+        // innerHTML 속성 : 기존의 값을 가져옴(get~)
+        
+        // 유사표현
+        // 1) document.body.innerHTML = document.body.innerHTML + content;
+        // 2) document.querySelector("body").innerHTML = oldContent + content;
+        // 3) document.querySelector("body").innerHTML += content;
+
+        console.log("oldContent : ", oldContent);
+        document.write(oldContent + content);
+
+        // 신규내용만 출력
+        // document.write(content);  // body 전체를 갈아엎음.
+    }
+    </script>
+    
+</head>
+<body>
+    
+    <h1>test page</h1>
+    <h2 id="heading">여기를 변경하고 싶어요</h2>
+
+</body>
+</html>

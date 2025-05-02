@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="heading">웹 개발자</h1>
+    <!-- <script lang="javascript"> 다른 스크립트를 불러올때 표기와 같이 사용해도 되나, 자바스크립트의 비중이 높아서 안써도 됨.-->
+    <script>
+    // 1. 변수선언 
+        // id="heading"인 요소를 제어하기 위하여 변수로 등록함.
+        // html문서에서 쿼리셀렉터가 id="heading"인 것을 heading이라는 변수로 선언
+        var heading = document.querySelector("#heading"); // 세미콜론이 없어도 되긴 하나 작성할 것.
+
+    // 2. 일반동작 
+        // heading 변수로 등록된 태그(요소)의 글자색을 변경.
+        heading.style.color = "red"; // CSS의 #heading{ color: red } 와 동일
+
+    // 3. event 처리 - 함수 작성 (event handler)
+        //CSS의 #heading:hover { color: blue } 와 유사하게 만들고 싶은 경우.
+        
+        // a. heading 변수(태그)에 마우스 포인터를 올리면 (event 발생)
+        // => 글자색이 blue로 변경 (headling, 처리)
+        heading.onmouseover = function() { // 마우스 포인터를 올렸을 때 실행되며 원색으로 되돌아가지 않음.
+            heading.style.color = "blue";
+        }
+        // b. heading 변수(태그)에 마우스 포인터를 벗어나면 (event 발생) 
+        // => 글자색이 상단에서 변경된 원래의 글자색 red로 변경(headling, 처리)
+        heading.onmouseout = function() { // 마우스 포인터를 땠을 때 실행되며 원색으로 되돌아가지 않음.
+            heading.style.color = "red";
+        }
+        // c. heading 변수(태그)에 마우스 포인터를 누르면(클릭하면) (event 발생) 
+        // => 글자색이 green으로 변경(headling, 처리)
+        heading.onclick = function() { // 마우스 포인터를 땠을 때 실행되며 원색으로 되돌아가지 않음.
+            heading.style.color = "green";
+        }
+
+        // 제어를 디테일하게 할수 있다.
+
+        // javascript는 대소문자, 오타에 굉장히 민감하므로 주의할 것
+    </script>
+
+</body>
+</html>

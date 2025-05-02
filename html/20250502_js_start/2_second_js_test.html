@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="heading" onMouseOver="heading.style.color = 'orange';">웹 개발자</h1>
+    <!-- 위와같이 라인에 직접 사용할 수 있으나 비추천 -->
+    <!-- HTML문서 내에서 inline방식으로 javascript 처리시 대소문자 구분 없음.-->
+    <!-- javascript code 내에서 처리시 대소문자 구분함!!!!!! 반드시 유의 -->
+    <!-- inline이랑 script랑 겹치면 script가 우선!!! -->
+
+    <script>
+        var heading = document.querySelector("#heading");
+
+        heading.style.color = "red"; // CSS의 #heading{ color: red } 와 동일
+
+        heading.onmouseover = function() { // 마우스 올렸을 때, 파란색.
+            heading.style.color = "blue";
+        }
+        heading.onmouseout = function() { // 마우스 땠을 때, 빨간색.
+            heading.style.color = "red";
+        }
+        heading.onclick = function() { // 마우스 눌렀을 때, 녹색.
+            heading.style.color = "green";
+        }
+    </script>
+
+</body>
+</html>
