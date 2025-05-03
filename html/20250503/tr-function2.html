@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>대칭 경로 전환</title>
+  <style>
+    /* 부모는 x축을 담당 */
+    #ex .x-container {
+      display: inline-block;
+      /* hover하지 않은 상태에서는 un-hover 전환 효과: ease-out (즉, 감속하며 돌아옴) */
+      transition: transform 1s ease-out;
+    }
+    /* 자식은 y축을 담당 */
+    #ex .y-container {
+      width: 50px;
+      height: 50px;
+      margin: 5px 10px;
+      padding: 5px;
+      line-height: 50px;
+      color: white;
+      background-color: #006aff;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      /* un-hover 상태에서는 ease-in (즉, 가속하며 돌아옴) */
+      transition: transform 1s ease-in;
+    }
+    /* hover 상태에서는 부모와 자식의 전환 효과를 반대로 */
+    #ex:hover .x-container {
+      transform: translateX(500px);
+      transition: transform 1s ease-in;
+    }
+    #ex:hover .y-container {
+      transform: translateY(500px);
+      transition: transform 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="ex">
+    <div class="x-container">
+      <div class="y-container">물체</div>
+    </div>
+  </div>
+</body>
+</html>

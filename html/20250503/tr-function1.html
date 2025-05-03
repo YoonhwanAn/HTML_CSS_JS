@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Curved Transition Timing Function</title>
+  <style>
+    /* 바깥 컨테이너는 X축 이동을 담당 */
+    #ex .x-container {
+      display: inline-block;  /* transform에 영향을 주기 위해 inline-block 사용 */
+      transition: transform 3s ease-in;
+    }
+    
+    /* 내부 요소는 Y축 이동을 담당 */
+    #ex .y-container {
+      transition: transform 3s ease-out;
+      /* 기존 div 스타일 적용 */
+      width: 50px;
+      height: 50px;
+      margin: 5px 10px;
+      padding: 5px;
+      color: white;
+      background-color: #006aff;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 50px; /* 세로 중앙 정렬 */
+    }
+    
+    /* hover 시 각각의 요소에 변환 적용 */
+    #ex:hover .x-container {
+      transform: translateX(500px);
+    }
+    
+    #ex:hover .y-container {
+      transform: translateY(500px);
+    }
+  </style>
+</head>
+<body>
+  <div id="ex">
+    <div class="x-container"> 
+      <div class="y-container">물체</div>
+    </div>
+  </div>
+</body>
+</html>

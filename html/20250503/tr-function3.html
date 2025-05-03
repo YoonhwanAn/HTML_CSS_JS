@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 곡선 애니메이션</title>
+  <style>
+    /* body를 중앙집중 배치 및 overflow 감추기 */
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* 애니메이션 대상 물체 */
+    #box {
+      width: 50px;
+      height: 50px;
+      background: #006aff;
+      color: white;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 5px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">물체</div>
+  <script>
+    const box = document.getElementById('box');
+
+    // Bézier 곡선의 점들
+    const startPos = { x: 0, y: 0 };
+    const endPos   = { x: 500, y: 500 };
+    const control  = { x: 0, y: 500 };
+
+    // Quadratic Bézier 계산 함수
+    // B(t) = (1-t)² * P₀ + 2(1-t)t * P₁ + t² * P₂
+    function getBezierPoint(t) {
+      const x = (1 - t) * (1 - t) * startPos.x + 2 * (1 - t) * t * control.x + t * t * endPos.x;
+      const y = (1 - t) * (1 - t) * startPos.y + 2 * (1 - t) * t * control.y + t * t * endPos.y;
+      return { x, y };
+    }
+
+    // 애니메이션 관련 변수
+    const duration = 1000; // 애니메이션 전체 시간 (ms)
+    let animationFrameId;
+    let animationStartTime = null; // 현 애니메이션 시작 시간
+    let initialT = 0;              // 애니메이션 시작 시 진행률
+    let currentT = 0;              // 현재 진행률 (0~1)
+    let targetT = 0;               // 목표 진행률 (1: forward, 0: reverse)
+    let animating = false;
+
+    // 애니메이션 함수: t를 0~1 사이에서 선형 보간하여 업데이트
+    function animate(timestamp) {
+      if (animationStartTime === null) {
+        animationStartTime = timestamp;
+        // 시작 시점의 진행률 저장
+        initialT = currentT;
+      }
+      const elapsed = timestamp - animationStartTime;
+      // 진행률 보간 (최대 1.0)
+      const tProgress = Math.min(elapsed / duration, 1);
+      
+      // forward면 currentT가 증가, reverse면 감소하도록 계산합니다.
+      if (targetT > initialT) {
+        // Forward: 0 → 1 (즉, currentT = initialT + (target - initial) * tProgress)
+        currentT = initialT + (targetT - initialT) * tProgress;
+      } else {
+        // Reverse: currentT → 0
+        currentT = initialT - (initialT - targetT) * tProgress;
+      }
+      
+      // Bézier 곡선 위의 위치 계산 및 업데이트
+      const pos = getBezierPoint(currentT);
+      box.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
+      
+      if (tProgress < 1) {
+        animationFrameId = requestAnimationFrame(animate);
+      } else {
+        animating = false;
+        // 완전히 도착했으므로 (currentT === targetT) animation 종료
+      }
+    }
+    
+    // 애니메이션 시작: 기존 진행률에서 newTarget으로 애니메이트
+    function startAnimation(newTarget) {
+      targetT = newTarget;
+      // 새 애니메이션의 시작 시점은 현재 상태에서 진행
+      animationStartTime = null;
+      animating = true;
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    
+    // 마우스 이벤트: body 전체에 대해 감지
+    // mouseenter(hover 시) – forward 애니메이션 (t: 현재 → 1)
+    document.body.addEventListener('mouseenter', () => {
+      startAnimation(1);
+    });
+
+    // mouseleave – reverse 애니메이션 (t: 현재 → 0)
+    document.body.addEventListener('mouseleave', () => {
+      startAnimation(0);
+    });
+  </script>
+</body>
+</html>

@@ -10,19 +10,25 @@
 		height: 100px;
 		background-color: #fb5;
 		border: 1px solid #222;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 10px;
 		/* Do it! 모든 대상에 2초 동안 ease-in 속도 곡선을 적용하는 트랜지션 */
+		transition: all 1.5s ease-in;
 		
 	}
 	.box:hover {  /* 여기에 있는 속성이 모두 트랜지션 대상 */
 		width: 200px;
 		height: 200px;
 		background-color: #f50;
-		transform: rotate(270deg);			
+		transform: rotate(180deg);
+		font-size: 40px;		
 	}
 </style>
 </head>
 
 <body>
-	<div class="box"></div>
+	<div class="box">lLL HY HL</div>
 </body>
 </html>
