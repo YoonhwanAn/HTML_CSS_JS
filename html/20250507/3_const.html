@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+
+            // const 문법 : const name1 = value1 [, name2 = value2 [, ... [, nameN = valueN]]];
+            // 대괄호는 있어도 그만 없어도 그만인 option 사항
+
+            const num1 = 1; // (O) 상수(constant variable) 정의
+            // const num1 // (X) 틀린 예시.
+            // 값이 변하지 않는(고정적인) 변수 => 상수
+
+            // num1 = 2; // (X) 대입(Assignment) 불가
+            // Uncaught TypeError: Assignment to constant variable.
+            // 기존값을 보호(캡슐화, 은닉)
+
+            // let a-b = 1; (X)
+            
+            // 변수 가독성
+            // full_name(snake case), fullName(camel case), full_Name(train case)
+
+            // NaN은 자료형이면서도 리터럴로 간주
+
+            // string은 "",'' 둘 다 사용가능
+            let str1 = "I'm a student."; // 가능
+            // let str2 = 'I'm a student.'; // 불가
+            let str2 = 'I\'m a student.'; // 가능
+            let str3 = "어린이날은 '5월 5일' 입니다."; // 가능 
+            // let str4 = "어린이날은 "5월 5일" 입니다."; // 불가
+            let str4 = "어린이날은 \"5월 5일\" 입니다."; // 가능
+
+            console.log("str1 :", str1);
+            console.log("str2 :", str2);
+            console.log("str3 :", str3);
+            console.log("str4 :", str4);
+
+            // 템플릿 리터럴(template literal)
+            // 1. 문자열과 변수, 식을 섞어서 하나의 문자열을 만드는 방식
+            // 2. 백틱(``) 기호를 사용해 문자열을 만든다. (큰따옴표, 작은따옴표 X, 키보드 좌상단 ~무늬 있는 위치)
+            // 3. 이스케이프 문자를 그대로 사용할 수 있어서 편리
+
+            let str5 = "<span class=\"abcd\">문자</span>";
+
+            let str6 = "<div id='wrap'><div id='box'>" + str5 + "</div></div>";
+            // template literal 이전 방식
+
+            let str7 = `<div id='wrap'><div id='box'>${str5}</div></div>`;
+            // template literal 방식
+
+            console.log("str7 :", str7);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

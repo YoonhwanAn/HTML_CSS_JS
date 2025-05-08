@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            
+            // var 변수 정의
+            // (다른 자료형으로도) 변수 재정의(re-define) 가능
+            var num1;
+            var num1 = 1; // 재정의
+            var num1 ="JS"; // 재정의
+            // num1 = 1; // 재정의(X) 정의된 변수에 새로운 값을 대입
+            // num1 = "JS"; // 재정의(X) 정의된 변수에 새로운 값을 대입
+
+            console.log("num1 :", num1); // num1 : JS
+            console.log("num의 자료형:", typeof num1); // num1의 자료형 :
+
+            // let 문법 : let var1 [= value1] [, var2 [= value2]] [, ..., varN [= valueN]];
+            /*
+            let num1 = 1;
+            let num2 = 2; // (case1)
+            
+            let num1 = 1, num2 = 2; // (case2) case1의 줄임표현 비추천. (주석 넣기 어려움)
+            */
+
+            let num1; // var로 정의된 num1에 대한 변수 재정의. => 불가함(에러발생)
+            // Uncaught SyntaxError: Identifier 'num' has already been declared
+            // 1) let으로 선언한 변수 -> 기존에 정의된 변수에 대해서 재정의 불가.
+            // 2) 변수의 지역성 보장 ex) java(고급 언어)의 지역변수 범위(scope)
+            // -> var와 다르게 변수 재정의가 불가함. => 명확한 지역변수
+
+            // 지역 범위(block scope) : { ... }
+
+            let num2;
+            num2 = 1; // 변수 재정의(X), 기존 변수에 신규 값을 대입 => 정상동작
+            num2 = "JS"; // 변수 재정의(X), 기존 변수에 신규 값을 대입 => 정상동작
+
+            // let으로 정의할 것 
+
+            // num : 변수명 => 식별자(identifier)의 일종.
+            // 비교) 키워드(keyword)와 다름 ex) let => 변수 생성(정의)하는 키워드(예약어)
+            // 예시) let let; // 불가함.
+
+            // = : 우측에서 좌측으로 대입하는 대입 연산자(operator) => 키워드의 일종
+            // 1, 'JS' : 값(value), 리터럴(literal : 상수, 값)
+            // 리터럴? :
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Grammar_and_types#%EB%A6%AC%ED%84%B0%EB%9F%B4
+
+
+            // 예약어? 식별자?
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

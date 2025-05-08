@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>times_table</title>
+  <script>
+    window.onload = function() {
+      
+      // 1. document.write를 이용해서 작성
+      // for(let i = 1; i <= 9; i++){
+      //   document.write(`<h3>${i}단</h3>`);
+      //   for(let j = 1; j <= 9; j++){
+      //     document.write(`${i} X ${j} = ${i * j}<br>`);
+      //   }
+      // }
+
+      // 2. document.body.innerHTML를 이용해서 작성
+      for(let i = 1; i <= 9; i++){
+        document.body.innerHTML += `<h3>${i}단</h3>`;
+        for(let j = 1; j <= 9; j++){
+          document.body.innerHTML += `${i} X ${j} = ${i * j}<br>`;
+        }
+        document.body.innerHTML += "<hr>";
+      }
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

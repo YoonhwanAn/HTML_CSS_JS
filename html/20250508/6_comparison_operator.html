@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>comparison_operator</title>
+  <script>
+    window.onload = function() {
+
+      // 1. 비교연산자
+      console.log('3 == "3" :', 3 == "3"); // true // "값"만 비교 - 문자열, 숫자 구분없이 내용이 일치하는지 (자료형 구분 X)
+      console.log('3 === "3" :', 3 === "3"); // false // "자료형" + "값" 비교 - 자료형 and 내용 일치하는지 (자료형 구분 O)
+      console.log('3 != "3" :', 3 != "3"); // false // "값"만 비교 - 문자열, 숫자 구분없이 내용이 다른지 (자료형 구분 X)
+      console.log('3 !== "3" :', 3 !== "3"); // true // "자료형" + "값" 비교 - 자료형 or 내용이 다른지 (자료형 구분 O)
+      console.log('3 < "4" :', 3 < "4"); // true
+      console.log('3 <= "4" :', 3 <= "4"); // true
+      console.log('3 > "4" :', 3 > "4"); // false
+      console.log('3 >= "4" :', 3 >= "4"); // false
+
+      // 2. 문자열의 비교연산
+      // ASCII 코드로 변경해서 문자계산함. (대표적인 ASCII code: 48-"0", 65-"A",  97-"a")
+      // 한자리의 문자열이 아니라면? => 첫째자리 연산후 동등하면 다음자리 연산. 
+      console.log('"a" > "A" :', "a" > "A"); // true
+      console.log('"A" > "a" :', "A" > "a"); // false
+      console.log('"십장생" > "불효자" :', "십장생" > "불효자"); // true
+      console.log('"불효자" > "십장생" :', "불효자" > "십장생"); // false
+      console.log('"불효자2" > "불효자1" :', "불효자2" > "불효자1"); // true
+      console.log('"불효자1" > "불효자2" :', "불효자1" > "불효자2"); // false
+
+
+      // 3. 논리연산자
+      // || - or
+      // && - and
+      // ! - not
+      const a = 3;
+      const b = -2;
+      console.log("!(a > 0 || b > 0)) :", !(a > 0 || b > 0)); // false
+
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

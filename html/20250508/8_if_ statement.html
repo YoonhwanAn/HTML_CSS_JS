@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if_statement</title>
+  <script>
+    window.onload = function() {
+
+      // 1. if를 사용한 예제1
+      let userNumber = 12
+
+      if(userNumber % 3 === 0) {
+        console.log("3의 배수입니다.")
+      } else {
+        console.log("3의 배수가 아닙니다.")
+      }
+
+      // 2. if를 이용한 예제2
+      let score1 = 81;
+      
+      if(score1 >= 60) {
+        console.log("합격")
+      } else {
+        console.log("불합격")
+      } 
+
+      let score2 = 81;
+      let credit1 = "F" // 초기값
+
+      if (score2 >= 90) {
+        credit1 = "A";
+      } else if (score2 >= 80) {
+        credit1 = "B";
+      } else if (score2 >= 70) {
+        credit1 = "C";
+      } else if (score2 >= 60) {
+        credit1 = "D";
+      } else {
+        credit1 = "F";
+      }
+
+      console.log("당신의 학점은",credit1,"입니다.")
+      
+      let score3 = 81;
+      let credit2 = "F" // 초기값
+      // if를 이용한 예제3
+      let score4 = parseInt(score3 / 10);
+      if (score4 == 9 || score4 == 10) {
+        credit2 = "A";
+      } else if (score4 == 8) {
+        credit2 = "B";
+      } else if (score4 == 7) {
+        credit2 = "C";
+      } else if (score4 == 6) {
+        credit2 = "D";
+      } else {
+        credit2 = "F";
+      }
+
+      console.log("당신의 학점은", credit2, "입니다.")
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

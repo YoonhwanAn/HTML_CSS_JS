@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boolean_example</title>
+  <script>
+    window.onload = function() {
+
+      let flag1 = Boolean(1); // true
+      let flag2 = Boolean(-1); // true
+      let flag3 = Boolean(0); // false
+      let flag4 = Boolean(1.2); // true
+      let flag5 = Boolean("abcd"); // true
+      let flag6 = Boolean(NaN); // false
+      let flag7 = Boolean("false"); // true
+      let flag8 = Boolean(false); // false
+      let flag9 = Boolean(""); // false
+      // 숫자 : 0을 제외한 숫자 => true, 0 => false
+      // 문자열 : 공란을 제외한 문자열 => true, 공란이 아닌 문자열 => false
+      // 기타 : null, undefined, NaN, false.
+
+
+      console.log("flag1 :", flag1);
+      console.log("flag2 :", flag2);
+      console.log("flag3 :", flag3);
+      console.log("flag4 :", flag4);
+      console.log("flag5 :", flag5);
+      console.log("flag6 :", flag6);
+      console.log("flag7 :", flag7);
+      console.log("flag8 :", flag8);
+      console.log("flag9 :", flag9);
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

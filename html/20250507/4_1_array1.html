@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            
+            // 배열
+            // 기본 자료형은 낱개
+            // 1) 배열 : 같은 자료형이 다수
+            // 2) 구조체 : 다른 자료형이 다수 (자바에는 없음. 구조적 언어에는 있음 (ex) C)
+            //            소속(멤버) 변수
+            // 3) 클래스 : OOP(넓은 의미의 객체지향) + 구조체
+            //            소속(멤버) 변수 + 메서드(소속 함수)
+
+
+            // 배열 변수 정의(선언)
+            // 정의(선언) + 초기값 = 초기화
+            let season = ["봄", "여름", "가을", "겨울"];
+            // 선언과 동시에 입력시 [] 대괄호;
+            // 중간에 대입인 경우 {} 중괄호; <-- 확인요
+
+            
+            // 배열 변수 자체 정보(구체적인 정보)를 출력
+            console.log("season :", season );            
+            
+            
+            // 낱개요소 접근
+            console.log("season[0] :", season[0] );
+            console.log("season[1] :", season[1] );
+            console.log("season[2] :", season[2] );
+            console.log("season[3] :", season[3] );
+            
+            // 배열의 길이(크기)
+            console.log("배열의 길이(크기) :", season.length);
+
+            // JavaScript가 지원하는 반복문
+                // 1) for 문
+                // 2) do...while 문
+                // 3) while 문
+                // 4) 레이블 문
+                // 5) break 문
+                // 6) continue 문
+                // 7) for...in 문
+                // 8) for...of 문
+
+            // 전체 요소 출력
+            // 1) 일반 for-loop
+            for (let i = 0; i < season.length; i++) {
+                console.log("season의 개별요소(for문) :", season[i]);
+            }
+
+            // 2) for ... in loop
+            for (let factor in season) {    //  인덱스/멤버필드(변수) in 배열/객체  => 배열의 경우 index를 출력, 객체의 경우 멤버필드(변수)를 추력.
+                console.log("season의 개별요소(for-in문) :", season[factor]); // factor를 출력하면 0 ~ 3 이 출력
+            }
+
+            // 3) for ... of loop
+            for (let factor of season) {    //  낱개 of 배열/객체
+                console.log("season의 개별요소(for-of문) :", factor); // factor를 출력하면 0 ~ 3 이 출력
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

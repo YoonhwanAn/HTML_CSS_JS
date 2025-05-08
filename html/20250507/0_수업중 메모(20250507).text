@@ -1,0 +1,25 @@
+// 1. 복습
+    [js의 기초]
+    스크립트 파일은 html내 문장 어디서나 존재 가능.
+    외장화가능 (일반적으로 js폴더 내 ~.js 파일로 작성이 일반적임.)
+
+    [식과 문]
+    식(experssion) - 값을 만들어 낼 수 있다면 모두 식이될 수 있다. 식은 변수에 저장된다.
+    문(statement) - 문의 끝에는 세미콜론(;)을 붙여서 구분. 넓은 의미에서는 식이나 값을 포함함.
+
+    [기본 입출력방법]
+    alert();
+    confirm();
+    prompt();
+    document.write();
+    console.log();
+
+// 2. 스타일 가이드
+    이후 팀 프로젝트 시 결정해서 반드시 통일 시킬 것
+    https://google.github.io/styleguide/jsguide.html
+    https://github.com/airbnb/javascript
+
+// 3. 변수(variable)
+    프로그램에서 자료를 담아두는 공간
+    (1) 재사용성: 한번 저장한 값 재사용 가능
+    (2) 가독성: 코드를 읽기 쉬움

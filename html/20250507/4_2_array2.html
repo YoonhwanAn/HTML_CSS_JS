@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            
+            // 배열 생성의 동일 표현
+            // let season = []; // (O)
+            let season = new Array(); // (O) (new 쓰는 것이 정석적인 표현)
+            // let season = Array(); // (O) 위와 동일표현 (가능은 하다)
+
+            // new:객체생성 연상자
+            // Array() : Array 클래스의 생성자 (구축자:constructor)
+
+            // 배열 객체(Array)
+            // 표준 내장(built-in) 객체 > Array
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+            // 배열 요소 추가 : 메서드(객체 소속(멤버) 함수) 활용
+            // 표준내장 객체 > Array > 인스턴스 메서드 > Array.prototype.push()
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+            season.push("봄");
+            season.push("여름");
+            season.push("가을");
+            season.push("겨울");
+
+            console.log("season :", season );            
+            
+            for (let factor of season) {
+                console.log("season의 개별요소(for-of문) :", factor);
+            }
+
+            // 아래와 같이 입력해도 동일하다.
+            let season2 = new Array("봄", "여름", "가을", "겨울"); // (O) (new 쓰는 것이 정석적인 표현)
+            // let season2 = Array("봄", "여름", "가을", "겨울"); // (O) 위와 동일표현 (가능은 하다)
+
+            console.log("season :", season2 );            
+            
+            for (let factor of season2) {
+                console.log("season2의 개별요소(for-of문) :", factor);
+            }
+
+            // forEach 메서드(함수)
+            // 표준내장 객체 > Array > 인스턴스 메서드 > Array.prototype.forEach()
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+            
+            // => : 화살표 함수(arrow function) // 하기의 형태와 동일한 내용 (modern 자바스크립트)
+            season2.forEach((elem) => {
+                console.log("season2의 개별요소(화살표함수) :", elem);
+            });
+
+            // 콜백 함수 : 인자부에서 바로 정의 및 호출
+            // 익명(이름이 없는 : anonymous) 함수 형태
+            season2.forEach(function(elem) {
+                console.log("season2의 개별요소(익명함수) :", elem);
+            });
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

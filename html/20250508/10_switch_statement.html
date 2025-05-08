@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch_statement</title>
+  <script>
+    window.onload = function() {
+      
+      // 1. switch 예제1
+      const expr = "Papayas";
+    switch (expr) {
+
+      case "Oranges":
+        console.log("Oranges are $0.59 a pound.");
+        break;
+      case "Mangoes":
+      case "Papayas":
+        console.log("Mangoes and papayas are $2.79 a pound.");
+        // Expected output: "Mangoes and papayas are $2.79 a pound."
+        break;
+
+      default:
+        console.log(`Sorry, we are out of ${expr}.`); // 문장내 어느위치든 상관없음. 앞으로 땡기면 break를 써야함.
+    }
+
+
+    // 2. switch 예제2
+    const game = "축구";
+    switch (game) {
+
+      default:
+        console.log(`${game}(은/는) 잠실 운동장에서 불가능한 종목입니다.`); // 처음이나 끝은 괜찮으나 중간에 넣는 것은 좋지 못함.(가독성 다운)
+        break;
+
+      case "축구":
+      case "육상":
+        console.log(`${game}(은/는) 잠실 주경기장에서 가능합니다.`);
+        break;
+      case "야구":
+        console.log("야구는 잠실 야구장에서 가능합니다.");
+        break;
+      case "수영":
+        console.log("수영은 잠실 제 1,2 수영장에서 가능합니다.");
+        break;
+    }
+
+    // 3. switch 예제3
+    let score1 = 81;
+    let credit1 = "F";
+
+    let score2 = parseInt(score1 / 10);
+
+    switch(score2) {
+      case 10 :
+      case 9  : credit1 = "A"; break;
+      case 8  : credit1 = "B"; break;
+      case 7  : credit1 = "C"; break;
+      case 6  : credit1 = "D"; break;
+      default : credit1 = "F"; break;
+    }
+
+    console.log("당신의 학점은", credit1, "입니다.")
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ternary_operator</title>
+  <script>
+    window.onload = function() {
+
+      // 1. 삼항연산자를 사용한 예제1
+      let userNumber = 12
+
+      if(userNumber !== null) {
+        parseInt(userNumber % 3 === 0) ? console.log("3의 배수입니다.") : console.log("3의 배수가 아닙니다.");
+      }
+
+      // 2. 삼항연산자를 이용한 예제2
+      let score1 = 70;
+      let result1 = (score1 >= 60) ? "합격" : "불합격";
+      
+      console.log("result1 :", result1);
+
+      // 3. 삼항연산자를 이용한 예제2의 변형
+      let score2 = 70;
+      score2 >= 60 ? console.log("합격") : console.log("불합격");
+
+      // 4. 삼항연산자를 이용한 예제3
+      let score3 = 81;
+      let credit1 = "F"
+
+      let score4 = parseInt(score3 / 10);
+
+      credit1 = score4 == 10 ? "A" :
+                score4 == 9  ? "A" :
+                score4 == 8  ? "B" :
+                score4 == 7  ? "C" :
+                score4 == 6  ? "D" : "F" ;
+
+      console.log("당신의 학점은", credit1, "입니다.")
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

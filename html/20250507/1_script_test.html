@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            
+            // 변수 선언(variable declaration/definition) case 1
+            var num1; // if 변수의 값을 넣지 않는다면? error는 발행하지 않으나 자료의 값이 undefined로 작성됨.
+
+            console.log("num1 :", num1); // num1 : undefined (정의가 안된)
+
+            // 변수 선언(variable declaration/definition) case 2
+            var num2 = 1;
+
+            console.log("num2 :", num2); // num2 : 1
+
+            // 자료형((data)type) 확인
+            // typeof 연산자
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof
+
+            console.log("num1의 자료형:", typeof num1); // num1의 자료형 : undefined
+            console.log("num2의 자료형:", typeof(num2)); // num2의 자료형 : number
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
