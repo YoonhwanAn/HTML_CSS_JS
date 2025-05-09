@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    let sum1 = 0;
+    let sum2 = 0;
+    let sum3 = 0;
+    let sum4 = 0;
+    let sum5 = 0; 
+
+    // for-loop의 여러가지 test
+
+    // 1) 기본값 변형
+    for(let i = 1; i <= 10; i++) { // 기본값
+    // for(let i = 1; i <= 10; i += 1) { // (O) 동일, 코드 길어짐
+    // for(let i = 1; i <= 10; ++i) { // (O) 동일
+    // for(let i = 1; i < 11; i++) { // (O) 동일
+
+      sum1 += i;
+    }
+    console.log(`case1: 1부터 10까지의 합계는 ${sum1}입니다`);
+
+    // 2) 첫번째 항목값 삭제
+    let j = 1; for(; j <= 10; j++) { // (O) 동일 // i가 for안에서만 사용되지 않고 밖에서도 사용됨.
+    // for(i <= 10; i++) { (X) // 에러발생
+    //  => 에러메세지 : Uncaught SyntaxError: Unexpected token ')'
+
+      sum2 += j;
+    }
+    console.log(`case2: 1부터 10까지의 합계는 ${sum2}입니다`);
+
+    // 3) 두번째 항목값 삭제
+    for(let i = 1; ; i++) { // 하기의 if문 및 break가 없다면 종결값이 없어 무한 루프됨.
+
+      if (i <= 10) { // 기본값
+      // if (!i > 10) { // 틀림 (!i가 false로 계산되어 false > 10 으로 계산되어 조건이 걸리지 않음.)
+      // if (!(i > 10)) { // 동일 표현
+      sum3 += i;
+      } else {
+        break;
+      }
+      
+      /* 동일 표현(1) - 비교연산자를 바꾸어서 조건을 다르게
+      if (i > 10) {
+        break;
+      } else {
+        sum3 += i;
+      }
+      */
+
+      /* 동일 표현(2) - i의 값이 11일 때 탈출하도록.
+      if (i === 11) break;
+      sum3 += i;
+      */
+
+      // 불가한 표현(3) - 삼항연산자
+      // i === 11 ? break : sum3+=i; // 불가능
+      // (참고)
+      // 삼항 연산자는 표현식(expression)이어야 하는데, break는 문(statement)입니다. 
+      // 삼항 연산자는 값을 반환할 수 있는 식을 평가하는 용도로 디자인되어 있기 때문에, 
+      // 제어 흐름을 변경하는 break, continue와 같은 문을 포함할 수 없습니다.
+    }
+    console.log(`case3: 1부터 10까지의 합계는 ${sum3}입니다`);
+
+    // 4) 세번째 항목값 삭제
+    for(let i = 1; i <= 10;) {
+
+      sum4 += i;
+      i++;
+      
+    }
+    
+    console.log(`case4: 1부터 10까지의 합계는 ${sum4}입니다`);
+
+    // 5) 다 빼도 되는가?
+    let k =1; for(;;) {
+
+      if (k <= 10) { 
+      sum5 += k;
+      k++;
+      } else {
+        break;
+      }
+      
+    }
+    
+    console.log(`case5: 1부터 10까지의 합계는 ${sum5}입니다`);
+    
+    // 비고) 테스트
+    let num = 10;
+    console.log("!num의 출력값은? :", !num); // !num의 출력값은? : false
+
+  </script>
+</body>
+</html>

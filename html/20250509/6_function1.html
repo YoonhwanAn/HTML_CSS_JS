@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>continue</title>
+</head>
+<body>
+  <script>
+
+    // 정수 n부터 m까지의 합을 구하는 함수
+    // 함수명 : sumNumbers
+    // 매개변수(형식인자, 가인자) : n, m
+    // 결과(리턴/반환)값 : 합계
+    function sumNumbers(n, m) { // n이 m보다 적다는 가정하에 진행.
+      
+      let sum = 0; // 합계 정의
+
+      for(let i = n; i <= m; i++) {
+        sum += i;
+        console.log("중간합계 =", sum);
+      }
+
+      console.log("sumNumbers 끝");
+      return sum; // 결과값 반환(output)
+      // return 이후의 코드는 dead code가 됨.
+      console.log("여기는 출력되지 않는 위치입니다(dead code)");
+    }
+
+    // 함수의 호출(function call)/실행(execution/run)
+    console.log("------------result에 결과값 넣기-----------");
+    let result = sumNumbers(1, 10);
+    console.log("result :", result);
+
+    // console.log에서 직호출
+    console.log("------------console.log에서 직호출-----------");
+    console.log("함수계산값 :", sumNumbers(1, 10));
+  </script>
+</body>
+</html>

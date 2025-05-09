@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+body {
+   margin: 0;
+}
+
+details {
+   margin: 10px;
+   width: 400px;
+}
+
+summary {
+
+   display: flex; /* 왜 flex만 적용했는데 사라질까? */
+   /* 사라지는 이유
+      <summary>는 기본적으로 display: block;이 적용.
+      브라우저가 <summary>의 기본 스타일을 적용할 때, <summary> 내부의 ::marker(▶)는 리스트 마커처럼 동작.
+      하지만 display: flex;를 적용하면 <summary>가 리스트처럼 동작하지 않게 되면서 마커가 사라짐
+   */
+   justify-content: space-between;
+   align-items: center;
+   padding : 15px 30px;
+   font-size: 1.3em;
+   background-color: #FFC000;
+   border-radius: 10px;
+   cursor: pointer; /* grab보다 pointer가 어울릴 것 같아서 변경 */
+
+}
+
+/* 
+   메인 메뉴에 롤오버(rollover) 및 서브 메뉴 열릴(open) 때 효과 처리
+
+   글꼴색 : 흰색,
+   글꼴 굵기 : 700,
+   배경색 : #FF7F27
+*/
+summary:hover, details[open] summary { 
+   color: #FFF;
+   font-weight: 700;
+   background-color: #FF7F27;
+
+}
+
+/* 
+   메인 메뉴 우측(뒷쪽: after) "+" 아이콘 부착 
+
+   내용 : +,
+   왼쪽 마진 : 40픽셀,
+   글꼴 크기 : 30픽셀,
+   글꼴색 : 흰색,    
+   트랜지션 : 트랜스폼(변환) 효과, 변환 지속시간 0.7초
+*/
+summary::after { 
+   content: "+";
+   /* margin-left: 40px; 필요없는 옵션*/
+   font-size: 30px;
+   color: #FFF;
+   transition: transform 0.7s;
+}
+
+/* 
+   서브 메뉴가 펼쳐진(open) 후 우측 아이콘 움직임 조정 
+
+   트랜스폼 : 135도 회전(rotate)
+
+   ※ https://developer.mozilla.org/ko/docs/Web/CSS/transform
+*/
+details[open] summary::after { 
+
+   transform: rotate(135deg);
+
+}
+
+/* 서브 메뉴 패널 */
+.dish-menu {
+   padding: 5px;
+   line-height: 1em;
+   background: #fff;
+   text-indent: 30px;
+}
+
+/* 
+   서브 메뉴 버튼 링크 
+
+   밑줄 제거,
+   글꼴색 : #333
+*/
+.dish-menu a {
+   text-decoration: none;
+   color: #333;
+
+}
+
+/* 
+   서브 메뉴 버튼 링크 롤오버(rollover) 상태
+
+   밑줄 제거,
+   글꼴색 : #ED1C24,
+   글꼴 굴기 : 굵게
+*/
+
+.dish-menu a:hover {
+   /* text-decoration: none; 필요없는옵션 */
+   color: #ED1C24;
+   font-weight: bold;
+   
+}
+/* 추가분 */
+.menu-content {
+   max-height: 0;
+   overflow: hidden;
+   opacity: 0;
+   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+details[open] .menu-content {
+   max-height: 1000px;  /* 콘텐츠의 최대 높이보다 큰 값으로 조정 */
+   opacity: 1;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 1. while문의 구조
+      /*
+      while (조건) {
+        명령
+      }
+      */
+
+    // 2. while문 예제1
+    let i = 1;
+    let sum1 = 0;
+    
+    while (i <= 10) { // for (; i <= 10 ;) 과 동일
+      sum1 += i;
+      i++;
+      console.log("중간합계(sum1) :", sum1);
+    }
+
+    // 3. while문 예제2
+    let j = 1;
+    let sum2 = 0;
+    
+    while (true) { // for (;;) 과 동일
+    // true일 때 반복, false일 때 실행하지 않음.
+    // true: 1, -1, 12312, "문자열"
+    // false: 0, NaN, undefined, ""
+      if (j <= 10) {
+        sum2 += j;
+        j++;
+        console.log("중간합계(sum2) :", sum2);
+      } else {
+        break;
+      }
+    }
+
+    // 4. do-while문의 실행
+    /*
+    do {
+      명령
+    } while (조건);
+    */
+  </script>
+</body>
+</html>
