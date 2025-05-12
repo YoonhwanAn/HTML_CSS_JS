@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+/* 게시판 패널 */
+.board-pnl {
+
+    /* 
+        최소 너비 : 800픽셀,
+        너비 : 60vw,
+        가로 중앙 정렬,
+        글꼴 크기 : 1em
+    */
+    min-width: 800px;
+    width: 60vw;
+    margin: auto;
+    font-size: 1em;
+
+}
+
+/* 
+    게시글 목록(한줄)
+    : 체크박스(5%) + 게시글 번호(10%) + 게시글 제목(35%) + 게시글 작성자(10%)
+    + 게시글 작성일(20%) + 게시글 조회수(10%) + 게시글 추천(좋아요)(10%) = 100%
+ */
+.board-row {
+
+    /* 
+        너비 : 100%,
+        높이 : 50픽셀,
+        플렉스 박스,
+        (가로 정렬 : 좌측 정렬),
+        테두리 : 1픽셀 점선 #ccc,
+        테두리 두께 : 상단 1픽셀, 나머지 0
+    */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-top: 1px dotted #ccc;
+    
+}
+
+/* 마지막 게시글 목록 : 최하단부 테두리 */
+div.board-row:last-child {
+    
+    /*
+        테두리 : 1픽셀 점선 #ccc,
+        테두리 두께 : 상/하 1픽셀, 좌/우 0
+    */
+    border-bottom: 1px dotted #ccc;
+}
+
+/* 게시글 목록(타이틀 : 헤더 부분) */
+.board-header-row {
+
+    /* 
+        너비 : 100%,
+        높이 : 50픽셀,
+        플렉스 박스,
+        (가로 정렬 : 좌측),
+        배경색 : #F2F2F2,
+        테두리 : 1픽셀 점선 #ccc,
+        테두리 두께 : 상단 1픽셀, 하/좌/우 0
+    */    
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background: #F2F2F2;
+    border-top: 1px dotted #ccc;
+}
+
+/* 게시글 목록 내의 패널들(공통) */
+div.board-row div[class^=board] {
+
+    /*
+        플렉스박스,
+        종횡 정렬 : 중앙정렬
+    */    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+    체크박스부터 언급되는 컴포넌트들에 대한 너비들은 
+    상단부의 "게시글 목록(한줄)"에 언급된 화면 비율을 참고합니다.
+*/    
+/* 체크박스 */
+.board-check {
+    width: 5%;
+}
+
+/* 게시글 번호 */
+.board-num {
+    width: 10%;
+}
+
+/* 게시글 제목 */
+.board-title {
+    width: 35%;
+}
+
+/* 게시글 작성자 */
+.board-writer {
+    width: 10%;
+}
+
+/* 게시글 작성일 */
+.board-write-date {
+    width: 20%;
+}
+
+/* 게시글 조회수 */
+.board-read-count {
+    width: 10%;
+}
+
+/* 게시글 추천(좋아요) */
+.board-recomm-count {
+    width: 10%;
+}
+
+/* 게시판 페이지내이션 패널 */
+nav.board-pagination {
+
+    /* 
+        너비 : 100%,
+        높이 : 150픽셀,
+        플렉스 박스,
+        종횡 정렬 : 가운데 정렬
+    */
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 게시판 페이지내이션 */
+.board-pagination ul {
+
+    /*
+        너비 : 300픽셀,
+        ul 자체 스타일 제거,
+        플렉스 박스,
+        세로 정렬 : 가운데 정렬
+    */
+    width: 300px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* 게시판 페이지내이션 : 페이지 링크 */
+.board-pagination ul li {
+    
+    /*
+        너비 : 40픽셀,
+        높이 : 40픽셀,
+
+        플렉스 박스,
+        가로 정렬 : 중앙정렬
+    */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 게시판 페이지내이션 : 페이지 링크 버튼 */
+.board-pagination ul a {
+
+    /*
+        글꼴색 : #595959,
+        글자 치장 제거,
+        글꼴 크기 : 1.5em
+    */
+    color: #595959;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+
+/* 게시판 페이지내이션 : 현재 페이지 링크 */
+.board-pagination ul li a.curr-page {
+
+    /*
+        글꼴색 : 검정,
+        글꼴 두께 : 굵게
+    */
+    color: black;
+    font-weight: bold;
+}
+
+/* 게시판 페이지내이션 : 첫/이전/이후/끝 아이콘 */
+.board-pagination ul a span.icon-size {
+
+    /*
+        글꼴 크기 : 1.5em
+    */
+    font-size: 1.5em;
+}

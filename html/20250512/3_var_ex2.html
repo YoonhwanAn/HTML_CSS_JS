@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 5. let의 경우
+    function sum() {
+      let n = 10;
+      let result = 0;
+
+      for (let i = 1; i <= n; i++) {
+        result += i;
+      }
+      console.log(result);
+    }
+
+    sum();
+    // sum함수를 벗어났기 때문에 let은 유효하지 않음.
+    console.log(result);  // ReferenceError: result is not defined
+
+
+    // 6. let의 경우. 중복선언 불가. 
+    function doIt() {
+      let a = 1;
+      console.log(a); // 1
+      let a = 2; // SyntaxError: Identifier 'x' has already been declared 
+      console.log(a);
+    }
+
+    doIt();
+
+    // 7. let은 변수 호이스팅이 안 됨.
+    let x = 10;
+
+    function display() {
+      console.log(x); 
+      console.log(y);  // ReferenceError: y is not defined // var였다면 y의 값이 undefined로 표시됨.
+      let y =20;
+    }
+
+    display();
+
+    // 8. const의 경우 값 수정불가
+    const user = "Kim";  
+    console.log(`My name is ${user}`);  // My name is Kim
+
+    user= "Lee ";  // Uncaught TypeError: Assignment to constant variable
+    console.log(`My name is ${user}`); 
+
+    
+  </script>
+</body>
+</html>

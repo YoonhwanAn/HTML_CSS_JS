@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- google icons :  https://fonts.google.com/icons -->
+    <!-- 구글 아이콘 CDN(Content Delivery Network) 링크 --> 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
+    <!-- CSS 외장 파일 링크 CSS 폴더에 있는 popup_style.css를 불어들임 -->    
+    <link rel="stylesheet" href="css/popup_style.css" />
+    <style>
+        /* #popup { visibility: hidden; } */
+    </style>
+    
+    <script>
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window
+    // onload : https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+    
+    // window.addEventListener("load",  fuction() {  // 동일한 표현임 (상단 onload 참고)
+    // })
+    // window.onload = fuction() {  // 동일한 표현
+    // }
+    window.onload = () => {
+
+        // 팝업창 제어 process.
+
+        // 1. 초기 상태 : 팝업창 은닉
+        // id="popup" / class="modal"
+        // 팝업창 요소 등록
+
+        // getElementById 메서드
+        // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+        
+        // (1) 작동여부 테스트 / 팝업을 클릭 시 작동이 나타나게 할 수 있는가?
+        /*
+        document.getElementById("popup").onclick = function() {
+            console.log("팝업클릭");
+        }
+        */
+
+
+        // (2) div 은닉 => visibility CSS속성을 이용해서 해보자
+        // visibility : https://developer.mozilla.org/ko/docs/Web/CSS/visibility
+
+        // HTMLElement : https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+        // document.getElementById("popup") 은 HTMLElement임.
+        
+        // HTMLElement.style : https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+        // HTMLElement 소속의 style 속성(멤버 변수)
+        // 현재 "popup"의 id에 설정된 스타일을 확인 가능
+        // let style = document.getElementById("popup").style;
+        // console.log(style);
+
+        // CSSStyleDeclaration : https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration
+        document.getElementById("popup").style.visibility = 'hidden';
+        // css의 #popup { visibility: hidden; }과 동일효과
+        // css는 정적이기 때문에 source에도 표현 됨.
+        // javascript로 제어하면 동적이기때문에 source 표현안 됨.
+        // => 자바스크립트로 작성한 코드가 지정한 위치에 코드를 밀어넣음
+        
+
+
+        ///////////////////////////////////////////////////////////////////////////////
+
+        // 2. 팝업창 오픈 버튼 작성 / 이벤트 처리
+        // - 클릭 => 팝업창 오픈
+        
+        // 버튼추가
+        // 자바스크립트에서 추가된 것은 동적으로 추가된 것이므로 항상 F12(devtools) 에서 변화된 소스로 확인할 것.
+        document.body.innerHTML += '<button id="btn" type="button">버튼</button>'
+        // => html의 제일 뒤에 <button id="btn" type="button">버튼</button> 작성한 것과 동일.
+        
+        /* 하기 표현과 동일한 표현. (addEventListerner) 구식표현. 쓰지않는걸 추천.
+        // document.getElementById("btn").addEventListener("click", function() {
+        document.getElementById("btn").addEventListener("click", () => {
+            console.log("버튼 클릭");
+        })
+        */
+        
+        // document.getElementById("btn").onclick = function () {
+        document.getElementById("btn").onclick = () => {
+            console.log("버튼 클릭");
+            // 팝업창 보여주기
+            document.getElementById("popup").style.visibility = 'visible';
+        }
+        
+        ///////////////////////////////////////////////////////////////////////////////
+
+        // 3. 팝업창 닫기 / 이벤트 처리
+        // - 우상단 X버튼 클릭시 => 팝업창 닫기
+        document.getElementById("modal_close_btn").onclick = () => {
+            console.log("X 클릭");
+            // 팝업창 숨기기
+            document.getElementById("popup").style.visibility = 'hidden';
+        }
+
+        // 4. 긴 코드를 어떻게 줄이고 가독성을 늘려야 하나?
+        // 변수 선언으로 줄일 것
+        // 해당 변수는 모아서 앞으로 (앞으로 제어하고자 할 변수들을 미리보여줌으써 작동을 짐작하게 함)
+
+        // let btn = document.getElementById("btn"); // 좌측과 같이변수를 선언한다면,
+        // document.getElementById("btn").onclick
+        // => btn.onclick // 상단의 코드를 좌측의 코드로 줄일 수 있음
+        
+        // let popup = document.getElementById("popup"); // 좌측과 같이변수를 선언한다면,
+        // document.getElementById("popup").style.visibility
+        // => popup.style.visibility // 상단의 코드를 좌측의 코드로 줄일 수 있음
+
+        // let closeBtn = document.getElementById("modal_close_btn"); // 좌측과 같이변수를 선언한다면,
+        // document.getElementById("modal_close_btn").onclick
+        // => closeBtn.onclick // 상단의 코드를 좌측의 코드로 줄일 수 있음
+    }
+    </script>
+
+</head>
+<body>
+
+    <!-- <button id="btn" type="button">버튼</button> -->
+
+    <!-- modal -->
+    <div id="popup" class="modal">
+        
+        <!-- modal header -->
+        <div class="modal_header">
+        
+            <!-- bullet icon -->
+            <div class="modal_header_icon">
+
+                <!-- 
+                    web_asset 이라는 검색어를 이용하여 팝업을 상징하는 아이콘을 
+                    검색하여 코드를 완성하십시오.
+                -->
+                <!-- TODO -->    
+                <span class="material-symbols-outlined">
+                    web_asset
+                </span>	        
+            </div>
+            <!--// bullet icon -->
+            
+            <!-- title -->
+            <!-- 제목(타이틀) 부분을 완성하십시오. class : modal_header_title -->
+            <!-- TODO --> 
+            <div class="modal_header_title">
+                제목
+            </div>
+            <!--// title -->
+            
+            <!-- closing button icon -->
+            <div class="modal_header_close">
+
+                <!-- 
+                    창닫기(close) 아이콘 부분을 완성하십시오. 
+                    링크 버튼 id : modal_close_btn                    
+                 -->
+                <a href="#" id="modal_close_btn">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </a>
+            </div>
+            <!--// closing button icon -->
+
+        </div>
+        <!--// modal header -->
+        
+        <!-- modal body -->
+        <div class="modal_body">
+            글 내용입니다.
+        </div>
+        <!--// modal body -->
+        
+        <!-- modal footer -->
+        <!--
+        <div class="modal_footer">
+        </div>
+        -->
+        <!--// modal footer -->
+        
+    </div>
+    <!--// modal -->
+            
+</body>
+</html>

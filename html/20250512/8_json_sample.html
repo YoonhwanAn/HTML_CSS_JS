@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>	
+	<script>
+    let arr = [ '짜장', '짬뽕', '난자완스', '라조기', '기스면' ]; // 배열
+    let json = { '짜장':'3', '짬뽕':'2', '난자완스':'1', '라조기':'5', '기스면':'4' }; // object, 객체
+    let jsonStr = '{ "짜장":"3", "짬뽕":"2", "난자완스":"1", "라조기":"5", "기스면":"4" }';
+
+    // 1) 배열(array)
+    for (let one in arr) {
+
+      console.log("arr의 인덱스 :", one); // index
+      console.log("arr의 낱개요소 :", arr[one]); // 배열의 낱개 요소 
+    }
+
+    // 2) 객체(object)    
+    console.log("json : ", json['짜장'])
+    console.log("json : ", json.짜장)
+
+    for (let one in json) {
+
+      console.log("json의 멤버필드 :", one); // json 멤버필드(속성)
+      console.log("json의 멤버필드의 값:", json[one]); // json의 멤버필드(속성)의 값
+      //  console.log("json의 멤버필드의 값:", json.one) // undefined 이렇게는 안된다.
+      // json.짜장 이 입력 가능하므로, parsedJSON.one 도 될 것 같지만 안 된다.
+    }  
+    
+    // 3) json data
+    let parsedJSON = JSON.parse(jsonStr); // JSON 문자열을 JSON 객체로 만들어줌
+
+    console.log("parsedJSON : ", parsedJSON['짜장'])
+    console.log("parsedJSON : ", parsedJSON.짜장)
+    // console.log("parsedJSON : ", parsedJSON.'짜장') // 에러! 틀린표현
+
+    for (let one in parsedJSON) {
+
+      console.log("parsedJSON의 멤버필드 :", one); // parsedJSON 멤버필드(속성)
+      console.log("parsedJSON의 멤버필드의 값:", parsedJSON[one]); // parsedJSON의 멤버필드(속성)의 값
+      // console.log("parsedJSON의 멤버필드의 값:", parsedJSON.one) // undefined 이렇게는 안된다.
+      // parsedJSON.짜장 이 입력 가능하므로, parsedJSON.one 도 될 것 같지만 안 된다.
+    }
+
+    // for...of 의 경우 arr는 가능한데 json은 불가함.
+    for (let one of arr) {
+      console.log("arr의 낱개요소 :", one); 
+    }
+
+    // for (let one of json) { // Uncaught TypeError: json is not iterable // 나열가능한 요소가 아니다.
+    //   console.log("arr의 낱개요소 :", one); 
+    // }
+	</script>
+</body>
+</html>
