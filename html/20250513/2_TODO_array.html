@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // concat // concatenates two arrays // 두 배열을 이어 붙임
+    console.log("-------Array.concat 예제-------");
+    const array1 = ["a", "b", "c"];
+    const array2 = ["d", "e", "f"];
+    const array3 = array1.concat(array2);
+
+    console.log(array3); // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+    
+
+    // every // 배열의 모든 요소가 제공된 함수로 구현된 테스트를 통과하는지 테스트
+    console.log("-------Array.every 예제-------");
+    const isBelowThreshold = (currentValue) => currentValue < 40;
+
+    const array4 = [1, 30, 39, 29, 10, 13];
+
+    console.log(array4.every(isBelowThreshold));// Expected output: true
+
+
+    // filter // 주어진 배열의 복사본을 생성, 배열에서 제공된 함수에 부합하는 요소로만 필터링
+    console.log("-------Array.filter 예제-------");
+    const words = ["spray", "elite", "exuberant", "destruction", "present"];
+
+    const result = words.filter((word) => word.length > 6);
+
+    console.log(result); // Expected output: Array ["exuberant", "destruction", "present"]
+
+
+    // forEach // 각 배열 요소에 대해 제공된 함수를 한 번씩 실행
+    console.log("-------Array.forEach 예제-------");
+    const array5 = ["a", "b", "c"];
+
+    array1.forEach((element) => console.log(element)); // Expected output: "a" // Expected output: "b" // Expected output: "c"
+
+    // indexOf // 배열에서 주어진 요소를 찾을 수 있는 '첫 번째 인덱스'를 반환하고, 찾을 수 없는 경우 -1을 반환 (같은 요소가 중복으로 있어도 첫 번째만 반환)
+    console.log("-------Array.indexOf 예제-------");
+    const beasts = ["ant", "bison", "camel", "duck", "bison"];
+
+    console.log(beasts.indexOf("bison"));// Expected output: 1 // ant= 0, bison=1, camel=2, duck=3, bison=4
+    console.log(beasts.indexOf("giraffe")); // Expected output: -1
+
+    // Start from index 2
+    console.log(beasts.indexOf("bison", 2)); // Expected output: 4 // 초기값 지정으로 camel=2, duck=3, bison=4 중 bison 4
+    console.log(beasts.indexOf("ant", 2)); // Expected output: -1 // 초기값 지정으로 camel=2, duck=3, bison=4 에서 찾았으나 ant없음.
+
+    // join
+    console.log("-------Array.join 예제-------");
+    const elements = ["Fire", "Air", "Water"];
+
+    console.log(elements.join()); // Expected output: "Fire,Air,Water"
+    console.log(elements.join("")); // Expected output: "FireAirWater"
+    console.log(elements.join("-")); // Expected output: "Fire-Air-Water"
+
+    // push // 배열의 마지막 부분에 새로운 요소를 추가 후 배열의 새로운 길이를 반환
+    console.log("-------Array.push 예제-------");
+    const animals = ["pigs", "goats", "sheep"];
+
+    const count = animals.push("cows");
+    console.log(count); // Expected output: 4 // 배열의 새로운 길이를 반환함
+    console.log(animals); // Expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+    animals.push("chickens", "cats", "dogs");
+    console.log(animals); // Expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+
+
+    // unshift // 배열의 첫 부분에 새로운 요소를 추가 후 배열의 새로운 길이를 반환
+    console.log("-------Array.unshift 예제-------");
+    const array6 = [1, 2, 3];
+
+    console.log(array6.unshift(4, 5)); // Expected output: 5  // 배열의 새로운 길이를 반환함
+    console.log(array6); // Expected output: Array [4, 5, 1, 2, 3]
+
+
+    // pop // 배열의 마지막 요소를 꺼내 결과값을 반환
+    console.log("-------Array.pop 예제-------");
+    const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+
+    console.log(plants.pop()); // Expected output: "tomato"
+    console.log(plants); // Expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+    plants.pop();
+    console.log(plants); // Expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+    // shift // 배열의 첫 요소를 꺼내 결과값을 반환
+    console.log("-------Array.shift 예제-------");
+    const ballGame = ["soccer", "baseball", "basketball"];
+    const firstElement = ballGame.shift();
+
+    console.log(ballGame); // Expected output: Array ["baseball", "basketball"]
+    console.log(firstElement); // Expected output: "soccer"
+
+    // splice // 배열의 지정한 위치의 기존 요소를 삭제 및 새 요소를 추가
+    console.log("-------Array.splice 예제-------");
+    const months = ["Jan", "March", "April", "June", "July", "October", "December"];
+    
+    months.splice(1, 0, "Feb"); // months[1] 위치에서 0개를 제거하고 "Feb"를 끼워넣음.
+    console.log(months); // Expected output: Array ["Jan", "Feb", "March", "April", "June", "July", "October", "December"]
+
+    months.splice(4, 2, "May"); // months[4] 위치에서 2개를 제거하고 "May"를 끼워넣음.
+    console.log(months); // Expected output: Array ["Jan", "Feb", "March", "April", "May", "October", "December"]
+    
+    months.splice(5, 2, "August", "September"); // months[5] 위치에서 2개를 제거하고 "August", "September"를 끼워넣음.
+    console.log(months); // Expected output: Array ["Jan", "Feb", "March", "April", "May", "August", "September"]
+
+
+    // slice // 
+    console.log("-------Array.slice 예제-------");
+    const phoneticAlphabet = ["alpa", "bravo", "charlie", "delta", "echo"];
+
+    console.log(phoneticAlphabet.slice(2)); // Expected output: Array ["charlie", "delta", "echo"] // [2]부터 끝까지
+    console.log(phoneticAlphabet.slice(2, 4)); // Expected output: Array ["charlie", "delta"] // [2]부터 [4]까지
+    console.log(phoneticAlphabet.slice(1, 5)); // Expected output: Array ["bravo", "charlie", "delta", "echo"] // [1]부터 [5]까지
+    console.log(phoneticAlphabet.slice(-2)); // Expected output: Array ["delta", "echo"] // [-2](뒤에서부터 두칸)부터 끝까지
+
+    // reverse // 배열의 순서를 반전
+    console.log("-------Array.reverse 예제-------");
+    const array7 = ["one", "two", "three"];
+    
+    console.log("array1:", array7); // Expected output: "array1:" Array ["one", "two", "three"]
+
+    const reversed = array7.reverse();
+    console.log("reversed:", reversed); // Expected output: "reversed:" Array ["three", "two", "one"]
+
+    // Careful: reverse is destructive -- it changes the original array.
+    console.log("array1:", array7); // Expected output: "array1:" Array ["three", "two", "one"]
+
+
+    // sort // 배열을 지정한 조건에 따라 정렬
+    console.log("-------Array.sort 예제-------");
+    
+
+    // toString
+    console.log("-------Array.toString 예제-------");
+
+    // 기타 MDN 참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+  </script>
+</body>
+</html>

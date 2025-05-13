@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    window.onload = () => {
+
+      // 1. DOM 구조로 `<div>데이터</div>`를 body에 삽입하기
+
+      // 레이어(layer : div) 구성
+      // DOM 함수
+      // HTML DOM 객체 : HTML +"Div" + Element
+      // => HTMLDivElement => Web APIs
+
+      // div 태그 작성
+      let div1 = document.createElement("div");
+      
+      // div 내용
+      let txt = document.createTextNode("데이터");
+
+      // div <= 값 (내용)
+      // <div>데이터</div>
+      // div : 부모 node, 데이터 : 자식노드
+      div1.appendChild(txt);
+
+      // body <= div 삽입
+      document.body.appendChild(div1);
+
+      // 2. innerHTML을 이용해서 삽입
+      // document.body.innerHTML = `<div>데이터</div>`; // (1항과 동일 DOM에 비해 간단)
+    }
+  </script>
+</body>
+</html>

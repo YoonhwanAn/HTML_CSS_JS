@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+
+      // div 태그 작성
+      let div1 = document.createElement("div");
+      
+      // div에 넣을 내용 작성
+      let txt = document.createTextNode("데이터");
+
+      // div <= 값 (내용)
+      div1.appendChild(txt); 
+      // <<div>데이터</div>
+
+      // body <= div 삽입
+      document.body.appendChild(div1);
+      
+      // id 속성추가 
+      div1.id= "layer1-id"; //(O)
+      // div => HTMLDivElement 멤버 필드(속성)
+      // id 존재유무 확인 : 조부모 객체(Element)가 id속성을 가지고 있음 // 상속 사용
+      
+      // custom(사용자 정의) 속성 작성
+      // div.setAttribute("id", "layer1-id" ); // setAttribute - 없으면 새로 만들고, 있으면 id값을 변경함.
+      
+      // class 속성추가 
+      div1.className = "layer1-class"; // (O)
+      // div => HTMLDivElement 멤버 필드(속성)
+      // className 존재유무 확인 : 조부모 객체(Element)가 id속성을 가지고 있음 // 상속 사용
+      
+      // div1.class = "layer1-class"; // (X) // id와 같이 유사하게 작성해보려고 해도, class라는 속성으로 명명되어 있지 않기 때문에 불가
+      // HTMLDivElement의 속성에 없기때문에 사용할 수 없음.
+      
+      // custom(사용자 정의) 속성 작성
+      // div.setAttribute("class", "layer1-class") // setAttribute - 없으면 새로 만들고, 있으면 id값을 변경함.
+
+
+      // CSS 속성 할당
+      div1.style.position = "absolute";
+      div1.style.left = "100px";
+      div1.style.top = "100px";
+      div1.style.width = "300px";
+      div1.style.height = "300px";
+      div1.style.backgroundColor = "cyan";
+
+      // 하기의 방법도 동일하게 작용함
+      // let cssStr =  `
+      //               position: absolute;
+      //               left: 100px;
+      //               top: 100px;
+      //               width: 300px;
+      //               height: 300px;
+      //               background-color: cyan;
+      //               `;
+      // div1.setAttribute("style",cssStr);
+
+      div1.style.display = "flex";
+      div1.style.alignItems = "center";
+      div1.style.justifyContent = "center";
+
+      div1.addEventListener("click", (e) => {
+        // console.log("e target :", e.target);
+        console.log("e currentTarget :", e.currentTarget);
+        
+        // 클릭 가정 시:
+        // e.target → 실제 클릭된 요소가 div1위에 있다고 치면 이벤트 발생 X (예-버튼)
+        // e.currentTarget → div1에 대해서 이벤트를 지정했으므로, div1 구간은 이벤트 모두 발생 (이벤트 리스너가 붙은 요소)
+          
+        console.log("e currentTarget.id :", e.currentTarget.id);
+
+        let id = e.currentTarget.id;
+        let layer1 = document.getElementById(id);
+        layer1.style.backgroundColor = "blue";
+      });
+
+    }
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

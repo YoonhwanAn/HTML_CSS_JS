@@ -1,15 +1,16 @@
 // 1. 기명함수, 익명함수
-    기명
-    function sumNumbers(n, m) {
+      기명
+      function sumNumbers(n, m) {
 
-    }
-    익명
-    let sumNumbers = function (n, m) {
+      }
 
-    }
+      익명
+      let sumNumbers = function (n, m) {
 
-    변수를 함수타입으로 가능하기때문에 익명함수가 존재 가능.
-    sumNumbers를 다음과 같은 함수로 정의한다.
+      }
+
+      변수를 함수타입으로 가능하기때문에 익명함수가 존재 가능.
+      sumNumbers를 다음과 같은 함수로 정의한다.
 
 // 2. 변수 => 지역/전역변수
       클래스(객체) => 소속 변수(멤버(소속) 필드(변수), 속성(특성))

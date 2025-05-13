@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 인스턴스(객체) 생성
+    // date : 인스턴스(객체 변수) : instance(실직 객체)
+    // new : 객체 생성 연산자
+    // Date() : 생성자(구축자: constructor) : 객체를 생성하는 특수 목적의 함수
+    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date
+    // 클래스와 동명(같은 이름)으로 사용
+    let date = new Date();
+
+    // 좁은 의미의 "객체" => 인스턴스 (실질 객체)
+    // 넓은 의미의 "객체" => 클래스(형식 객체)
+
+    console.log("date :", date); // 기본양식 : Tue May 13 2025 10:53:14 GMT+0900 (한국 표준시)
+    console.log("date :", date.toString()); // 위와 동일. original. 
+
+    // 각 국가의 표준사양으로 표시하도록 포멧을 잡아줌.
+    console.log("date(locale)-1 : ", new Intl.DateTimeFormat(navigator.language).format(date)) // 한국포멧으로 변경된 양식 : 2025. 5. 13.
+    console.log("date(locale)-2 : ", new Intl.DateTimeFormat("KO-KR").format(date)) // 위와 동일
+    console.log("date(locale)-3 :", date.toLocaleString()) // 2025. 5. 13. 오전 10:58:35
+    console.log("date(locale)-4 :", new Date().toLocaleString()) // 위와 동일 - new Date() : 익명 인스턴스(객체) (주의! 익명클래스와는 다름!)
+    // 참고
+    // Intl : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Intl
+    // 국제화(I18N) : https://developer.mozilla.org/ko/docs/Glossary/Internationalization
+    // Date.toLocaleString() : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+
+    // 드문케이스지만 class 밑에 class가 붙는 경우가 있음. (예 Intl.DateTimeFormat)
+    // 기명 인스턴스 => 생성한 것을 변수로 저장해뒀으니 다시 사용할 수 있다 => 다회성이다.
+    // 익명 인스턴스.멤버(속성(필드/변수) / 메서드) => 생성했으나 저장하지 않았다 => 일회성이다. 
+
+
+  </script>
+</body>
+</html>
