@@ -24,7 +24,7 @@
 
     // 각 국가의 표준사양으로 표시하도록 포멧을 잡아줌.
     console.log("date(locale)-1 : ", new Intl.DateTimeFormat(navigator.language).format(date)) // 한국포멧으로 변경된 양식 : 2025. 5. 13.
-    console.log("date(locale)-2 : ", new Intl.DateTimeFormat("KO-KR").format(date)) // 위와 동일
+    console.log("date(locale)-2 : ", new Intl.DateTimeFormat("ko-KR").format(date)) // 위와 동일
     console.log("date(locale)-3 :", date.toLocaleString()) // 2025. 5. 13. 오전 10:58:35
     console.log("date(locale)-4 :", new Date().toLocaleString()) // 위와 동일 - new Date() : 익명 인스턴스(객체) (주의! 익명클래스와는 다름!)
     // 참고

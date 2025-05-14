@@ -1,5 +1,10 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family: 'HSYuji-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body 
 {
     /* 전체화면 내외부 간격 : 0 */
@@ -43,15 +48,36 @@ div#left_menu
 /* 메인 요리 */
 div#center_dish
 {
+    position: relative;
     min-width: 1000px;
     width: calc(100vw - 300px);
     /* background: cyan;     */
-    background: url('../pic/table.jpg');
+    background: url('../pic/table.jpg') no-repeat;
+    background-size: cover;
 
     /* 요리 접시 중앙 정렬 */
     display:flex;
     align-items:center;
     justify-content:center;
+}
+
+/* 포스트잇 */
+#post_it
+{
+    position: absolute;		
+    left: calc(50vw - 380px);
+    top: calc(50vh -230px);
+    width: 460px;
+    height: 460px;
+    background: url(../pic/post-it.png) no-repeat;
+    background-size: contain;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'HSYuji-Regular';
+    font-size: 3em;
 }
 
 /* 가운데 요리 접시 */

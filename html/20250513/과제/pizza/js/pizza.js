@@ -21,6 +21,7 @@ window.onload = function() {
     let knife_box = document.getElementById("knife_box");
     let fork_box = document.getElementById("fork_box");
     let main_dish = document.querySelector("#main_dish");
+    let post_it = document.getElementById("post_it");
     let canvas = document.getElementById("pizzaCanvas");
     
     
@@ -53,7 +54,7 @@ window.onload = function() {
         pizza.style.alignItems = "center";
         pizza.style.justifyContent = "center";
     }
-
+    
     // 피자 메뉴 공용 변수 설정
     let pizza_menu_btns = document.querySelectorAll("img[id^=pizza]");
     const ctx = canvas.getContext('2d');
@@ -68,11 +69,13 @@ window.onload = function() {
         // 확대와 함께 흔들리는 애니메이션 추가
         pizza_menu_btn.style.transform = 'scale(1.2)';
         pizza_menu_btn.style.animation = 'shake 0.8s ease-in-out infinite';
+        pizza_menu_btn.style.background = 'radial-gradient(white 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.0) 70% )';
         });
 
         pizza_menu_btn.addEventListener('mouseout', function(e) {
             pizza_menu_btn.style.animation = '';
             pizza_menu_btn.style.transform = 'scale(1)';
+            pizza_menu_btn.style.background = '';
         });
     }
 
@@ -98,10 +101,11 @@ window.onload = function() {
             
             alert("피자 먹자 !");				
             
-            // 포크/나이프 등장
+            // 포크/나이프 등장 & 포스트잇 제거
             fork_box.style.visibility = "visible";
             knife_box.style.visibility = "visible";
-            
+            post_it.style.display = "none";
+
             // 피자클릭 시 피자먹기
             
             // 이전에 등록된 캔버스 클릭 이벤트 리스너가 있다면 제거
@@ -162,10 +166,11 @@ window.onload = function() {
 
             alert("잘 먹었습니다.");
 
-            // 포크와 나이프를 치운다.
+            // 포크와 나이프를 치운다.& 포스트잇 생성
             console.log("자리 정리");
             fork_box.style.visibility = "hidden";
             knife_box.style.visibility = "hidden";
+            post_it.style.display = "flex";
             
             // 피자를 치운다
             ctx.clearRect(0, 0, canvas.width, canvas.height);  
@@ -187,6 +192,7 @@ window.onload = function() {
             console.log("자리 정리");
             fork_box.style.visibility = "hidden";
             knife_box.style.visibility = "hidden";
+            post_it.style.display = "flex";
 
             // 피자를 치운다
             ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  	<meta charset="UTF-8">
+  	<title>쿠키샵(cookie shop) 갤러리</title>
+ 	
+	<!-- bootstrap CDN link -->
+	<!-- https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+	<link href="css/cookie_shop.css" rel="stylesheet" />
+
+	<script src="js/cookie_shop.js"></script>
+        
+</head>
+
+<body>
+
+	<!-- 전체 레이아웃 -->
+	<div id="wrap_section">
+
+		<!-- 쿠키 갤러리 -->
+		<!--
+			bootstrap carousel slide(부트스트랩 캐러셀 슬라이드) 
+			: https://getbootstrap.com/docs/5.3/components/carousel/
+			: https://www.w3schools.com/bootstrap5/bootstrap_carousel.php
+		-->
+		<!-- 
+			carousel-fade // cross-fade
+		 	data-bs-ride="carousel" // 자동 실행
+		-->
+		<div id="cookie_gallery_section" class="carousel slide" data-bs-ride="carousel">
+
+			<!-- Indicators/dots(점 인디케이터 아이콘) -->
+			<div id="carousel-indicators" class="carousel-indicators">
+				
+				<!-- 
+				<button type="button" data-bs-target="#cookie_gallery_section" data-bs-slide-to="0" class="active"></button>
+				<button type="button" data-bs-target="#cookie_gallery_section" data-bs-slide-to="1"></button>
+				<button type="button" data-bs-target="#cookie_gallery_section" data-bs-slide-to="2"></button> 
+				-->
+
+			</div>
+			<!--// Indicators/dots(점 인디케이터 아이콘) -->
+			
+			<!-- 쿠키 이미지들 -->
+			<!-- carousel-inner -->
+			<div class="carousel-inner slider_panel" id="slider_panel">
+
+				<!-- 쿠키 내용(글)들 -->
+				<div id="slider_text_panel" class="slider_text_panel">
+				</div>
+				
+			</div>
+			<!--// carousel-inner -->
+			<!--// 쿠키 이미지들 -->
+
+			<!-- 캐러셀 슬라이드 제어 버튼(좌/우) -->
+			<!-- Left and right controls/icons -->
+			<button class="carousel-control-prev" type="button" data-bs-target="#cookie_gallery_section" data-bs-slide="prev">
+				<div class="carousel-control-prev-icon" id="slide_custom_left_icon"></div>
+			</button>
+
+			<button class="carousel-control-next" type="button" data-bs-target="#cookie_gallery_section" data-bs-slide="next">
+				<span class="carousel-control-next-icon" id="slide_custom_right_icon"></span>
+			</button>
+			<!--// 캐러셀 슬라이드 제어 버튼(좌/우) -->
+
+		</div>
+		<!--// 쿠키 갤러리 -->
+
+	</div>
+	<!--// 전체 레이아웃 -->
+
+</html>

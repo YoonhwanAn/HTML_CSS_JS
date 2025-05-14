@@ -1,0 +1,52 @@
+문제의 원인은 두 가지 방식(인라인 스타일로 직접 설정 vs. CSS 애니메이션으로 정의된 transform)을 동시에 적용할 때 transform 속성이 충돌하기 때문입니다. 다시 말해, JavaScript로 인라인 스타일로 transform: scale(1.2)를 설정하면, 그 이후 CSS 애니메이션(keyframes에서 정의한 shake)이 동일한 transform 속성을 덮어쓰게 되어, 의도한 효과(확대와 흔들림)가 제대로 보이지 않는 경우가 있습니다.
+
+이 문제를 해결하는 좋은 방법은 CSS 클래스에 해당 효과를 모두 정의한 후, 마우스오버 시 해당 클래스를 추가하고 마우스아웃 시 제거하는 방식입니다. 이렇게 하면 CSS에서 한 곳에 효과를 모아서 처리하게 되고, 인라인 스타일과의 충돌도 피할 수 있습니다.
+
+예시를 들어볼게요.
+
+1. CSS 수정
+마우스오버 효과(확대+shake 애니메이션)를 적용할 클래스를 정의합니다.
+
+css
+/* 좌측메뉴 mouseover시 애니메이션 */
+@keyframes shake {
+    0%   { transform: scale(1.2) rotate(0deg); }
+    25%  { transform: scale(1.2) rotate(2deg); }
+    50%  { transform: scale(1.2) rotate(0deg); }
+    75%  { transform: scale(1.2) rotate(-2deg); }
+    100% { transform: scale(1.2) rotate(0deg); }
+}
+
+/* 마우스 오버 효과 클래스 */
+.hoverEffect {
+    transition: transform 0.3s ease-out;
+    /* 기본 확대 효과 */
+    transform: scale(1.2);
+    /* Shake 애니메이션 추가 */
+    animation: shake 0.8s ease-in-out infinite;
+    background: radial-gradient(white 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.0) 70%);
+}
+위에서는 .hoverEffect 클래스에 확대(1.2)와 함께 shake 애니메이션을 넣어두었습니다.
+
+2. JavaScript 수정
+마우스오버와 마우스아웃 시 해당 클래스를 추가하거나 제거하도록 처리합니다.
+
+js
+// 피자 메뉴 mouseover, mouseout 이벤트 설정 (CSS 클래스를 사용하는 방식)
+for (let pizza_menu_btn of pizza_menu_btns) {
+    pizza_menu_btn.addEventListener('mouseover', function(e) {
+        pizza_menu_btn.classList.add('hoverEffect');
+    });
+
+    pizza_menu_btn.addEventListener('mouseout', function(e) {
+        pizza_menu_btn.classList.remove('hoverEffect');
+    });
+}
+이제 마우스가 해당 이미지 위에 올라가면 .hoverEffect 클래스가 추가되어 CSS에서 설정한 확대와 애니메이션 효과가 동시에 적용됩니다. 마우스가 벗어나면 클래스가 제거되어 원래 상태로 복귀됩니다.
+
+추가 설명
+왜 클래스 방식이 좋은가? CSS 클래스 방식은 코드의 유지보수와 재사용성이 높습니다. 여러 요소에 동일한 효과를 주기 쉽고, 애니메이션이나 변환(transition) 설정을 CSS 한 곳에서 관리할 수 있어 수정이나 확장이 편리합니다.
+
+인라인 스타일 vs. Animation의 충돌 transform 속성은 애니메이션과 별개로 한 번에 하나의 값만 적용할 수 있습니다. 인라인으로 설정한 transform 값이 있다면, CSS 애니메이션에서 transform을 변경할 때 우선순위나 동작 방식에 따라 의도한 효과가 나타나지 않을 수 있습니다. 클래스 방식을 사용하면 CSS가 한 곳에서 관리되므로 이러한 충돌을 피할 수 있습니다.
+
+이와 같이 수정하면 확대 효과와 shake 애니메이션이 모두 적용되어, 피자 메뉴에 마우스가 올라색 때 원하는 효과가 나타날 것입니다.

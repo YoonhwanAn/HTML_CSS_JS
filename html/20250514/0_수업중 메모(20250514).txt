@@ -1,0 +1,73 @@
+// 복습
+
+객체란?
+광의의 의미 : 클래스
+협의의 의미 : 인스턴스
+
+객체(Object) : 멤버(소속 : has-A)
+= 멤버필드(변수) : 속성(attribute, property)
++ 메서드(method : 객체 함수)
+: 행위(action, behavior)
+
+HTML(XML)
+:태그(tag) => 요소(element) => 객체(Object)
+
+div 태그 => HTMLDiv element
+: 속성(이벤트 포함),
+메서드(정적, 원형(prototype), 인스턴스)
+: 자신의 것 + 상속된 것(is-A)
+
+상속 관계) is-A
+EventTarget 
+<- Node(태그, 주석(comment), 내용(text) ...)
+<- Element(XML 태그)
+<- HTMLElement(HTML 태그)
+<- HTMDivElement(HTML 태그 중 특정태그)
+
+
+XML 제어를 제어하기 위해서 나온 체제 => (1)DOM / (2)SAX 
+
+DOM(Document Object Model)
+- XML은 tree 구조로 되어있음. => 일반적인 구조보다 속도가 많이 떨어짐. 
+- DOM API(설계서) : DOM은 W3C社에서 XML구조를 설계하기 위해 설계됨.
+  => 구현 : Javascript, Java, ....
+
+  ex) JS div 작성 + 텍스트 + 속성 + 이벤트(속성 변경)
+
+  [작성예시]
+  document.createElement : 태그(div) 작성
+  document.createTextNode : 노드(텍스트) 작성
+  document.appendChild : 태그(div) <- 노드(텍스트)
+  document.appendChild : 태그(body) <- 태그(div)
+
+  (주의) 트리 조작(tree manipulation) : 코드 길어짐 -> 성능 저하 !
+  => 현업적 사용성 저하
+  
+  (대용)
+  document.body(태그).innerHTML(innerText, textContent)
+  직접 밀어넣음. 코드 심플 -> 성능 증가 => 현업적
+
+SAX(Simple API for XML)
+  SAX는 XML 파일을 해석하기 위해 DOM 대신 사용
+  이름을 보면 알 수 있다시피 SAX는 DOM에 비해 단순한 인터페이스를 갖고 있음.
+  처리해야할 파일이 많거나 큰 경우에 적합.
+  그러나!!! 데이터 내용을 조작할 수 있는 기능은 상대적으로 적음
+
+JS 내장객체(built-in) 객체
+: Date, Intl, Math, RegExp(정규표현식), JSON, ...
+  https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+
+DOM, BOM
+
+window.document.body.innerHTML
+
+// Cache 메모리 ?
+  // 추가로 차장볼 것
+  미디어 <--- 미디어
+  소비자 <--- --- 도매상
+
+
+// <button type="button" id="btn" class="btn-class">버튼</button>
+  <button>은 타입을 지정하지 않으면 기본 submit이므로 주의!!!
+
+// Swiper는 대문이나, 필요한 부분에만. 시선이 분산되고 사용자의 경험에 좋지 않음.
