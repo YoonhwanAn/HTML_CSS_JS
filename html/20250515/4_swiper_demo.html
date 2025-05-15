@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <title>swiper_demo</title>
+  <style>
+    .animal-name {
+      position: absolute; 
+      padding: 20px 30px; 
+      font-size: 30px; 
+      color:white; 
+      z-index:1; 
+      text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+    }
+    .swiper {
+      width: 600px;
+      height: 400px;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-pagination-bullet {
+      background: deeppink !important;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: deeppink !important;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      
+      // 1. 반복구문을 자바스크립트로 넣기. 
+      // => 반복구문을 넣은 후에 swiper가 동작하여야 함 => swiper보다 앞에 나와야 함에 유의!!!!
+      
+      // (1) 동물사진 배열 정의
+      let animal_pictures = ['deer.jpg',
+                            'fox.jpg',
+                            'giraffe.jpg',
+                            'hedgehog.jpg',
+                            'koala.jpg',
+                            'lion.jpg',
+                            'meerkat.jpg',
+                            'raccoon.jpg',
+                            'rhinoceros.jpg',
+                            'wolf.jpg'];
+      
+      // (2) 동물이름 배열 정의
+      let animal_names = ['사슴',
+                        '여우',
+                        '기린',
+                        '고슴도치',
+                        '코알라',
+                        '사자',
+                        '미어캣',
+                        '라쿤',
+                        '코뿔소',
+                        '늑대'];
+
+      // (3) 동물사진, 이름의 배열을 이용하여 <div class="swiper-wrapper">에 동일 구문을 반복하여 넣기 
+      // (3-1) 넣을 위치 선언 (후속 코드를 줄이기 위함)
+      let swiperWrapper = document.querySelector('.swiper-wrapper');
+      // (3-2) 넣을 코드들을 압축시킬 변수선언
+      let slideContents = "";
+      // (3-3) 압축시킬 변수에 코드 밀어 넣기
+      for (i = 0; i < animal_pictures.length; i++) {
+        slideContents += `<div class="swiper-slide">
+                            <div class="animal-name">${animal_names[i]}</div>
+                            <img src="images/${animal_pictures[i]}">
+                          </div>`;
+      } 
+      // (3-4) 압축시킨 변수를 넣을 위치에 끼워넣기
+      swiperWrapper.innerHTML += slideContents;
+
+      // 2. swiper 정의
+      // => 작성된 HTML문서를 기반으로 작동해야함 => 1항의 반복문보다 뒤에 위치해야함에 유의!!!! 
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need autoplay
+        autoplay: {
+          delay: 4000,
+        },
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: 'ture',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <header style="text-align: center"> 
+    <h1>위기에 빠진 동물들을 도와주세요</h1>
+  </header>
+
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- 반복구문 자바스크립트로 제어 -->
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <!-- //Slider main container -->
+
+  <footer>
+    <div style="padding:10px; text-align: center;"> 
+      <h3>후원문의 : 김OO 신한은행 000-00000-000-000</h3>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <button style="width: 150px; height: 50px; border-radius: 30px; font-size: 15px; font-weight: bold;"> 후원하기</button>
+    </div>
+  </footer>
+
+</body>
+</html>

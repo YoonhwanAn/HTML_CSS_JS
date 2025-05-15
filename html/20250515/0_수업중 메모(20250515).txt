@@ -1,0 +1,30 @@
+// 1. 공짜로!!!! 많은 예제를!!! 얻기!!!!!!
+  (1) 원하는 책을 검색하기
+  (2) 출판사 자료실, 깃허브 등 탐색하여 코드를 획득
+  (3) 인터넷 서점(예스24 등) 원하는 도서의 목차를 저장 - why? 코드의 제목명이 책의 목차를 따라가는 경우가 많음.
+
+// 2. 꿀팁!
+  이미지파일 혹은 파일명 여러개를 생성했는데 리스트를 만들어야 한다???
+  (1) CMS를 통해서 파일이 포함된 폴더에 들어가서 dir/b 를 하면 파일명을 빠르게 뽑을 수 있다.
+  (2) 복사하고, 붙여넣자
+  (3) 파일명을 바꾸려면 Ctrl + H (바꾸기)에서 [.png\r\n"] -> [', \r\n'] 로 변경하자
+  (4) 앞과 뒤 수정
+  (5) 개꿀!
+
+(변경 전)
+chocolate_chip.png
+german_chocolate.png
+lemonade.png
+Mexican_Hot_Chocolate.png
+
+(변경 후)
+chocolate_chip', 
+'german_chocolate', 
+'lemonade', 
+'Mexican_Hot_Chocolate.png
+
+(마무리)
+'chocolate_chip', 
+'german_chocolate', 
+'lemonade', 
+'Mexican_Hot_Chocolate'

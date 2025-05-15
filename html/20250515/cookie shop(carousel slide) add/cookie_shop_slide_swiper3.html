@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  	<meta charset="UTF-8">
+  	<title>쿠키샵(cookie shop)</title>
+ 
+	<link href="css/cookie_shop_swiper3.css" rel="stylesheet" />
+
+	<!-- swiper 추가 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<!-- bootstrap 추가 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    
+  <script src="js/cookie_shop_swiper3.js" charset="UTF-8"></script>
+
+</head>
+
+<body>
+
+	<!-- 전체 레이아웃 -->
+	<div id="wrap_section">
+
+		<!-- 쿠키 갤러리 -->
+		<!-- Slider main container -->
+		<div class="swiper">
+
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper" id="slider_panel"></div>
+
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+
+		</div>
+		<!--// Slider main container -->
+		<!--// 쿠키 갤러리 -->
+
+		<!-- 쿠키 장바구니 -->
+		<div class="cookie_cart_section">
+
+			<table class="table" id="order_board" style="width:700px;">
+
+				<!-- 타이틀 -->
+				<tr>
+					<td style="width:200px">상품명</td>
+					<td style="width:100px">단가</td>
+					<td style="width:100px">주문수량</td>
+					<td style="width:100px">상품별 집계</td>
+				</tr>
+				<!--// 타이틀 -->
+
+				<!-- 상품 주문 현황 -->
+				<tr>
+					<td colspan="4" style="background-color:orange">	<!-- 총계 : 오렌지색 배경색 부각 -->						
+						<div class="input-group">
+							<span class="input-group-text">총계 : </span>
+							<input class="form-control" type="number" id="total_price" min="0" readonly />
+						</div>	   
+					</td>
+				</tr>
+
+				<!--// 상품 주문 현황 -->
+
+			</table>
+			
+		</div>
+		<!--// 쿠키 장바구니 -->
+
+	</div>
+	<!--// 전체 레이아웃 -->
+
+</html>
