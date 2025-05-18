@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+body { 
+    margin: 0px; 
+    padding: 0px; 
+}
+
+/* Cookie Gallery */
+/* swiper */
+.swiper {
+    width: 840px;
+    height: 455px;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 슬라이드 패널 */
+#slider_panel 
+{ 
+    /*  slidesPerView: 4 적용 시 */
+    width: calc(210px * 7);
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+/* 의류 패널 */
+.wear-pnl {
+
+    width: 210px;
+    height: 455px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* 플렉스 박스, 세로(컬럼)방향 전개 */		
+    /* background: yellow;      */
+}
+
+/* 의류 관심상품(좋아요) 등록 : 210px(190px + 20px(padding)) * 30px */
+.wear-preferred-item {
+
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    width: 190px;
+    background-color: #F1F1F1;
+	/* 
+		플렉스 박스, 
+        가로 우측 정렬, 
+        내부간격 : 10px, 
+        너비 : 190px, 
+        배경색 : #F1F1F1 
+	*/	
+}
+
+/*  관심 상품(좋아요) 아이콘 */
+span.preferred-item-icon {
+
+    color: #ccc;
+}
+
+.material-symbols-outlined:hover {
+
+    cursor: pointer;
+    color: #ccc;
+
+	/* 마우스 커서 모양 : 포인터, 글꼴색 : #ccc */
+	
+}
+
+/* 의류 썸네일 패널 : 210px * 250px */
+.wear-gallery-pic {
+
+    width: 210px;
+    height: 250px;
+    /* background : red; */
+}
+
+/* 의류 썸네일 : 210px * 290px */
+.wear-gallery-pic img {
+
+    width: 210px;
+    height: 290px;
+    object-position: 0 -40px;
+}
+
+/* 원단 스타일 : 210px * 35px + padding-bottom(8px) */
+.wear-fabric {
+
+    width: 210px;
+    height: 35px;    
+    padding: 4px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: cyan; */
+}
+
+
+/* 원단 이미지 wrapper */
+.wear-fabric .wear-fabric-icon {
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* 
+    원단 이미지 : 상품이미지에서 클립핑 
+    클립핑시에는 "픽픽"의 십자선을 활용하여 클립핑(clipping)할 좌표를 측정합니다.
+*/
+.wear-fabric .wear-fabric-icon img {
+
+    width: 16px;
+    height: 16px;
+    margin-left : 4px;
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/rect */
+    /* position: relative;
+    left: -210px;
+    top: -210px; */
+    
+	/* 
+		이미지 클립핑 : clip-path : rect() 함수 활용 
+		: 상우하좌 220px 240px 240px 220px 
+	*/
+}
+
+
+/* 브랜드 : 15px */
+.brand-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: orange; */
+}
+
+/* 상품명 : 210px */
+.wear-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightskyblue; */
+}
+
+/* 상품 단가 : 210px * 15px */
+.wear-price {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightgreen; */
+}
+
+/* 상품 추천 별점 및 상품평 아이콘 : 210px * 15px */
+.wear-recomm-review {
+
+    width: 210px;
+    /* background: lightcyan; */
+}    
+
+.wear-recomm-review-icon-wrap {  
+
+    width: 70px;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background: #F1F1F1;  */
+}
+
+.wear-recomm-review span.material-symbols-outlined {
+
+    margin-top: 10px;
+    font-size: 15px;
+    height: 25px;
+}
+
+.wear-recomm-review span.wear-recomm-review-num {
+
+    padding-top: 0px;
+    font-size: 12px;
+    height: 30x;
+    /* background : yellow; */
+}
+
+/* 신상품 여부 : 210px * 35px */
+.new-wear {
+    
+    display: flex;
+    padding: 5px 0 5px 5px;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: lightcyan; */
+}
+
+/* 신상품 아이콘 */
+.new-wear-icon {
+
+    font-size: 12px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+}
