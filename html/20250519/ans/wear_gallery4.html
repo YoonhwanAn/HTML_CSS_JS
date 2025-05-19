@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>남성 의류 갤러리</title>
+
+    <!-- google icons :  https://fonts.google.com/icons -->
+    <!-- 
+        구글 아이콘 CDN(Content Delivery Network) 링크 
+        - Guide : https://developers.google.com/fonts/docs/material_symbols?hl=ko 
+    --> 
+    <!-- google symbols --> 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&icon_names=favorite,home,search,settings" rel="stylesheet" /> -->
+    
+    <link rel="stylesheet" href="css/wear_gallery4.css" />
+
+    <!-- 의류 사이트 : https://www.kolonsport.com/Category/List/105010080000?productGenders=MALE&srsltid=AfmBOoqn_f8Vhq3xdKF5nR6IBbYBEojZRcG5rFUIzTxvrjkGyyJ3ekw0 -->    
+
+    <!-- CSV 파일 로드 라이브러리 : https://www.papaparse.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+</head>
+<body>
+
+    <script>
+        // 관련 소스 : https://medium.com/@ryan_forrester_/read-csv-files-in-javascript-how-to-guide-8d0ac6df082a
+        async function fetchCSV(url) {
+            try {
+
+                const response = await fetch(url);
+                const data = await response.text();
+                
+                // document.getElementById('output').innerText = data;
+                let productsStr = data;
+
+                console.log("상품 정보들 : ", typeof productsStr)
+                console.log("상품 정보들 : ", productsStr)
+
+                // JSON 으로 변환
+                // 예시 : https://www.papaparse.com/docs#csv-to-json
+                productsJSON = Papa.parse(productsStr);
+                console.log("productJSON : ", productsJSON);
+                console.log("productJSON typeof : ", typeof productsJSON);
+
+                let productsLen = productsJSON.data.length - 2; // 컬럼 제외
+
+                // console.log("상품 갯수(컬럼 제외) : ", productsLen);
+
+                console.log("컬럼 현황 : ", productsJSON.data[0]);
+                console.log("첫 상품 정보 : ", productsJSON.data[1]);
+                console.log("마지막 상품 정보 : ", productsJSON.data[productsLen-1]);
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                // 상품 정보를 상품 패널에 추가
+                let productContent = '';
+
+                for (let i = 1; i <= productsLen; i++) {
+
+                    console.log("상품 아이디 : ", `${productsJSON.data[i][0]}`);
+
+                    let product = productsJSON.data[i]; // 개별상품 정보
+
+                    productContent = `  <!-- 의류 단품 패널 -->
+                                        <div class="wear-pnl">
+
+                                            <!-- 의류 관심 상품(좋아요) 등록 -->
+                                            <div class="wear-preferred-item">
+                                                <span class="material-symbols-outlined preferred-item-icon">
+                                                    favorite
+                                                </span>              
+                                            </div>
+                                            <!--// 의류 관심 상품(좋아요) 등록 -->
+
+                                            <!-- 의류 썸네일 사진 패널 -->              
+                                            <div class="wear-gallery-pic">
+                                                <img class="img1" src="pic/${product[0]}_LM1.jpg" />
+                                                <img class="img2" src="pic/${product[0]}_LM2.jpg" />
+                                            </div>
+                                            <!--// 의류 썸네일 사진 패널 -->
+
+                                            <!-- 원단 스타일 -->
+                                            <div class="wear-fabric">
+                                                <div class="wear-fabric-icon">             
+                                                    <img src="pic/${product[0]}_LM1.jpg" />
+                                                </div>
+                                            </div>
+                                            <!--// 원단 스타일 -->
+
+                                            <!-- 브랜드 -->
+                                            <div class="brand-name">
+                                                ${product[3]}
+                                            </div>
+                                            <!--// 브랜드 -->
+
+                                            <!-- 상품명-->
+                                            <div class="wear-name">
+                                                ${product[1]}
+                                            </div>
+                                            <!--// 상품명-->
+
+                                            <!-- 상품 단가 -->
+                                            <div class="wear-price">
+                                                ${product[4]}원
+                                            </div>
+                                            <!--// 상품 단가 -->
+
+                                            <!-- 상품 추천 별점 및 상품평 -->
+                                            <div class="wear-recomm-review">
+                                                ${product[6] != '0' ? ` <div class="wear-recomm-review-icon-wrap">
+                                                                            <span class="material-symbols-outlined">
+                                                                                star
+                                                                            </span>
+                                                                            <span class="wear-recomm-review-num">5</span>    
+
+                                                                            <span class="material-symbols-outlined">
+                                                                                reviews
+                                                                            </span>
+                                                                            <span class="wear-recomm-review-num">1</span>
+                                                                        </div>` : ``}
+                                            </div>
+                                            <!--// 상품 추천 별점 및 상품평 -->
+
+                                            <!-- 신상품 여부 -->
+                                            <div class="new-wear">
+                                                ${product[5] == 'O' ? `<span class="new-wear-icon">신상품</span>` : ``}                                                
+                                            </div> 
+                                            <!--// 신상품 여부 -->
+
+                                        </div>
+                                        <!--// 의류 단품 패널 -->
+                                    `;
+                    // 의류 갤러리에 추가
+                    let wrap = document.querySelector(".wrap");
+                    wrap.innerHTML += productContent;
+                   
+                } // for    
+
+            } catch (error) {                
+                console.error('Error fetching CSV:', error);
+            }
+        }
+
+        fetchCSV('./상품정보-추가상품_grid용.csv');
+    </script>
+
+    <!-- 의류 갤러리 -->
+    <div class="wrap">
+        
+    </div>
+    <!--// 의류 갤러리 -->
+    
+</body>
+</html>

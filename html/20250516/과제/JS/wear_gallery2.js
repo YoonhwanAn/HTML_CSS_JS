@@ -161,7 +161,7 @@ window.onload = () => {
     wear_panels +=  `<!-- 의류 단품 패널 ${product_codes[i]}/${names[i]} -->
                         <div class="swiper-slide wear-pnl">
                           <!-- 의류 관심 상품(좋아요) 등록 -->
-                          <div class="wear-preferred-item">
+                          <div class="wear-preferred-item" id="favorite-icon-${i}">
                               <span class="material-symbols-outlined preferred-item-icon">
                                   favorite
                               </span>              
@@ -236,4 +236,39 @@ window.onload = () => {
   },
 
   });
+
+//   let materialSymbols = document.querySelectorAll("[id^=favorite-icon] span.material-symbols-outlined");
+//   // console.log(materialSymbols);
+
+//   document.querySelector('.swiper-wrapper').addEventListener('click', (event) => {
+//     // 클릭한 요소가 바로 아이콘이거나 아이콘 내부의 자식인 경우를 모두 처리
+//     const icon = event.target.closest('.preferred-item-icon');
+//     if (!icon) return;
+
+//     console.log("Icon clicked via delegation");
+
+//     if (icon.classList.contains('filled')) {
+//       icon.classList.remove('filled');
+//       icon.classList.add('outline');
+//     } else {
+//       icon.classList.remove('outline');
+//       icon.classList.add('filled');
+//     }
+//   });
+
+//   materialSymbols.forEach((materialSymbol) => {
+//     // 초기 상태가 정해져있지 않다면 outline 상태를 기본으로 설정
+//     materialSymbol.classList.add("outline");
+
+//     materialSymbol.addEventListener("click", () => {
+//       console.log("Icon clicked"); // 이벤트 확인
+//       if (materialSymbol.classList.contains("filled")) {
+//         materialSymbol.classList.remove("filled");
+//         materialSymbol.classList.add("outline");
+//       } else {
+//         materialSymbol.classList.remove("outline");
+//         materialSymbol.classList.add("filled");
+//       }
+//     });
+//   });
 }
