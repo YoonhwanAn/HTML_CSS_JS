@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>card game</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <style>
+    .background{
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      width: 1200px;
+      height: 800px;
+      margin: 0 auto;
+      background: center no-repeat url("board.avif");
+      background-size: cover;
+    }
+    .swiper{
+      /* width: 700px;
+      height: 600px; */
+
+      width: 700px;
+      height: 400px;
+    }
+    .swiper-slide > img{
+      width: 230px;
+      height: 352px;
+    }
+  </style>
+
+</head>
+<body>
+<!-- Slider main container -->
+  <div class="background">
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="card/10S.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="card/JS.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="card/QS.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="card/KS.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="card/AS.png">
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+  </div>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: false,
+      // centerInsufficientSlides: true,
+      // centeredSlides: true,
+      // centeredSlidesBounds: true,
+
+      // 카드효과
+      effect: 'cards',
+      cardsEffect: {
+        slideShadows: false,
+      },
+
+      // 키보드를 사용하여 슬라이드 탐색을 활성화
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+      },
+      
+      // 마우스 휠을 사용하여 슬라이드 탐색을 활성화
+        mousewheel: {
+        invert: true,
+        },
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      // scrollbar: {
+      //   el: '.swiper-scrollbar',
+      // },
+    });
+  </script>
+</body>
+</html>

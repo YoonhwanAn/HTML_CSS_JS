@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>남성 의류 갤러리</title>
+
+    <link rel="stylesheet" href="./css/wear_gallery6.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- CSV 파일 로드 라이브러리 : https://www.papaparse.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="./js/wear_gallery6.js"></script>
+
+    <!-- 팝업창 스타일 (임시) -->
+    <style>
+    </style>
+</head>
+<body>
+
+    <!-- 팝업, 의류갤러리 전체 wrap -->
+    <div id="wrap_container">
+        <!-- 팝업 warp -->
+        <div id="popup_wrap">
+            <!-- 이미지 팝업 : 610px X 965px 
+                header : 610px X 50px (창닫기)
+                body(이미지) : 610px X 915px (~ LM1/LM2.jpg)-->
+            <div id="img_popup">
+
+                <!-- header -->
+                <!-- <div id="img_popup_header">
+                    <span id="close_btn" class="material-symbols-outlined">close</span>
+                </div> -->
+                <!-- // header -->
+                <!-- body -->
+                <div id="img_popup_body">
+
+                </div>
+                <!-- // body -->
+
+            </div>
+            <!-- // 이미지 팝업 -->
+        </div>
+        <!-- // 팝업 warp -->
+
+        <!-- 의류 갤러리 패널-->
+        <div class="wrap">
+
+        </div>
+        <!-- // 의류 갤러리 패널-->
+    
+    </div>
+    <!-- // wrap_container -->
+</body>
+</html>
